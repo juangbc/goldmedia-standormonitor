@@ -64,7 +64,6 @@ export default {
       }
     }
     return {
-      // pngPath: this.$pngPath,
       loggedIn: false,
       userData : {},
       userMail : '',
