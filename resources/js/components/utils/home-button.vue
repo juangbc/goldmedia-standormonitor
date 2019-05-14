@@ -35,28 +35,28 @@ export default {
   },
   mounted () {
     switch (this.mode) {
-      case 'standortmonitor':
-        this.link = 'standortmonitor'
+      case 'standortanalyse':
+        this.link = 'standortanalyse-basisdaten'
         this.ico = 'fa-eye'
-        this.heading = 'Standortmonitor'
+        this.heading = 'Standortanalyse'
         this.text = 'Detailed info of occupation in different länder'
         break
-      case 'market':
-        this.link = 'marketShare'
+      case 'zeitreihenanalyse':
+        this.link = 'zeitreihenanalyse-beschaeftigte'
         this.ico = 'fa-chart-pie'
-        this.heading = 'Tableau 1'
+        this.heading = 'Zeitreihenanalyse'
         this.text = 'Market Shares and related statistics'
         break
-      case 'platform':
-        this.link = 'users'
+      case 'vergleichsanalyse':
+        this.link = 'vergleichsanalyse-bundesvergleich'
         this.ico = 'fa-tv'
-        this.heading = 'Tableau 2'
+        this.heading = 'Vergleichsanalyse'
         this.text = 'Comparison of VoD platforms in Germany'
         break
-      case 'titles':
-        this.link = 'titleAnalytics'
+      case 'branchenanalyse':
+        this.link = 'branchenanalyse-medienbranchen'
         this.ico = 'fa-file-video'
-        this.heading = 'Tableau 3'
+        this.heading = 'Branchenanalyse'
         this.text = 'Analysis for single or multiple titles'
         break
     }

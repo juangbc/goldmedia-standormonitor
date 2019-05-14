@@ -14,11 +14,11 @@
       <div class="cards top20">
         <el-row :gutter="60" class="row-home">
           <el-col :xs="24" :sm="24" :md="12">
-            <button-home mode="market" ref="market"></button-home>
+            <button-home mode="standortanalyse" ref="market"></button-home>
           </el-col>
 
           <el-col :xs="24" :sm="24" :md="12">
-            <button-home mode="platform"></button-home>
+            <button-home mode="zeitreihenanalyse"></button-home>
           </el-col>
 
         </el-row>
@@ -26,11 +26,11 @@
         <el-row :gutter="60" class="row-home">
 
           <el-col :xs="24" :sm="24" :md="12">
-            <button-home mode="standortmonitor"></button-home>
+            <button-home mode="vergleichsanalyse"></button-home>
           </el-col>
 
           <el-col :xs="24" :sm="24" :md="12">
-            <button-home mode="platform"></button-home>
+            <button-home mode="branchenanalyse"></button-home>
           </el-col>
 
         </el-row>

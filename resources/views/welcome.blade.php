@@ -204,5 +204,6 @@
             </div>
 
     <script src="{{ asset('js/app.js') }}"></script>
+    <script type='text/javascript' src='https://eu-west-1a.online.tableau.com/javascripts/api/viz_v1.js'></script>
     </body>
 </html>

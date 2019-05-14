@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="sidebar">
-      <el-aside width="250px">
+      <el-aside width="240px">
         <el-menu :router="true" :default-active="activeLink" :unique-opened="true"
                  background-color="#393d49"
                  text-color="#e0e0e0"
@@ -64,6 +64,16 @@
             </el-menu-item-group>
           </el-submenu>
 
+          <el-menu-item index="methoden" :route="{'name':'methoden'}">
+            <i class="fa fa-chart-pie fa-fw"></i><span class="sidebar-title">Methoden</span>
+          </el-menu-item>
+
+          <el-menu-item index="shop" :route="{'name':'shop'}">
+            <i class="fa fa-chart-pie fa-fw"></i><span class="sidebar-title">Shop</span>
+          </el-menu-item>
+
+
+
         </el-menu>
 
         <div class="sidebar-bot footer-sidebar">
@@ -72,10 +82,8 @@
             <router-link :to="{ name: 'faq'}">FAQ</router-link>
             |
             <router-link :to="{ name: 'disclaimer'}">Disclaimer</router-link>
-          </div>
-          <div class="logo-sidebar">
-            <router-link :to="{ name: 'home'}">
-            </router-link>
+            |
+            <router-link :to="{ name: 'impressum'}">Impressum</router-link>
           </div>
         </div>
       </el-aside>

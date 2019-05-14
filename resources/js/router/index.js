@@ -28,6 +28,11 @@ import branchenanalyseMedienbranchen from '../components/pages/branchenanalyse-m
 import branchenanalyseGames from '../components/pages/branchenanalyse-games'
 import branchenanalyseBranchenvergleich from '../components/pages/branchenanalyse-branchenvergleich'
 
+import shop from '../components/pages/shop'
+import impressum from '../components/pages/impressum'
+import methoden from '../components/pages/methoden'
+
+
 import settings from '../components/utils/settings'
 import navbar from '../components/utils/navbar'
 import home from '../components/pages/home'
@@ -210,6 +215,16 @@ export default new Router(
                                 component: zeitreihenanalyseUnternehmen
                             },
                         ]
+                    },
+                    {
+                        path: '/methoden',
+                        name: 'methoden',
+                        component: methoden
+                    },
+                    {
+                        path: '/shop',
+                        name: 'shop',
+                        component: shop
                     },
                 ]
             }
