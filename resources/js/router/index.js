@@ -32,7 +32,7 @@ import shop from '../components/pages/shop'
 import impressum from '../components/pages/impressum'
 import methoden from '../components/pages/methoden'
 
-
+import overview from '../components/pages/overview'
 import settings from '../components/utils/settings'
 import navbar from '../components/utils/navbar'
 import home from '../components/pages/home'
@@ -107,6 +107,11 @@ export default new Router(
                                 meta: {auth: true}
                             }
                         ]
+                    },
+                    {
+                        path: '/overview',
+                        name: 'overview',
+                        component: overview
                     },
                     {
                         path: '/branchenanalyse',

@@ -1,3 +1,4 @@
+
 import Vue from 'vue'
 import navbar from './components/utils/navbar'
 import home1 from './components/home1'
@@ -9,7 +10,7 @@ import vueHeadful from 'vue-headful'
 import StarRating from 'vue-star-rating'
 import VueRouter from 'vue-router';
 import router from './router'
-import App from './App'
+//import App from './App'
 // import '../theme/index.css'
 import 'C:/xampp/htdocs/gmapi/resources/theme/index.css'
 import 'vue-tableau'
@@ -52,7 +53,7 @@ Vue.filter('numFormat', numFormat)
 Vue.use(require('vue-moment'))
 Vue.component('navbar', navbar)
 Vue.component('sidebar', sidebar)
-Vue.use(require('vue-tableau'))
+//Vue.use(require('vue-tableau'))
 
 Vue.prototype.$apiBase1 = 'http://localhost/gmapi/resources/js/'
 Vue.prototype.$apiBase = 'http://localhost/gmapi/public/api/'

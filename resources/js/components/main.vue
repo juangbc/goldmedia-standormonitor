@@ -41,7 +41,8 @@ export default {
       }
     }
   },
-  mounted: function () {
+  mounted:
+          function () {
     if (document.documentElement.clientWidth < this.mobileLimit) {
       this.mobile = true
     }

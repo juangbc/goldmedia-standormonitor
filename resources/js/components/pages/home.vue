@@ -83,7 +83,7 @@ export default {
 <style scoped>
   .welcome {
     font-weight: 500;
-    margin-top: 70px;
+    /*margin-top: 70px;*/
     margin-bottom: 40px;
     color: #5c7a96;
     width: 100%;

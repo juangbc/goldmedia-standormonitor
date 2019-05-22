@@ -1,26 +1,38 @@
 <template>
-
     <div>
-        <Tableau
-                :url="url"
-                height="1200px"
-                width="-webkit-fill-available"
+        <el-table
+                v-show="loading"
+                v-loading="loading"
+                style="width: 100%">
+        </el-table>
+        <div id="app">
+            <div ref="tableau"></div>
+        </div>
 
-                ref="tableau">
-        </Tableau>
     </div>
 </template>
 
 <script>
     export default {
-        data () {
+        data() {
             return {
-                url: "https://eu-west-1a.online.tableau.com/t/goldmedia/views/StandortmonitorV_1_2/Dashboard2?iframeSizedToWindow=true&:embed=y&:showAppBanner=false&:display_count=no&:showVizHome=no&:origin=viz_share_link",
+                loading: true,
+                url: "https://eu-west-1a.online.tableau.com/t/goldmedia/views/" +
+                    "StandortmonitorV_1_2/Dashboard2?iframeSizedToWindow=true&:embed=y&:showAppBanner=false&:display_count=no&:showVizHome=no&:origin=viz_share_link",
+                options: {
+                    hideTabs: true
+                }
             }
         },
-        mounted() {
-           console.log(this.$refs['tableau'].workBook.getName());
-                }
+        methods: {
+            initViz: function () {
+                let viz = new tableau.Viz(this.$refs.tableau, this.url, this.options);
+                this.loading = false;
+            }
+        },
+        mounted: function () {
+            this.initViz()
+        }
     }
 
 </script>

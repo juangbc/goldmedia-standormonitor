@@ -21,7 +21,7 @@
               <el-menu-item index="1" :route="{'name':'standortanalyse-basisdaten'}">Basisdaten</el-menu-item>
               <el-menu-item index="2" :route="{'name':'standortanalyse-beschaeftigte'}">Beschäftigte</el-menu-item>
               <el-menu-item index="3" :route="{'name':'standortanalyse-umsaetze'}">Umsätze</el-menu-item>
-              <el-menu-item index="4" :route="{'name':'standortanalyse-unternehmen'}">Unternehmen und Selbstständige</el-menu-item>
+              <el-menu-item index="4" :route="{'name':'standortanalyse-unternehmen'}">Unternehmen/Selbstständige</el-menu-item>
             </el-menu-item-group>
           </el-submenu>
 
@@ -30,7 +30,7 @@
             <el-menu-item-group>
               <el-menu-item index="1" :route="{'name':'zeitreihenanalyse-beschaeftigte'}">Beschäftigte</el-menu-item>
               <el-menu-item index="2" :route="{'name':'zeitreihenanalyse-umsaetze'}">Umsätze</el-menu-item>
-              <el-menu-item index="3" :route="{'name':'zeitreihenanalyse-unternehmen'}">Unternehmen und Selbstständige</el-menu-item>
+              <el-menu-item index="3" :route="{'name':'zeitreihenanalyse-unternehmen'}">Unternehmen/Selbstständige</el-menu-item>
             </el-menu-item-group>
           </el-submenu>
 
