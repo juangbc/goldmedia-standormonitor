@@ -1,15 +1,15 @@
 <template>
-<div>
-    <el-table
-            v-show="loading"
-            v-loading="loading"
-            style="width: 100%">
-    </el-table>
-    <div id="app">
-        <div ref="tableau"></div>
-    </div>
+    <div>
+        <el-table
+                v-show="loading"
+                v-loading="loading"
+                style="width: 100%">
+        </el-table>
+        <div id="app">
+            <div id="tableau" ref="tableau"></div>
+        </div>
 
-</div>
+    </div>
 </template>
 
 <script>
@@ -20,13 +20,16 @@
                 url: "https://eu-west-1a.online.tableau.com/t/goldmedia/views/" +
                     "StandortmonitorV_1_2/Dashboard2?iframeSizedToWindow=true&:embed=y&:showAppBanner=false&:display_count=no&:showVizHome=no&:origin=viz_share_link",
                 options: {
-                    hideTabs: true
+                    hideTabs: true,
+                    width: "-webkit-fill-available",
+                    height: "-webkit-fill-available"
                 }
             }
         },
         methods: {
             initViz: function () {
                 let viz = new tableau.Viz(this.$refs.tableau, this.url, this.options);
+
                 this.loading = false;
             }
         },

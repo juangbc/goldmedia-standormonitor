@@ -6,7 +6,7 @@
                 style="width: 100%">
         </el-table>
         <div id="app">
-            <div ref="tableau"></div>
+            <div id="tableau" ref="tableau"></div>
         </div>
 
     </div>
@@ -20,7 +20,9 @@
                 url: "https://eu-west-1a.online.tableau.com/t/goldmedia/views/" +
                     "StandortmonitorV_1_2/Dashboard2?iframeSizedToWindow=true&:embed=y&:showAppBanner=false&:display_count=no&:showVizHome=no&:origin=viz_share_link",
                 options: {
-                    hideTabs: true
+                    hideTabs: true,
+                    width: "-webkit-fill-available",
+                    height: "-webkit-fill-available"
                 }
             }
         },

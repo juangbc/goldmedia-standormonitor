@@ -16,26 +16,26 @@
           </el-menu-item>
 
           <el-submenu index="2">
-            <template slot="title"><i class="fa fa-eye fa-fw "></i><span class="sidebar-title">Standortanalyse</span></template>
+            <template slot="title"><i class="fa fa-eye fa-fw "></i><span class="sidebar-title">Standort</span></template>
             <el-menu-item-group>
               <el-menu-item index="1" :route="{'name':'standortanalyse-basisdaten'}">Basisdaten</el-menu-item>
               <el-menu-item index="2" :route="{'name':'standortanalyse-beschaeftigte'}">Beschäftigte</el-menu-item>
               <el-menu-item index="3" :route="{'name':'standortanalyse-umsaetze'}">Umsätze</el-menu-item>
-              <el-menu-item index="4" :route="{'name':'standortanalyse-unternehmen'}">Unternehmen/Selbstständige</el-menu-item>
+              <el-menu-item index="4" :route="{'name':'standortanalyse-unternehmen'}">Unternehmen</el-menu-item>
             </el-menu-item-group>
           </el-submenu>
 
           <el-submenu index="3">
-            <template slot="title"><i class="fa far fa-calendar-times fa-fw"></i><span class="sidebar-title">Zeitreihenanalyse</span></template>
+            <template slot="title"><i class="fa far fa-calendar-times fa-fw"></i><span class="sidebar-title">Zeitreihen</span></template>
             <el-menu-item-group>
               <el-menu-item index="1" :route="{'name':'zeitreihenanalyse-beschaeftigte'}">Beschäftigte</el-menu-item>
               <el-menu-item index="2" :route="{'name':'zeitreihenanalyse-umsaetze'}">Umsätze</el-menu-item>
-              <el-menu-item index="3" :route="{'name':'zeitreihenanalyse-unternehmen'}">Unternehmen/Selbstständige</el-menu-item>
+              <el-menu-item index="3" :route="{'name':'zeitreihenanalyse-unternehmen'}">Unternehmen</el-menu-item>
             </el-menu-item-group>
           </el-submenu>
 
           <el-submenu index="4">
-            <template slot="title"><i class="fas fa-chart-area"></i><span class="sidebar-title">Vergleichsanaylse</span></template>
+            <template slot="title"><i class="fas fa-chart-area"></i><span class="sidebar-title">Vergleiche</span></template>
             <el-menu-item-group>
               <el-menu-item index="1" :route="{'name':'vergleichsanalyse-bundesvergleich'}">Bundesvergleich</el-menu-item>
               <el-menu-item index="2" :route="{'name':'vergleichsanalyse-laendervergleich'}">Ländervergleich</el-menu-item>
@@ -46,7 +46,7 @@
 
 
           <el-submenu index="5">
-            <template slot="title"><i class="fa fa-tv fa-fw "></i><span class="sidebar-title">Branchenanalyse</span></template>
+            <template slot="title"><i class="fa fa-tv fa-fw "></i><span class="sidebar-title">Branchen</span></template>
             <el-menu-item-group>
               <el-menu-item index="1" :route="{'name':'branchenanalyse-medienbranchen'}">Medienbranchen</el-menu-item>
               <el-menu-item index="2" :route="{'name':'branchenanalyse-branchenvergleich'}">Branchenvergleich</el-menu-item>
