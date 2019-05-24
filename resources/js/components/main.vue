@@ -55,6 +55,9 @@ export default {
 </script>
 
 <style>
+  #tableau{
+    height: 1050px;
+  }
   .header-data{
     margin-top: 0;
   }

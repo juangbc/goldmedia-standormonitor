@@ -21,8 +21,8 @@
                     "StandortmonitorV_1_2/Dashboard2?iframeSizedToWindow=true&:embed=y&:showAppBanner=false&:display_count=no&:showVizHome=no&:origin=viz_share_link",
                 options: {
                     hideTabs: true,
-                    width: "-webkit-fill-available",
-                    height: "-webkit-fill-available"
+                    width: "100%",
+                    height: "100%"
                 }
             }
         },

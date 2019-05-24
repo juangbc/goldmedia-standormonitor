@@ -55,8 +55,8 @@ Vue.component('navbar', navbar)
 Vue.component('sidebar', sidebar)
 //Vue.use(require('vue-tableau'))
 
-Vue.prototype.$apiBase1 = 'http://standortmonitor.net/resources/js/'
-Vue.prototype.$apiBase = 'http://standortmonitor.net/public/api/'
+Vue.prototype.$apiBase1 = 'http://localhost/gmapi/resources/js/'
+Vue.prototype.$apiBase = 'http://localhost/gmapi/public/api/'
 Vue.prototype.$pngPath = Vue.prototype.$apiBase1+"GM-Logo-weiß - Kopie.png"
 
 

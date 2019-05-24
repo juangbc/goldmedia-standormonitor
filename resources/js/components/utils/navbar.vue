@@ -8,7 +8,12 @@
                     <img class="full-width" :src="$pngPath"/>
                 </router-link>
             </div>
-            <div style="float: left; font-size: 30px; margin-left: 35%; color: white; padding-top: 10px;">
+            <div style="float: left;
+            font-size: 23px;
+            margin-left: 35%;
+            color: white;
+            padding-top: 15px;
+            font-weight: bold;">
                 BETA
             </div>
             <li role="menuitem" aria-haspopup="true" class="mobile-submenus el-submenu" tabindex="0"
