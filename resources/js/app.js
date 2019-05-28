@@ -52,21 +52,14 @@ Vue.filter('numFormat', numFormat)
 Vue.use(require('vue-moment'))
 Vue.component('navbar', navbar)
 Vue.component('sidebar', sidebar)
-//Vue.use(require('vue-tableau'))
 
 Vue.prototype.$apiBase1 = 'http://standortmonitor.net/resources/js/'
 Vue.prototype.$apiBase = 'http://standortmonitor.net/public/api/'
 Vue.prototype.$pngPath = Vue.prototype.$apiBase1+"GM-Logo-weiß - Kopie.png"
-
-
-
-/*
-const routes = [
-    { path: '/', component: Hello },
-];
-*/
-
-//const router = new VueRouter({routes});
+Vue.prototype.$pngLandingPage = Vue.prototype.$apiBase1+"pngLandingPage1.png"
+Vue.prototype.$pngFilmproduktion = Vue.prototype.$apiBase1+"filmproduktion.png"
+Vue.prototype.$pngStandortstudieBayern = Vue.prototype.$apiBase1+"Standortstudie_Bayern.jpg"
+Vue.prototype.$pngStandortstudieNRW = Vue.prototype.$apiBase1+"Standortstudie_NRW.jpg"
 
 const app = new Vue({
     el: '#app',
@@ -74,11 +67,3 @@ const app = new Vue({
     components: {home1: home1},
     template: '<home1/>'
 });
-
-/*
-new Vue({
-    el: '#app',
-    router: router,
-    components: {App: App},
-    template: '<App/>'
-})*/

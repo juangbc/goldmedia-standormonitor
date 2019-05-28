@@ -28,6 +28,11 @@ import branchenanalyseMedienbranchen from '../components/pages/branchenanalyse-m
 import branchenanalyseGames from '../components/pages/branchenanalyse-games'
 import branchenanalyseBranchenvergleich from '../components/pages/branchenanalyse-branchenvergleich'
 
+import contact from '../components/pages/contact'
+import about from '../components/pages/about'
+import cases from '../components/pages/cases'
+import methodik from '../components/pages/methodik'
+
 import shop from '../components/pages/shop'
 import impressum from '../components/pages/impressum'
 import methoden from '../components/pages/methoden'
@@ -61,6 +66,27 @@ export default new Router(
                 path: '/password-reset',
                 name: 'passwordReset',
                 component: passwordReset
+            },
+            {
+                path: '/about',
+                name: 'about',
+                component: about
+            },
+            {
+                path: '/contact',
+                name: 'contact',
+                component: contact
+            },
+            {
+                path: '/cases',
+                name: 'cases',
+                component: cases
+            },
+
+            {
+                path: '/methodik',
+                name: 'methodik',
+                component: methodik
             },
             {
                 path: '/platform/pages/faq',
