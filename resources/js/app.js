@@ -57,7 +57,7 @@ Vue.prototype.$apiBase1 = 'http://standortmonitor.net/resources/js/'
 Vue.prototype.$apiBase = 'http://standortmonitor.net/public/api/'
 Vue.prototype.$pngPath = Vue.prototype.$apiBase1+"GM-Logo-weiß - Kopie.png"
 Vue.prototype.$pngLandingPage = Vue.prototype.$apiBase1+"pngLandingPage1.png"
-Vue.prototype.$pngFilmproduktion = Vue.prototype.$apiBase1+"filmproduktion.png"
+Vue.prototype.$pngFilmproduktion = Vue.prototype.$apiBase1+"filmproduktion.jpg"
 Vue.prototype.$pngStandortstudieBayern = Vue.prototype.$apiBase1+"Standortstudie_Bayern.jpg"
 Vue.prototype.$pngStandortstudieNRW = Vue.prototype.$apiBase1+"Standortstudie_NRW.jpg"
 

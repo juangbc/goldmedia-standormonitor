@@ -102,26 +102,23 @@
 
             <div class="gm-blau" style="font-size: 20px;">Referenzen und Studien</div>
             <div>
-              <el-col :span="8">
+              <el-col :span="8" style="padding: 1%;">
                 <a href="https://www.goldmedia.com/aktuelles/info/article/mehr-beschaeftigte-mehr-umsatz-medienstandort-bayern-attraktiv-fuer-alle-branchen/" target="_blank">
                   Standort Bayern
                 </a>
-                <img :src="$pngStandortstudieBayern" style="max-width: 700px;
-    float: right; float: right;"/>
+                <img :src="$pngStandortstudieBayern" style="width: 100%;"/>
               </el-col>
-              <el-col :span="8">
+              <el-col :span="8" style="padding: 1%;">
                 <a href="https://www.goldmedia.com/produkt/study/produzentenstudie-2018/" target="_blank">
                   Produzentenstudie 2018
                 </a>
-                <img :src="$pngFilmproduktion" style="max-width: 700px;
-    float: right; float: right;"/>
+                <img :src="$pngFilmproduktion" style="width: 100%;"/>
               </el-col>
-              <el-col :span="8">
+              <el-col :span="8" style="padding: 1%;">
                 <a href="https://www.goldmedia.com/aktuelles/info/article/audio-visuelle-medien-in-nordrhein-westfalen-standortstudie-fuer-das-mediennetzwerkesnrw/" target="_blank">
                   Audio-visuelle Medien in NRW
                 </a>
-                <img :src="$pngStandortstudieNRW" style="max-width: 700px;
-    float: right; float: right;"/>
+                <img :src="$pngStandortstudieNRW" style="width: 100%;"/>
               </el-col>
             </div>
 
