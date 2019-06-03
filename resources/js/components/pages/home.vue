@@ -71,11 +71,6 @@ export default {
 
   },
   mounted () {
-    /* axios.get(this.$apiBase + 'api/survey/status')
-      .then(response => {
-        this.totalCount = response.data.totalResponses
-        this.loaded.count = true
-      }) */
   }
 }
 </script>

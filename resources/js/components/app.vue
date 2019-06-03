@@ -25,23 +25,15 @@
     Vue.use(VueSession)
 
     export default {
-        userMail: 'spon',
-        name: 'home1',
+        userMail: '',
+        name: 'app',
         data () {
             return {
                 userData :{},
-                sessionData: {
-                    'loggedIn': false,
-                    'userType': 0,
-                    'markets': [0]
-                },
                 window: {
                     width: 0,
                     height: 0
                 },
-                lists: {'loaded': false, 'providers': []},
-                /*defaultSettings: {
-                }*/
             }
         },
         methods: {
@@ -56,12 +48,6 @@
         mounted () {
         },
         watch: {
-            sessionData: function () {
-                if (this.sessionData.loggedIn === true) {
-                } else {
-                   // this.logout()
-                }
-            }
         }
     }
 

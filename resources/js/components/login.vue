@@ -21,7 +21,7 @@
           </div>
       </el-menu>
     <div>
-      <el-menu style="background-color: whitesmoke; color: #1b4b72" :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect">
+      <el-menu style="background-color: whitesmoke; color: #1b4b72" class="el-menu-demo" mode="horizontal">
           <div>
 
             <li role="menuitem" aria-haspopup="true" class="mobile-submenus el-submenu" tabindex="0"
@@ -77,7 +77,7 @@
         </div>
       <div>
           <img :src="$pngLandingPage" style="max-width: 700px;
-    float: right; float: right;"/>
+    float: right;"/>
       </div>
     </el-card>
   </el-row>

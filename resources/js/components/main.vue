@@ -30,7 +30,14 @@ export default {
   watch: {
     $route (to, from) {
       this.sideBarVisibleMobile = false
-    }
+    },
+    /*sessionData: function () {
+      if (this.sessionData.loggedIn === true) {
+      }
+      else {
+        this.logout();
+      }
+    }*/
   },
   methods: {
     handleResize () {

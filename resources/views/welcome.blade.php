@@ -38,7 +38,7 @@
             <div class="content">
 
                 <div id="app">
-                    <home1></home1>
+                    <app></app>
                 </div>
             </div>
 

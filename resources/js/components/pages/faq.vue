@@ -442,6 +442,9 @@ export default {
   methods: {
     handleChange (val) {
     }
+  },
+  mounted() {
+
   }
 }
 </script>

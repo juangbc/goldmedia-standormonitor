@@ -1,11 +1,6 @@
 <template>
   <div>
   <div>Profile settings</div>
-
-  <div class="top20">
-    <el-button @click="saveChanges" type="primary"><i class="fa fa-save"></i> Save settings</el-button>
-  </div>
-
   </div>
 </template>
 
@@ -13,63 +8,7 @@
 import axios from 'axios'
 
 export default {
-  components: {
-
-  },
-  computed: {
-
-  },
-  data () {
-    return {
-      value: '',
-      tabActive: 0,
-      selectionMonth: null,
-      defaultSettings: {
-        expanded: false,
-        dates: [null, null],
-        calc: null,
-        admin: null,
-        market: null
-      },
-
-    }
-  },
-  props: {
-    mobile: {
-      type: Boolean,
-      default: () => false
-    }
-  },
-  methods: {
-    getSession () {
-      let config = {
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
-        }
-      }
-      axios.get(this.$apiBase + 'load-user', config)
-              .then(response => {
-                console.log(response);
-              })
-    },
-    handleClick (tab) {
-      this.tabActive = tab.index * 1
-    },
-    logout () {
-      this.$parent.$parent.logout()
-    },
-    handleRoute (route) {
-      if (route === 'logout') {
-        this.logout()
-      } else {
-        this.$router.push({'name': route})
-      }
-    },
-    },
-    saveChanges () {
-      console.log(this.$session.getAll());
-    }
-}
+  }
 </script>
 
 <style scoped>

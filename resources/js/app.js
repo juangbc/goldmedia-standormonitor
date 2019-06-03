@@ -1,17 +1,15 @@
 import Vue from 'vue'
 import navbar from './components/utils/navbar'
-import home1 from './components/home1'
+import vueApp from './components/app'
 import sidebar from './components/utils/sidebar'
 import numFormat from 'vue-filter-number-format'
 import locale from 'element-ui/lib/locale/lang/en'
 import Element from 'element-ui'
 import vueHeadful from 'vue-headful'
 import StarRating from 'vue-star-rating'
-import VueRouter from 'vue-router';
 import router from './router'
-//import App from './App'
-// import '../theme/index.css'
-import 'C:/xampp/htdocs/gmapi/resources/theme/index.css'
+//import 'C:/xampp/htdocs/gmapi/resources/theme/index.css'
+import '../theme/index.css'
 import 'vue-tableau'
 
 /**
@@ -32,12 +30,7 @@ window.Vue = require('vue');
  * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
  */
 
-// const files = require.context('./', true, /\.vue$/i);
-// files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
-
-//Vue.component('App', require('./App.vue').default);
-
-Vue.component('home1', require('./components/home1.vue').default);
+Vue.component('vueApp', require('./components/app.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -53,8 +46,8 @@ Vue.use(require('vue-moment'))
 Vue.component('navbar', navbar)
 Vue.component('sidebar', sidebar)
 
-Vue.prototype.$apiBase1 = 'http://standortmonitor.net/resources/js/'
-Vue.prototype.$apiBase = 'http://standortmonitor.net/public/api/'
+Vue.prototype.$apiBase1 = 'http://localhost/gmapi/resources/js/'
+Vue.prototype.$apiBase = 'http://localhost/gmapi/public/api/'
 Vue.prototype.$pngPath = Vue.prototype.$apiBase1+"GM-Logo-weiß - Kopie.png"
 Vue.prototype.$pngLandingPage = Vue.prototype.$apiBase1+"pngLandingPage1.png"
 Vue.prototype.$pngFilmproduktion = Vue.prototype.$apiBase1+"filmproduktion.jpg"
@@ -64,6 +57,6 @@ Vue.prototype.$pngStandortstudieNRW = Vue.prototype.$apiBase1+"Standortstudie_NR
 const app = new Vue({
     el: '#app',
     router: router,
-    components: {home1: home1},
-    template: '<home1/>'
+    components: {vueApp: vueApp},
+    template: '<vueApp/>'
 });
