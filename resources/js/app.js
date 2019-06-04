@@ -46,8 +46,8 @@ Vue.use(require('vue-moment'))
 Vue.component('navbar', navbar)
 Vue.component('sidebar', sidebar)
 
-Vue.prototype.$apiBase1 = 'http://localhost/gmapi/resources/js/'
-Vue.prototype.$apiBase = 'http://localhost/gmapi/public/api/'
+Vue.prototype.$apiBase1 = 'http://standortmonitor.net/resources/js/'
+Vue.prototype.$apiBase = 'http://standortmonitor.net/public/api/'
 Vue.prototype.$pngPath = Vue.prototype.$apiBase1+"GM-Logo-weiß - Kopie.png"
 Vue.prototype.$pngLandingPage = Vue.prototype.$apiBase1+"pngLandingPage1.png"
 Vue.prototype.$pngFilmproduktion = Vue.prototype.$apiBase1+"filmproduktion.jpg"
