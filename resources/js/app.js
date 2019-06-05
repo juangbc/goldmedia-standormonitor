@@ -8,7 +8,6 @@ import Element from 'element-ui'
 import vueHeadful from 'vue-headful'
 import StarRating from 'vue-star-rating'
 import router from './router'
-//import 'C:/xampp/htdocs/gmapi/resources/theme/index.css'
 import '../theme/index.css'
 import 'vue-tableau'
 
@@ -60,3 +59,4 @@ const app = new Vue({
     components: {vueApp: vueApp},
     template: '<vueApp/>'
 });
+

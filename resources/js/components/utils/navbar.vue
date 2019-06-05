@@ -118,7 +118,6 @@
             }
         },
         mounted() {
-            //console.log(this.$session.exists());
             this.userMail = this.$session.get('email');
             if (this.$session.exists() === false) {
                 this.logout();

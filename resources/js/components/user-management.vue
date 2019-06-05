@@ -96,19 +96,11 @@ export default {
         },
         {
           value: '2',
-          label: 'Demo account'
+          label: 'Test account'
         },
         {
           value: '3',
-          label: 'Normal account, catalogue disabled'
-        },
-        {
-          value: '4',
-          label: 'Moderator account'
-        },
-        {
-          value: '5',
-          label: 'Panel statistics only'
+          label: 'Admin account'
         }
       ],
       pageNum: 1,
@@ -153,20 +145,9 @@ export default {
           method: 'post',
           params: {
             email: this.ruleForm2.email,
-            //userType: this.userType,
           }
         }, config)
           .then(response => {
-            console.log(response)
-            /*if (response.data.success === false) {
-              this.resetForm('ruleForm2')
-            } else {
-              this.mailCreated = this.ruleForm2.email
-              this.showPw = true
-              this.newUserPW = response.data.password
-              this.resetForm('ruleForm2')
-              this.getNormalUserList()
-            }*/
           })
       }
     },
@@ -176,7 +157,6 @@ export default {
           'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
         }
       }
-      console.log(email);
       axios.request(this.$apiBase + 'delete-user', {
         method: 'post',
         params: {
@@ -195,7 +175,6 @@ export default {
       }
       let $apiBase = this.$apiBase +'get-user-names';
       axios.get($apiBase, {
-        //mode: 'list'
       }, config)
         .then(response => {
           if (response.data.users.length >= 1) {
@@ -229,11 +208,7 @@ export default {
   computed: {
     userTypeCurrent: function () {
       return 1
-      // this.$parent.$parent.$parent.$parent.sessionData.userType * 1
     }
-    /* sessionData: function () {
-      return this.$parent.$parent.$parent.$parent.sessionData
-    } */
   },
   mounted () {
     this.getNormalUserList()
