@@ -24,33 +24,28 @@
       <el-menu style="background-color: whitesmoke; color: #1b4b72" class="el-menu-demo" mode="horizontal">
           <div>
 
-            <li role="menuitem" aria-haspopup="true" class="mobile-submenus el-submenu" tabindex="0"
-                style="float: right; margin-left: 20px;
-    font-weight: bold;" v-if="!loginClicked">
+            <li role="menuitem" aria-haspopup="true" class="mobile-submenus el-submenu navbar-subtitle" tabindex="0"
+                v-if="!loginClicked">
               <router-link class="font-13" :to="{ name: 'about'}">
                 ABOUT
               </router-link>
             </li>
 
-            <li role="menuitem" aria-haspopup="true" class="mobile-submenus el-submenu" tabindex="0"
-                style="float: right;margin-left: 20px;
-    font-weight: bold;" v-if="!loginClicked">
+            <li role="menuitem" aria-haspopup="true" class="mobile-submenus el-submenu navbar-subtitle" tabindex="0"
+                v-if="!loginClicked">
               <router-link class="font-13" :to="{ name: 'methodik'}">
                 METHODIK
               </router-link>
             </li>
 
-            <li role="menuitem" aria-haspopup="true" class="mobile-submenus el-submenu" tabindex="0"
-                style="float: right;margin-left: 20px;
-    font-weight: bold;" v-if="!loginClicked">
+            <li role="menuitem" aria-haspopup="true" class="mobile-submenus el-submenu navbar-subtitle" tabindex="0"
+                v-if="!loginClicked">
               <router-link class="font-13" :to="{ name: 'cases'}">
                 CASES
               </router-link>
             </li>
 
-            <li role="menuitem" aria-haspopup="true" class="mobile-submenus el-submenu" tabindex="0"
-                style="float: right;margin-left: 20px;
-    font-weight: bold;" v-if="!loginClicked">
+            <li role="menuitem" aria-haspopup="true" class="mobile-submenus el-submenu navbar-subtitle" tabindex="0" v-if="!loginClicked">
               <router-link class="font-13" :to="{ name: 'contact'}">
                 KONTAKT
               </router-link>
@@ -76,8 +71,7 @@
           </div>
         </div>
       <div>
-          <img :src="$pngLandingPage" style="max-width: 700px;
-    float: right;"/>
+          <img class="landing-page-title-image" :src="$pngLandingPage"/>
       </div>
     </el-card>
   </el-row>
@@ -85,8 +79,8 @@
   <el-row>
         <el-card>
           <el-col :span="10">
-            <div class="gm-blau" style="font-size: 20px;">Standortmonitoring als interaktive Datenbank</div>
-            <div>
+            <div class="gm-blau subtitle" style="font-size: 20px;">Standortmonitoring als interaktive Datenbank</div>
+            <div class="landing-page-textbox">
               Der Goldmedia Standortmonitor aggregiert erstmals belastbare Zahlen und Fakten für alle Regionen und alle Teilmärkte der Medienbranche in Deutschland.
               Das Kompendium an Daten und Fakten ist als interaktive digitale Datenbank aufbereitet.
 
@@ -100,25 +94,25 @@
       <el-row>
         <el-card>
 
-            <div class="gm-blau" style="font-size: 20px;">Referenzen und Studien</div>
+            <div class="gm-blau subtitle" style="font-size: 20px;">Referenzen und Studien</div>
             <div>
-              <el-col :span="8" style="padding: 1%;">
+              <el-col class="landing-page-column" :span="8">
                 <a href="https://www.goldmedia.com/aktuelles/info/article/mehr-beschaeftigte-mehr-umsatz-medienstandort-bayern-attraktiv-fuer-alle-branchen/" target="_blank">
                   Standort Bayern
                 </a>
-                <img :src="$pngStandortstudieBayern" style="width: 100%;"/>
+                <img class="landing-page-image" :src="$pngStandortstudieBayern"/>
               </el-col>
-              <el-col :span="8" style="padding: 1%;">
+              <el-col class="landing-page-column" :span="8">
                 <a href="https://www.goldmedia.com/produkt/study/produzentenstudie-2018/" target="_blank">
                   Produzentenstudie 2018
                 </a>
-                <img :src="$pngFilmproduktion" style="width: 100%;"/>
+                <img class="landing-page-image" :src="$pngFilmproduktion"/>
               </el-col>
-              <el-col :span="8" style="padding: 1%;">
+              <el-col class="landing-page-column" :span="8">
                 <a href="https://www.goldmedia.com/aktuelles/info/article/audio-visuelle-medien-in-nordrhein-westfalen-standortstudie-fuer-das-mediennetzwerkesnrw/" target="_blank">
                   Audio-visuelle Medien in NRW
                 </a>
-                <img :src="$pngStandortstudieNRW" style="width: 100%;"/>
+                <img class="landing-page-image" :src="$pngStandortstudieNRW"/>
               </el-col>
             </div>
 
@@ -128,8 +122,8 @@
       <el-row>
         <el-card>
           <el-col :span="10">
-            <div class="gm-blau" style="font-size: 20px;">Standortmonitoring</div>
-            <div>
+            <div class="gm-blau subtitle" style="font-size: 20px;">Standortmonitoring</div>
+            <div class="landing-page-textbox">
               Die Medienbranche ist ein wichtiger Wirtschaftsfaktor und wertet das Image einer Region stark auf. Die Bundesländer sind daher bemüht,
               die eigene Stellung als Medienhochburg auszubauen und mit Anreizen die Ansiedlung von Medienunternehmen und innovativen Kreativindustrien zu befördern.
               Daten und Fakten zu Standortfragen sind das Einmaleins für die Entwicklung von Regionen und Unternehmensentscheidungen.
@@ -138,12 +132,11 @@
         </el-card>
       </el-row>
 
-
-      <el-row>
+      <el-row style="margin-bottom: 30px;">
         <el-card>
           <el-col :span="10">
-            <div class="gm-blau" style="font-size: 20px;">Methodik und Inhalte </div>
-            <div>
+            <div class="gm-blau subtitle" style="font-size: 20px;">Methodik und Inhalte </div>
+            <div class="landing-page-textbox">
               Der Goldmedia Standortmonitor basiert auf aktuellen Daten des Statistischen Bundesamts, der Statistischen Landesämter
               und der Bundesagentur für Arbeit. Die Daten wurden auf Goldmedia-Anfrage individuell durch die Ämter zusammengestellt
               und aggregiert.
@@ -157,7 +150,6 @@
 
     </div>
     </div>
-
 
     <div v-if="loginClicked">
       <el-row style="margin-top: 100px">
@@ -290,6 +282,34 @@
 
 <style scoped>
 
+  .navbar-subtitle {
+    float: right;
+    margin-left: 20px;
+    font-weight: bold;
+    padding: 5px;
+  }
+
+  .landing-page-column {
+    padding: 1%;
+  }
+
+  .landing-page-title-image {
+    max-width: 700px;
+  }
+
+  .landing-page-textbox {
+    padding-bottom: 10px;
+  }
+
+  .subtitle {
+    font-size: 20px;
+    margin-bottom: 5px;
+  }
+
+  .landing-page-image {
+    width: 100%;
+    margin-top: 5px;
+  }
   .gm-blau {
     color: #5C7A96;
   }

@@ -23,18 +23,6 @@
 
         </el-row>
 
-        <el-row :gutter="60" class="row-home">
-
-          <el-col :xs="24" :sm="24" :md="12">
-            <button-home mode="vergleichsanalyse"></button-home>
-          </el-col>
-
-          <el-col :xs="24" :sm="24" :md="12">
-            <button-home mode="branchenanalyse"></button-home>
-          </el-col>
-
-        </el-row>
-
       </div>
     </div>
   </div>
@@ -43,6 +31,7 @@
 <script>
 // import ICountUp from 'vue-countup-v2'
 // import axios from 'axios'
+import axios from 'axios';
 import homeButton from 'C:/xampp/htdocs/gmapi/resources/js/components/utils/home-button'
 
 export default {
@@ -67,10 +56,17 @@ export default {
       maxHeight: 0
     }
   },
-  computed: {
-
+  methods: {
+    trustedAuthentication() {
+      axios
+              .get('http://localhost/gmapi/public/test.php')
+              .then(response => {
+                console.log(response)
+              })
+    },
   },
   mounted () {
+    this.trustedAuthentication();
   }
 }
 </script>

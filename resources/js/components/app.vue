@@ -37,13 +37,6 @@
             }
         },
         methods: {
-           logout () {
-                axios
-                  .get(this.$apiBase + 'api/user.php?mode=logout')
-                  .then(response => {
-                    this.$router.push({'name': 'loginPage'})
-                  })
-               },
         },
         mounted () {
         },

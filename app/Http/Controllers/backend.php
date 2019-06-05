@@ -44,35 +44,6 @@ class backend extends Controller
         return response(['users' =>$users],200);
     }
 
-    public function loadUser(Request $request)
-    {
-        //session(['key' => 'value']);
-        //return $request->session()->get('user');
-        //$response =  json_decode(json_encode($usi), True);
-        //echo json_encode($response);
-        //exit;
-        /*$user = DB::table('gm_users')
-            ->where('EML',  $request->input("email"))
-            ->select('uid','EML','TYP','HSH','creator_uid','data_protection')->get();*/
-        //$response['user_data'] =  json_decode(json_encode($user), True);
-        //echo json_encode($response);
-        /*if (strlen($request->input("email")) >= 1) {
-            $request->session()->put('email', $request->input("email"));
-        }*/
-        //$request->session()->put('user', $user);
-//        echo $request->session()->get('user');
-        //$data = $request->session()->all();
-        $data = session('key');
-        echo json_encode($data);
-        //print_r()
-        //dd(session('user'));
-        //var_dump('user');
-        //var_dump()
-        //echo "hh";
-        //response(['success' =>$success,'user' =>$user],200);
-        exit;
-    }
-
     public function isPasswordCorrect(Request $request) {
         $response = ["success" => false];
 
@@ -152,7 +123,7 @@ class backend extends Controller
     }
 
     public function logout(Request $request) {
-       // $request->session()->flush();
+       $request->session()->flush();
     }
 
 

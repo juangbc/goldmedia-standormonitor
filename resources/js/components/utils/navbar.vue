@@ -91,7 +91,7 @@
                 axios
                     .get(this.$apiBase + 'logout')
                         .then(response => {
-                            this.$router.push({'name': 'loginPage'})
+                            this.$router.push({'name': 'loginPage'});
                         })
             },
             openSettings() {
@@ -118,7 +118,6 @@
             }
         },
         mounted() {
-            //console.log(this.$session.exists());
             this.userMail = this.$session.get('email');
             if (this.$session.exists() === false) {
                 this.logout();
