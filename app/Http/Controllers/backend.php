@@ -1,24 +1,20 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
-use Illuminate\Database\Eloquent\Model;
-use App\User;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Collection;
-use Illuminate\Support\Fluent;
-
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Hash;
 
 class backend extends Controller
 {
 
     public function getUserNames(Request $request)
     {
-
         $users = DB::table('gm_users')
-            ->where('deleted',0)
+            ->where([
+                ['deleted',0],
+                ['TYP', '<>', 1]])
             ->orderBy('uid','asc')
             ->select('uid','EML','TYP')->get();
 
@@ -37,11 +33,20 @@ class backend extends Controller
 
     public function addUser(Request $request)
     {
+
+        if( $request->input("userType") == 1){
+            $response['message'] = "can't create admin user";
+            return $response;
+        }
+        $password = Str::random(8);
+        $hashed_password = Hash::make($password);
+        $api_key = Str::random(12);
+
         $users = DB::table('gm_users')->insert([
-            ['email' => $request->input("email"), 'uid' => 999],
+            ['EML' => $request->input("email"),'HSH' => $hashed_password,'TYP' => $request->input("userType"),"api_key" => $api_key,'creator_uid' => "1"]
         ]);
 
-        return response(['users' =>$users],200);
+        return response(['users' =>$users, 'password' =>$password], 200);
     }
 
     public function isPasswordCorrect(Request $request) {
@@ -126,8 +131,4 @@ class backend extends Controller
        $request->session()->flush();
     }
 
-
-    public function index() {
-        echo "data lad";
-    }
 }

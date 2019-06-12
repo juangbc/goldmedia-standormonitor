@@ -21,7 +21,7 @@ Route::get('get-user-names','backend@getUserNames');
 
 Route::post('delete-user','backend@deleteUser');
 
-Route::post('add-user','backend@addUser');
+Route::get('add-user','backend@addUser');
 
 Route::get('/','backend@index');
 

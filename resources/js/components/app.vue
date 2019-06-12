@@ -19,7 +19,6 @@
 
 <script>
     import VueSession from 'vue-session'
-    import axios from 'axios'
     import Vue from 'vue'
 
     Vue.use(VueSession)
@@ -36,12 +35,6 @@
                 },
             }
         },
-        methods: {
-        },
-        mounted () {
-        },
-        watch: {
-        }
     }
 
 </script>

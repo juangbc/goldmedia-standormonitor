@@ -29,14 +29,10 @@
 </template>
 
 <script>
-// import ICountUp from 'vue-countup-v2'
-// import axios from 'axios'
-import axios from 'axios';
 import homeButton from 'C:/xampp/htdocs/gmapi/resources/js/components/utils/home-button'
 
 export default {
   components: {
-    // ICountUp,
     'button-home': homeButton
   },
   data () {
@@ -56,25 +52,14 @@ export default {
       maxHeight: 0
     }
   },
-  methods: {
-    trustedAuthentication() {
-      axios
-              .get('http://localhost/gmapi/public/test.php')
-              .then(response => {
-                console.log(response)
-              })
-    },
-  },
   mounted () {
-    this.trustedAuthentication();
-  }
+    }
 }
 </script>
 
 <style scoped>
   .welcome {
     font-weight: 500;
-    /*margin-top: 70px;*/
     margin-bottom: 40px;
     color: #5c7a96;
     width: 100%;
@@ -104,10 +89,6 @@ export default {
       margin-left: 0 !important;
       margin-right: 0 !important;
     }
-  }
-
-  .logo-home {
-    width: 450px;
   }
 
   .home-menu {

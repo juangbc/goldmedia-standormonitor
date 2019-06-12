@@ -96,20 +96,8 @@ export default {
         },
         {
           value: '2',
-          label: 'Demo account'
+          label: 'Test account'
         },
-        {
-          value: '3',
-          label: 'Normal account, catalogue disabled'
-        },
-        {
-          value: '4',
-          label: 'Moderator account'
-        },
-        {
-          value: '5',
-          label: 'Panel statistics only'
-        }
       ],
       pageNum: 1,
       isAdmin: true,
@@ -150,15 +138,15 @@ export default {
         this.$message.error('Please enter a correct email address')
       } else {
         axios.request(this.$apiBase + 'add-user', {
-          method: 'post',
+          method: 'get',
           params: {
             email: this.ruleForm2.email,
-            //userType: this.userType,
+            userType: this.userType,
           }
         }, config)
           .then(response => {
-            console.log(response)
-            /*if (response.data.success === false) {
+            console.log(response);
+            if (response.data.success === false) {
               this.resetForm('ruleForm2')
             } else {
               this.mailCreated = this.ruleForm2.email
@@ -166,7 +154,7 @@ export default {
               this.newUserPW = response.data.password
               this.resetForm('ruleForm2')
               this.getNormalUserList()
-            }*/
+            }
           })
       }
     },

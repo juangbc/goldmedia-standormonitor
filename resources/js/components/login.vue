@@ -79,7 +79,7 @@
 
   <el-row>
         <el-card>
-          <el-col sm="24" :xs="24" :md="12" :lg="10">
+          <el-col :sm="24" :xs="24" :md="12" :lg="10">
             <div class="gm-blau subtitle" style="font-size: 20px;">Standortmonitoring als interaktive Datenbank</div>
             <div class="landing-page-textbox">
               Der Goldmedia Standortmonitor aggregiert erstmals belastbare Zahlen und Fakten für alle Regionen und alle Teilmärkte der Medienbranche in Deutschland.
@@ -122,7 +122,7 @@
 
       <el-row>
         <el-card>
-          <el-col sm="24" :xs="24" :md="12" :lg="10">
+          <el-col :sm="24" :xs="24" :md="12" :lg="10">
             <div class="gm-blau subtitle" style="font-size: 20px;">Standortmonitoring</div>
             <div class="landing-page-textbox">
               Die Medienbranche ist ein wichtiger Wirtschaftsfaktor und wertet das Image einer Region stark auf. Die Bundesländer sind daher bemüht,
@@ -135,7 +135,7 @@
 
       <el-row style="margin-bottom: 30px;">
         <el-card>
-          <el-col sm="24" :xs="24" :md="12" :lg="10">
+          <el-col :sm="24" :xs="24" :md="12" :lg="10">
             <div class="gm-blau subtitle" style="font-size: 20px;">Methodik und Inhalte </div>
             <div class="landing-page-textbox">
               Der Goldmedia Standortmonitor basiert auf aktuellen Daten des Statistischen Bundesamts, der Statistischen Landesämter
