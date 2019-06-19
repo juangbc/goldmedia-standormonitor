@@ -105,8 +105,7 @@ export default {
           }
           }, config)
           .then(response => {
-            console.log(response)
-            if (response.data.message === 'success') {
+            if (response.data.success=== true) {
               this.resetForm('ruleForm2')
               this.passwordChanged = true
             } else {

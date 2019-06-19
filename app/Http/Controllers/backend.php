@@ -67,7 +67,7 @@ class backend extends Controller
     }
 
     public function changePassword(Request $request) {
-        $response = ["success" => false];
+        $response = [];
 
         $hash = DB::table('gm_users')
             ->where('EML', $request->input("email"))
@@ -82,6 +82,7 @@ class backend extends Controller
             $response['success'] = true;
         }
         else {
+            $response['success'] = false;
             return json_encode($response);
         }
 
@@ -92,10 +93,10 @@ class backend extends Controller
         $hashOldString = implode(' ', $array[0]);
         $hashNew = password_hash($request->input("password"), PASSWORD_BCRYPT);
 
-        DB::table('gm_users')->where('HSH',$hashOldString)->update(['HSH'=>$hashNew]);
+        $changed = DB::table('gm_users')->where('HSH',$hashOldString)->update(['HSH'=>$hashNew]);
+        $response['pw_updated'] = $changed;
 
         return json_encode($response);
-
     }
 
     public function login(Request $request)

@@ -52,6 +52,10 @@ Vue.prototype.$pngLandingPage = Vue.prototype.$apiBase1+"pngLandingPage1.png"
 Vue.prototype.$pngFilmproduktion = Vue.prototype.$apiBase1+"filmproduktion.jpg"
 Vue.prototype.$pngStandortstudieBayern = Vue.prototype.$apiBase1+"Standortstudie_Bayern.jpg"
 Vue.prototype.$pngStandortstudieNRW = Vue.prototype.$apiBase1+"Standortstudie_NRW.jpg"
+Vue.prototype.$pngStandortstudieBewegtbild = Vue.prototype.$apiBase1+"Bewegtbild_Studie.jpg"
+Vue.prototype.$pngStandortstudieWila = Vue.prototype.$apiBase1+"Wirtschaftliche_Lage_Rundfunk.jpg"
+Vue.prototype.$pngStandortWirtschaftlicheBedeutungFilm = Vue.prototype.$apiBase1+"Wirtschaftliche_Bedeutung_Filmindustrie.jpg"
+Vue.prototype.$pngLandingPageBackground = Vue.prototype.$apiBase1+"landingPageBackgroundImage.png"
 
 const app = new Vue({
     el: '#app',
