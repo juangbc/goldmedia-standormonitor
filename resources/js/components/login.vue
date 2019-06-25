@@ -1,6 +1,5 @@
 <template>
-  <div>
-
+  <div class="main-page">
       <el-menu class="menu" style="color: white">
           <div class="float-left logo-navbar navbar float-left" tabindex="0">
               <img class="full-width" :src="$pngPath"/>
@@ -24,28 +23,25 @@
       <el-menu style="background-color: whitesmoke; color: #1b4b72" class="el-menu-demo" mode="horizontal">
           <div>
 
-            <li role="menuitem" aria-haspopup="true" class="mobile-submenus el-submenu navbar-subtitle" tabindex="0"
-                v-if="!loginClicked">
+            <li role="menuitem" aria-haspopup="true" class="mobile-submenus el-submenu navbar-subtitle" tabindex="0">
               <router-link class="font-13" :to="{ name: 'about'}">
                 ABOUT
               </router-link>
             </li>
 
-            <li role="menuitem" aria-haspopup="true" class="mobile-submenus el-submenu navbar-subtitle" tabindex="0"
-                v-if="!loginClicked">
+            <li role="menuitem" aria-haspopup="true" class="mobile-submenus el-submenu navbar-subtitle" tabindex="0">
               <router-link class="font-13" :to="{ name: 'methodik'}">
                 METHODIK
               </router-link>
             </li>
 
-            <li role="menuitem" aria-haspopup="true" class="mobile-submenus el-submenu navbar-subtitle" tabindex="0"
-                v-if="!loginClicked">
+            <li role="menuitem" aria-haspopup="true" class="mobile-submenus el-submenu navbar-subtitle" tabindex="0">
               <router-link class="font-13" :to="{ name: 'cases'}">
                 CASES
               </router-link>
             </li>
 
-            <li role="menuitem" aria-haspopup="true" class="mobile-submenus el-submenu navbar-subtitle" tabindex="0" v-if="!loginClicked">
+            <li role="menuitem" aria-haspopup="true" class="mobile-submenus el-submenu navbar-subtitle" tabindex="0">
               <router-link class="font-13" :to="{ name: 'contact'}">
                 KONTAKT
               </router-link>
@@ -55,28 +51,16 @@
 
     </div>
 
+    <span v-if="!loginClicked">
 
-    <div v-if="!loginClicked">
-
-
-      <span>
-        <img style="width: 100%" :src="$pngLandingPageBackground"/>
-      </span>
-      <span>
-        <img style="width: 100%;margin-top: -0.1em;" :src="$pngLandingPageBackground"/>
-      </span>
-
-<div style="width: 70%;
-    padding-left: 15%;
-    padding-top: 5%;
-margin-top: -130%;">
+<div class="main-column">
   <el-row>
     <el-card>
         <div class="gm-blau" style="color: #5C7A96; font-weight: 600;">
           <div class="subtitle-images" style="float: left; width: 100%">
             STANDORTMONITOR
           </div>
-          <div style="font-size: 20px; float: left; width: 100%;">
+          <div style="font-size: 17px; float: left; width: 100%;">
             Medien- und Kreativstandorte in Deutschland.<br>
             Laufend aktualisierte Daten, Fakten, Grafiken interaktiv
           </div>
@@ -94,7 +78,7 @@ margin-top: -130%;">
           </el-col>
             <el-col :sm="24" :xs="24" :md="12" :lg="12">
             <div class="landing-page-textbox">
-              <span style="font-family: Frutiger LT W04_45 Light,Helvetica,Arial,sans-serif;">
+              <span>
               Der Goldmedia Standortmonitor aggregiert erstmals belastbare Zahlen und Fakten für alle Regionen und alle Teilmärkte der
               gesamten Kreativwirtschaft in Deutschland von der Länderperspektive bis auf die Ebene der Städte und Landkreise.
 
@@ -156,7 +140,7 @@ margin-top: -130%;">
              </a>
         </el-col>
         <el-col class="landing-page-column" :span="8">
-          <a href="https://www.goldmedia.com/fileadmin/goldmedia/2015/Studien/2017/Standortstudie_HH/Goldmedia_Standortstudie_FFHSH_2017_dt.pdf" target="_blank">
+          <a href="https://www.bmwi.de/Redaktion/DE/Publikationen/Studien/bedeutung-filmindustrie.pdf?__blob=publicationFile&v=18" target="_blank">
             <div class="image">
               <img class="landing-page-image" :src="$pngStandortWirtschaftlicheBedeutungFilm" alt/>
               <h2 class="image-title"><span>Wirtschaftliche Bedeutung</span></h2>
@@ -166,7 +150,7 @@ margin-top: -130%;">
         </el-col>
         <el-col class="landing-page-column" :span="8">
 
-          <a href="https://www.bmwi.de/Redaktion/DE/Publikationen/Studien/bedeutung-filmindustrie.pdf?__blob=publicationFile&v=18" target="_blank">
+          <a href="https://www.goldmedia.com/fileadmin/goldmedia/2015/Studien/2017/Standortstudie_HH/Goldmedia_Standortstudie_FFHSH_2017_dt.pdf" target="_blank">
             <div class="image">
               <img class="landing-page-image" :src="$pngStandortstudieBewegtbild" alt/>
               <h2 class="image-title"><span>Standortstudie: Bewegtbildbranche</span></h2>
@@ -186,11 +170,7 @@ margin-top: -130%;">
             <div class="subtitle">Standortmonitoring</div>
             </el-col>
           <el-col :sm="24" :xs="24" :md="12" :lg="12">
-          <div class="landing-page-textbox" style="margin-left: -10%;
-    /* padding: 2%; */
-    padding-bottom: 2em;
-    padding-right: 2em;
-    padding-top: 2em">
+          <div class="landing-page-textbox">
             Die Kreativwirtschaft ist ein wichtiger Wirtschaftsfaktor und wertet das Image einer Region stark auf.
             Bundesländer und Kommunen sind daher bemüht, die eigene Stellung als Medien- und Kreativhochburg auszubauen
             und mit Anreizen die Ansiedlung von Medienunternehmen und innovativen Kreativindustrien zu befördern.
@@ -200,29 +180,43 @@ margin-top: -130%;">
         </el-card>
       </el-row>
 
-      <el-row style="margin-bottom: 30px;">
+      <el-row style="margin-bottom: 0px;">
         <el-card>
           <el-col :sm="24" :xs="24" :md="12" :lg="12">
             <div class="subtitle">Methodik <br> und Inhalte </div>
           </el-col>
             <el-col :sm="24" :xs="24" :md="12" :lg="12">
             <div class="landing-page-textbox">
-              Der Goldmedia Standortmonitor basiert auf aktuellen Daten des Statistischen Bundesamts, der Statistischen Landesämter und der
-              Bundesagentur für Arbeit sowie der Künstlersozialkasse und weiterer ausgewählter Primärstudien. Die Daten wurden für Goldmedia
-              individuell durch die Ämter zusammengestellt und aggregiert. Der Standmonitor enthält Zeitreihen-Daten ab 2013 bis zum jeweils
-              aktuellsten verfügbaren Zeitpunkt der Daten. Alle Daten werden kontinuierlich aktualisiert, so dass alle Informationen stets auf
-              dem neuesten Stand sind. Der Goldmedia Standmonitor wird sukzessive erweitert um Daten aus Goldmedia Primärdatenerhebungen sowie
-              Sekundärdatenerhebungen und Daten von Branchenverbänden.
+              Der Goldmedia Standortmonitor basiert auf aktuellen Daten des Statistischen Bundesamts, der Statistischen
+              Landesämter und der Bundesagentur für Arbeit sowie der Künstlersozialkasse und weiterer ausgewählter
+              Primärstudien. Die Daten werden individuell zusammengestellt und durch Goldmedia aggregiert. Der Standmonitor
+              enthält Zeitreihen-Daten ab 2013 bis zum jeweils aktuellsten verfügbaren Zeitpunkt der Daten. Alle Daten werden
+              kontinuierlich aktualisiert, so dass alle Informationen stets auf dem neuesten Stand sind. Der Goldmedia Standmonitor
+              wird sukzessive erweitert um Daten aus Goldmedia Primärdatenerhebungen sowie Sekundärdatenerhebungen und Daten von Branchenverbänden.
             </div>
             </el-col>
         </el-card>
       </el-row>
 
-    </div>
-    </div>
+  <el-row>
+    <el-card style="margin-bottom: 10px">
+      <el-col :sm="24" :xs="24" :md="24" :lg="24">
+        <div class="landing-page-textbox" style="margin-left: 5%">
+          Kontaktieren Sie uns! Ihre Ansprechpartner sind <a href="mailto:mathias.birkel@goldmedia.de">Mathias Birkel</a> und
+          <a href="mailto:klaus.goldhammer@goldmedia.de">Prof. Dr. Klaus Goldhammer</a>
+          oder telefonisch: 030-2462660. Gern präsentieren wir Ihnen die Vorteile und Möglichkeiten des Standortmonitors.
+        </div>
+      </el-col>
+    </el-card>
+  </el-row>
 
-    <div v-if="loginClicked">
-      <el-row style="margin-top: 100px">
+
+    </div>
+    </span>
+
+    <div v-if="loginClicked" class="login">
+    <div class="login-card">
+      <el-row>
         <el-col :span="8"></el-col>
         <el-col :span="8">
           <el-card>
@@ -256,7 +250,7 @@ margin-top: -130%;">
         </el-col>
       </el-row>
     </div>
-
+    </div>
 
   </div>
 </template>
@@ -352,6 +346,29 @@ margin-top: -130%;">
 
 <style scoped>
 
+  .login-card {
+    height: 100%;
+    margin-top: 100px;
+  }
+
+  .main-column {
+    width: 70%;
+    padding-left: 15%;
+    padding-top: 5%;
+    margin-top: 2%;
+  }
+  .login {
+    height: 800px;
+  }
+
+  .main-page {
+    background: url("http://standortmonitor.net/resources/js/landingPageBackgroundImage.png") repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+
   .title-landing {
     font-size: 30px;
   }
@@ -363,10 +380,41 @@ margin-top: -130%;">
   }
 
 
-  @media (max-width: 1000px) {
+  @media (max-width: 1300px) {
     .top-image {
       display: none;
     }
+
+    .subtitle {
+      margin-bottom: unset;
+      color: #455a64;
+      font-size: 2em;
+      padding-left: 0em !important;
+      padding-top: 0em !important;
+    }
+
+
+    .landing-page-textbox {
+      margin-left: unset !important;
+      font-size: 1em;
+    }
+
+  }
+
+
+  @media (max-width: 1700px) {
+    .subtitle {
+      margin-bottom: unset;
+      color: #455a64;
+      font-size: 2em;
+      padding-left: 0em !important;
+      padding-top: 1em !important;
+    }
+
+    .top-image {
+      width: 500px;
+    }
+
   }
 
   @media (max-width: 800px) {
@@ -377,6 +425,19 @@ margin-top: -130%;">
     .landing-page-column {
       width: 100%;
     }
+
+    .subtitle-images {
+      font-size: 1.5em !important;
+    }
+
+    .subtitle {
+      font-size: 1.5em !important;
+    }
+
+    .navbar-subtitle {
+      margin-left: unset !important;
+    }
+
     }
 
 
@@ -396,37 +457,32 @@ margin-top: -130%;">
   }
 
   .landing-page-textbox {
-    font-size: 1.2em;
-    padding-bottom: 10px;
+    font-size: 1.2em;;
     line-height: 1.6;
-    font-family: Frutiger LT W04_45 Light,Helvetica,Arial,sans-serif;
+    font-family: Segoe UI,Frutiger,Frutiger Linotype,Dejavu Sans,Helvetica Neue,Arial,sans-serif !important;
     color: #4c4c4c;
     margin-left: -10%;
-    /* padding: 2%; */
-    padding-bottom: 2em;
     padding-right: 2em;
     padding-top: 2em;
+    padding-bottom: 2em;
   }
 
   .subtitle {
     margin-bottom: 5px;
     font-weight: 400;
-    font-family: Frutiger LT W04_55 Roman,Helvetica,Arial,sans-serif;
+    font-family: Segoe UI,Frutiger,Frutiger Linotype,Dejavu Sans,Helvetica Neue,Arial,sans-serif !important;
     color: #455a64;
-    font-size: 3em;
-    /*padding: 1em;
-    padding-left: 2em;*/
-    font-size: 3em;
-    padding: 0.6em;
-    padding-left: 3em;
+    font-size: 2.5em;
+    padding-top: 0.6em;
+    padding-left: 1em;
   }
 
   .subtitle-images {
     margin-bottom: 5px;
     font-weight: 400;
-    font-family: Frutiger LT W04_55 Roman,Helvetica,Arial,sans-serif;
+    font-family: Segoe UI,Frutiger,Frutiger Linotype,Dejavu Sans,Helvetica Neue,Arial,sans-serif !important;
     color: #455a64;
-    font-size: 3em;
+    font-size: 2.7em;
   }
   .landing-page-image {
     width: 100%;
@@ -477,25 +533,20 @@ margin-top: -130%;">
 
   .image {
     position: relative;
-    width: 100%; /* for IE 6 */
+    width: 100%;
   }
 
   h2 {
     width: 100%;
-    /*width: fit-content;*/
     position: absolute;
     top: -18px;
   }
 
   h2 span {
-    /*color: white;*/
     color: #455a64;
-    /*font: bold 24px/45px Helvetica, Sans-Serif;*/
     letter-spacing: -1px;
-    /*background: rgb(0, 0, 0); fallback color */
     background: rgba(255,255,255,.8);
     font: bold 15px/30px Helvetica, Sans-Serif;
-    /*background: rgba(0, 0, 0, 0.7);*/
     padding: 10px;
   }
 
@@ -516,19 +567,8 @@ margin-top: -130%;">
     left: 133px;
   }
 
-
-
   .el-row {
-    margin-top: 10px;
-  /*
-  font-family: Frutiger LT W04_45 Light,Helvetica,Arial,sans-serif;
-
-
-  font-weight: 400;
-    font-family: Frutiger LT W04_55 Roman,Helvetica,Arial,sans-serif;
-        color: #455a64;
-   */
-
+    margin-top: 5px;
   }
 
 </style>

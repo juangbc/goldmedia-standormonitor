@@ -28,6 +28,10 @@
                 height: 100%;
             }
 
+            .content {
+                height: 100%;
+            }
+
         </style>
 
         <script type="text/javascript" src="https://public.tableau.com/javascripts/api/tableau-2.min.js"></script>
