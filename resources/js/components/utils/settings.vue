@@ -1,13 +1,64 @@
 <template>
   <div>
-  <div>Profile settings</div>
+
+    <el-card
+            title="Default profile settings"
+            :visible.sync="defaultSettings.expanded"
+            width="400px">
+      <div>Here you can change the default settings for all data views.</div>
+
+      <div class="top10">
+        <h4 class="bot10">Bundesland</h4>
+        <el-select v-model="defaultSettings.bundesland" placeholder="Select">
+          <el-option
+                  v-for="item in $bundesland"
+                  :key="item.key"
+                  :label="item.caption"
+                  :value="item.key">
+          </el-option>
+        </el-select>
+      </div>
+
+      <div class="top20">
+        <el-button @click="saveChanges" type="primary"><i class="fa fa-save"></i> Save settings</el-button>
+      </div>
+
+      <div class="top20">
+        <el-button @click="raveChanges" type="primary"><i class="fa fa-save"></i> rave settings</el-button>
+      </div>
+    </el-card>
   </div>
+
 </template>
 
 <script>
 import axios from 'axios'
 
 export default {
+data() {
+  return {
+    defaultSettings: {
+      expanded: true,
+      dates: [null, null],
+      bundesland:  0,
+      admin: null,
+      market: null,
+    }
+  }
+},
+  methods: {
+    saveChanges() {
+      this.$store.commit('set_bundesland', this.defaultSettings.bundesland)
+    },
+    /*raveChanges() {
+      //console.log(this.$store.getters.bundesland.toString())
+      let x = this.$store.getters.bundesland.toString()
+      //console.log(typeof x)
+    }*/
+  },
+  mounted() {
+    //console.log(this.$store.getters.bundesland)
+  }
   }
 </script>
 

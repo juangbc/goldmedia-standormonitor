@@ -231,17 +231,17 @@ export default new Router(
                         component: {template: '<router-view/>'},
                         children: [
                             {
-                                path: '/vergleichsanalyse/beschaeftigte',
+                                path: '/zeitreihenanalyse/beschaeftigte',
                                 name: 'zeitreihenanalyse-beschaeftigte',
                                 component: zeitreihenanalyseBeschaeftigte
                             },
                             {
-                                path: '/vergleichsanalyse/umsaetze',
+                                path: '/zeitreihenanalyse/umsaetze',
                                 name: 'zeitreihenanalyse-umsaetze',
                                 component: zeitreihenanalyseUmsaetze
                             },
                             {
-                                path: '/vergleichsanalyse/unternehmen',
+                                path: '/zeitreihenanalyse/unternehmen',
                                 name: 'zeitreihenanalyse-unternehmen',
                                 component: zeitreihenanalyseUnternehmen
                             },

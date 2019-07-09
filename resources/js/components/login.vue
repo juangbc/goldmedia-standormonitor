@@ -1,26 +1,26 @@
 <template>
   <div class="main-page">
-      <el-menu class="menu" style="color: white">
+      <el-menu class="menu">
           <div class="float-left logo-navbar navbar float-left" tabindex="0">
               <img class="full-width" :src="$pngPath"/>
           </div>
         <div>
           <li role="menuitem" aria-haspopup="true" class="mobile-submenus el-submenu" tabindex="0"
-              style="float: right" v-if="!loginClicked">
-            <el-button type="text" style="float: right; font-style: inherit; padding: 20px; color: white" @click="loginClick">
-            <span style="font-size: 16px">Login</span>
+              v-if="!loginClicked">
+            <el-button class="login-button" type="text" @click="loginClick">
+            <span>Login</span>
           </el-button>
           </li>
           <li role="menuitem" aria-haspopup="true" class="mobile-submenus el-submenu" tabindex="0"
-              style="float: right" v-if="loginClicked">
-            <el-button type="text" style="float: right; font-style: inherit; padding: 20px; color: white" @click="returnLanding">
-              <span style="font-size: 16px">Return</span>
+              v-if="loginClicked">
+            <el-button class="login-button" type="text" @click="returnLanding">
+              <span>Return</span>
             </el-button>
           </li>
           </div>
       </el-menu>
     <div>
-      <el-menu style="background-color: whitesmoke; color: #1b4b72" class="el-menu-demo" mode="horizontal">
+      <el-menu class="el-menu-demo header-menu" mode="horizontal">
           <div>
 
             <li role="menuitem" aria-haspopup="true" class="mobile-submenus el-submenu navbar-subtitle" tabindex="0">
@@ -56,11 +56,11 @@
 <div class="main-column">
   <el-row>
     <el-card>
-        <div class="gm-blau" style="color: #5C7A96; font-weight: 600;">
-          <div class="subtitle-images" style="float: left; width: 100%">
+        <div class="gm-blau">
+          <div class="subtitle-images main-title">
             STANDORTMONITOR
           </div>
-          <div style="font-size: 17px; float: left; width: 100%;">
+          <div class="subtitle-main">
             Medien- und Kreativstandorte in Deutschland.<br>
             Laufend aktualisierte Daten, Fakten, Grafiken interaktiv
           </div>
@@ -135,7 +135,7 @@
             <div class="image">
               <img class="landing-page-image" :src="$pngStandortstudieWila" alt/>
               <h2 class="image-title"><span>Wirtschaftliche</span></h2>
-              <h2 class="image-title" style="margin-top: 2.4em;"><span>Lage des Rundfunks</span></h2>
+              <h2 class="image-title subtitle-image-title"><span>Lage des Rundfunks</span></h2>
             </div>
              </a>
         </el-col>
@@ -144,7 +144,7 @@
             <div class="image">
               <img class="landing-page-image" :src="$pngStandortWirtschaftlicheBedeutungFilm" alt/>
               <h2 class="image-title"><span>Wirtschaftliche Bedeutung</span></h2>
-              <h2 class="image-title" style="margin-top: 2.4em;"><span>der Filmindustrie in Deutschland</span></h2>
+              <h2 class="image-title subtitle-image-title"><span>der Filmindustrie in Deutschland</span></h2>
             </div>
           </a>
         </el-col>
@@ -154,7 +154,7 @@
             <div class="image">
               <img class="landing-page-image" :src="$pngStandortstudieBewegtbild" alt/>
               <h2 class="image-title"><span>Standortstudie: Bewegtbildbranche</span></h2>
-              <h2 class="image-title" style="margin-top: 2.4em;"><span> in Hamburg und Schleswig-Holstein 2017</span></h2>
+              <h2 class="image-title subtitle-image-title"><span> in Hamburg und Schleswig-Holstein 2017</span></h2>
             </div>
           </a>
 
@@ -180,7 +180,7 @@
         </el-card>
       </el-row>
 
-      <el-row style="margin-bottom: 0px;">
+      <el-row >
         <el-card>
           <el-col :sm="24" :xs="24" :md="12" :lg="12">
             <div class="subtitle">Methodik <br> und Inhalte </div>
@@ -199,9 +199,9 @@
       </el-row>
 
   <el-row>
-    <el-card style="margin-bottom: 10px">
+    <el-card class="bottom-card">
       <el-col :sm="24" :xs="24" :md="24" :lg="24">
-        <div class="landing-page-textbox" style="margin-left: 5%">
+        <div class="landing-page-textbox bottom-card">
           Kontaktieren Sie uns! Ihre Ansprechpartner sind <a href="mailto:mathias.birkel@goldmedia.de">Mathias Birkel</a> und
           <a href="mailto:klaus.goldhammer@goldmedia.de">Prof. Dr. Klaus Goldhammer</a>
           oder telefonisch: 030-2462660. Gern präsentieren wir Ihnen die Vorteile und Möglichkeiten des Standortmonitors.
@@ -209,7 +209,6 @@
       </el-col>
     </el-card>
   </el-row>
-
 
     </div>
     </span>
@@ -345,6 +344,32 @@
 </script>
 
 <style scoped>
+  .subtitle-image-title {
+    margin-top: 2.4em;
+  }
+
+  .header-menu {
+    background-color: #F5F5F5 !important;
+  }
+
+  .main-title {
+    float: left;
+    width: 100%;
+  }
+  .login-button {
+    float: right;
+    font-style: inherit;
+    padding: 20px;
+    color: white;
+    font-size: 1.2em;
+  }
+
+  .subtitle-main {
+    float: left;
+    width: 100%;
+    font-size: 1.3em;
+    font-family: Segoe UI,Frutiger,Frutiger Linotype,Dejavu Sans,Helvetica Neue,Arial,sans-serif !important;
+  }
 
   .login-card {
     height: 100%;
@@ -369,22 +394,13 @@
     background-size: cover;
   }
 
-  .title-landing {
-    font-size: 30px;
-  }
-
   .top-image {
-    max-width: 700px;
-    margin-top: -13%;
-    float: right;
+    max-width: 1000px;
+    width: 100%;
   }
 
 
   @media (max-width: 1300px) {
-    .top-image {
-      display: none;
-    }
-
     .subtitle {
       margin-bottom: unset;
       color: #455a64;
@@ -398,7 +414,6 @@
       margin-left: unset !important;
       font-size: 1em;
     }
-
   }
 
 
@@ -411,16 +426,9 @@
       padding-top: 1em !important;
     }
 
-    .top-image {
-      width: 500px;
-    }
-
   }
 
-  @media (max-width: 800px) {
-    .title-landing {
-      font-size: 20px;
-    }
+  @media (max-width: 750px) {
 
     .landing-page-column {
       width: 100%;
@@ -438,8 +446,14 @@
       margin-left: unset !important;
     }
 
+    .subtitle-main {
+      font-size: 0.8em !important;
     }
 
+    .landing-page-textbox {
+      font-size: 1em !important;
+    }
+    }
 
   .navbar-subtitle {
     float: right;
@@ -486,7 +500,6 @@
   }
   .landing-page-image {
     width: 100%;
-   /* margin-top: 5px;*/
   }
   .gm-blau {
     color: #5C7A96;
@@ -555,20 +568,12 @@
     padding: 3px;
   }
 
-  .image-title-1 {
-    left: 260px;
-  }
-
-  .image-title-2 {
-    left: 188px;
-  }
-
-  .image-title-3 {
-    left: 133px;
-  }
-
   .el-row {
     margin-top: 5px;
   }
 
+  .bottom-card {
+    margin-bottom: 10px;
+    margin-left: unset;
+  }
 </style>
