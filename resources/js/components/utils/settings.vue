@@ -5,13 +5,35 @@
             title="Default profile settings"
             :visible.sync="defaultSettings.expanded"
             width="400px">
-      <div>Here you can change the default settings for all data views.</div>
+      <div>Hier können Sie Filter für Ihre Profil-Einstellungen speichern.</div>
 
       <div class="top10">
-        <h4 class="bot10">Bundesland</h4>
+        <h4 class="bot10">Nach Bundesland filtern</h4>
         <el-select v-model="defaultSettings.bundesland" placeholder="Select">
           <el-option
                   v-for="item in $bundesland"
+                  :key="item.key"
+                  :label="item.caption"
+                  :value="item.key">
+          </el-option>
+        </el-select>
+      </div>
+      <div class="top10">
+        <h4 class="bot10">Nach Jahr filtern</h4>
+        <el-select v-model="defaultSettings.year" placeholder="Select">
+          <el-option
+                  v-for="item in $year"
+                  :key="item.key"
+                  :label="item.caption"
+                  :value="item.key">
+          </el-option>
+        </el-select>
+      </div>
+      <div class="top10">
+        <h4 class="bot10">Nach Markt Filtern</h4>
+        <el-select v-model="defaultSettings.markt" placeholder="Select">
+          <el-option
+                  v-for="item in $markt"
                   :key="item.key"
                   :label="item.caption"
                   :value="item.key">
@@ -23,9 +45,6 @@
         <el-button @click="saveChanges" type="primary"><i class="fa fa-save"></i> Save settings</el-button>
       </div>
 
-      <div class="top20">
-        <el-button @click="raveChanges" type="primary"><i class="fa fa-save"></i> rave settings</el-button>
-      </div>
     </el-card>
   </div>
 
@@ -41,6 +60,8 @@ data() {
       expanded: true,
       dates: [null, null],
       bundesland:  0,
+      year : 5,
+      markt : 0,
       admin: null,
       market: null,
     }
@@ -49,15 +70,12 @@ data() {
   methods: {
     saveChanges() {
       this.$store.commit('set_bundesland', this.defaultSettings.bundesland)
+      this.$store.commit('set_year', this.defaultSettings.year)
+      this.$store.commit('set_markt', this.defaultSettings.markt)
+
     },
-    /*raveChanges() {
-      //console.log(this.$store.getters.bundesland.toString())
-      let x = this.$store.getters.bundesland.toString()
-      //console.log(typeof x)
-    }*/
   },
   mounted() {
-    //console.log(this.$store.getters.bundesland)
   }
   }
 </script>

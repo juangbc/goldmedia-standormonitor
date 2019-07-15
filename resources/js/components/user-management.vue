@@ -91,11 +91,11 @@ export default {
       reg: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,24}))$/,
       optionsAdmin: [
         {
-          value: '0',
+          value: 0,
           label: 'Normal account'
         },
         {
-          value: '2',
+          value: 1,
           label: 'Test account'
         },
       ],
@@ -105,7 +105,7 @@ export default {
       showResults: true,
       showPw: false,
       newUserPW: '',
-      userType: '0',
+      userType: 0,
       mailCreated: '',
       userTypeSet: true,
       data: [],
@@ -137,9 +137,16 @@ export default {
       } else if (!this.reg.test(this.ruleForm2.email)) {
         this.$message.error('Please enter a correct email address')
       } else {
+        console.log(this.userType);
+
+        if (this.userType !== 1 || this.userType !== 2) {
+          this.userType = 1;
+        }
+
         axios.request(this.$apiBase + 'add-user', {
           method: 'get',
           params: {
+
             email: this.ruleForm2.email,
             userType: this.userType,
           }

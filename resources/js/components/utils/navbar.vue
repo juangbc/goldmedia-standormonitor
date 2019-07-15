@@ -2,35 +2,38 @@
 
 <template>
     <div>
-        <ul role="menubar" class="el-menu-demo el-menu--horizontal el-menu">
-            <div class="logo-navbar navbar float-left" tabindex="0">
+        <ul role="menubar" class="el-menu-demo el-menu--horizontal el-menu menu container-flex">
+            <div class="element-flex">
+                <div class="container-logo">
+                <div class="logo-navbar navbar float-left" tabindex="0">
                 <router-link :to="{ name: 'home'}">
                     <img class="full-width" :src="$pngPath"/>
                 </router-link>
             </div>
-            <div style="float: left;
-            font-size: 23px;
-            margin-left: 35%;
-            color: white;
-            padding-top: 15px;
-            font-weight: bold;">
+                </div>
+                <div class="beta-container">
+            <span>
                 BETA
+            </span>
+                </div>
             </div>
-            <li role="menuitem" aria-haspopup="true" class="mobile-submenus el-submenu" tabindex="0"
-                style="float: right">
-                <div @click="openSettings" class="el-submenu__title" style="border-bottom-color: transparent;">
-                    <i class="fa fa-fw fa-cog black"></i><span> Default settings</span>
+<div class="element-flex container-flex container-flex2">
+    <li role="menuitem" aria-haspopup="true" class="mobile-submenus el-submenu flex-item2">
+                <div @click="openSettings" class="el-submenu__title">
+                    <span>
+                    <i class="white fa fa-fw fa-cog black"></i>
+                    <span class="white"> Default settings</span>
+                    </span>
                 </div>
             </li>
-            <li role="menuitem" aria-haspopup="true" class="mobile-submenus el-submenu" tabindex="0"
-                style="float: right">
+            <li role="menuitem" aria-haspopup="true" class="mobile-submenus el-submenu flex-item2">
                 <el-dropdown @command="handleRoute">
-                    <div class="el-submenu__title" style="border-bottom-color: transparent;">
-            <span>
-              <i class="fa fa-fw fa-user"></i>
-              <span>{{userMail}}</span>
-              <i class="el-submenu__icon-arrow el-icon-arrow-down"></i>
-            </span>
+                    <div class="el-submenu__title">
+                    <span>
+                      <i class="fa fa-fw fa-user"></i>
+                      <span class="white">{{userMail}}</span>
+                      <i class="el-submenu__icon-arrow el-icon-arrow-down"></i>
+                    </span>
                     </div>
                     <el-dropdown-menu slot="dropdown">
                         <el-dropdown-item command="changePassword"><i class="fa fa-key"></i> Change password
@@ -39,19 +42,43 @@
                     </el-dropdown-menu>
                 </el-dropdown>
             </li>
+</div>
         </ul>
+
+        <div>
+            <el-menu class="el-menu-demo header-menu" mode="horizontal">
+                <div class="menu-div">
+
+                    <li role="menuitem" aria-haspopup="true" class="mobile-submenus el-submenu navbar-subtitle"
+                        tabindex="0">
+                        <router-link class="font-16 dark-blue" :to="{ name: 'about'}">
+                            About
+                        </router-link>
+                    </li>
+
+                    <li role="menuitem" aria-haspopup="true" class="mobile-submenus el-submenu navbar-subtitle"
+                        tabindex="0">
+                        <router-link class="font-16 dark-blue" :to="{ name: 'cases'}">
+                            Cases
+                        </router-link>
+                    </li>
+
+                </div>
+            </el-menu>
+
+        </div>
     </div>
 </template>
 <script>
     import axios from 'axios'
 
     export default {
-        computed: {
+        /*computed: {
             pickerOptions2: function () {
                 let x = 0
                 return x
             }
-        },
+        },*/
         data() {
             return {
                 userMail: '',
@@ -82,17 +109,15 @@
             }
         },
         methods: {
-            getSession () {
-            },
             handleClick(tab) {
                 this.tabActive = tab.index * 1
             },
             logout() {
                 axios
                     .get(this.$apiBase + 'logout')
-                        .then(response => {
-                            this.$router.push({'name': 'loginPage'});
-                        })
+                    .then(response => {
+                        this.$router.push({'name': 'loginPage'});
+                    })
             },
             openSettings() {
                 this.$router.push({'name': 'settings'})
@@ -119,18 +144,28 @@
         },
         mounted() {
             this.userMail = this.$session.get('email');
+            this.userType = this.$session.get('user_type');
             if (this.$session.exists() === false) {
                 this.logout();
             }
-            },
-        watch: {
-        }
-        }
+        },
+        watch: {}
+    }
 </script>
 
 <style scoped>
+
+    .element-flex {
+        width: 50%;
+    }
+
+    .container-flex {
+        display: flex;
+    }
+
     .logo-navbar {
-        width: 200px;
+        width: 100%;
+        max-width: 200px;
         padding: 20px 10px 8px 20px;
     }
 
@@ -151,15 +186,136 @@
         color: #f2f2f2 !important;
     }
 
-    #navbar-mobile-button {
-        background-color: #ab8852;
-        color: #fff;
-        border-color: #fff;
+    .el-submenu__title {
+        padding: 0;
     }
 
-    @media only screen and (max-width: 800px) {
-        .mobile-submenus {
-            float: left !important;
+    .beta-container span {
+        font-size: 10px !important;
+        margin-top: 10px !important;
+    }
+
+    @media (max-width: 800px) {
+
+        .white {
+            font-size: 0.7em;
+        }
+
+        .logo-navbar {
+            padding-left: 0.3em;
+            padding-top: 1.2em;
         }
     }
+
+    .container-flex2 {
+        justify-content: flex-end;
+    }
+
+    .flex-item2 {
+        width: 150px;
+    }
+
+    .white {
+        color: #ffffff;
+    }
+
+    .el-submenu__title * {
+        vertical-align: unset;
+    }
+
+    .container-logo {
+        width: 50%;
+    }
+
+    .el-submenu__icon-arrow {
+        position: unset;
+        top: unset;
+        right: unset;
+        margin-top: -7px;
+        transition: -webkit-transform .3s;
+        transition: transform .3s, -webkit-transform .3s;
+        font-size: 12px;
+    }
+    .menu-div {
+        height: 50px;
+        float: left;
+        margin-left: 20%;
+    }
+
+    .menu {
+        background-color: #ab8852;
+        color: #fff;
+        height: 55px;
+    }
+
+    .dark-blue {
+        color: #4c4c4c;
+    }
+
+    .header-menu {
+        padding: 0;
+        margin: 0 0 1px -1em;
+        font-family: Frutiger LT W04_65 Bold, Helvetica, Arial, sans-serif;
+        color: #455a64;
+        font-size: 1.3rem;
+        background: #fff !important;
+    }
+
+    @media (max-width: 750px) {
+
+        .font-16 {
+            font-size: 13px;
+        }
+
+        .navbar-subtitle {
+            margin-left: 10px;
+            padding: unset !important;
+        }
+
+        .menu-div {
+            margin-left: 15%;
+            height: 30px;
+        }
+    }
+
+    .navbar-subtitle {
+        float: right;
+        font-weight: 600;
+        padding: .7em 1em;
+    }
+
+    .logo-navbar {
+        padding: 20px 10px 8px 20px;
+        color: #fff;
+        max-width: 200px;
+    }
+
+    ul.el-menu-demo.el-menu--horizontal.el-menu {
+        border-bottom: 0 !important;
+    }
+
+    .el-menu {
+        background-color: #ab8852;
+    }
+
+    .beta-container span {
+        /*font-size: 0.9em;*/
+        font-size: 10px !important;
+        margin-top: 10px !important;
+    }
+
+    h2 {
+        width: 100%;
+        position: absolute;
+        top: -18px;
+    }
+
+    h2 span {
+        color: #455a64;
+        letter-spacing: -1px;
+        background: rgba(255, 255, 255, .8);
+        font: bold 15px/30px Helvetica, Sans-Serif;
+        padding: 10px;
+    }
+
 </style>

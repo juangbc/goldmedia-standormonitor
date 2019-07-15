@@ -27,13 +27,13 @@ import branchenanalyseRundfunk from '../components/pages/branchenanalyse-rundfun
 import branchenanalyseMedienbranchen from '../components/pages/branchenanalyse-medienbranchen'
 import branchenanalyseGames from '../components/pages/branchenanalyse-games'
 import branchenanalyseBranchenvergleich from '../components/pages/branchenanalyse-branchenvergleich'
+import branchenanalyseVRAR from '../components/pages/branchenanalyse-vrar'
 
 import contact from '../components/pages/contact'
 import about from '../components/pages/about'
 import cases from '../components/pages/cases'
 import methodik from '../components/pages/methodik'
 
-import shop from '../components/pages/shop'
 import impressum from '../components/pages/impressum'
 import methoden from '../components/pages/methoden'
 
@@ -41,6 +41,7 @@ import overview from '../components/pages/overview'
 import settings from '../components/utils/settings'
 import navbar from '../components/utils/navbar'
 import home from '../components/pages/home'
+import datenschutz from '../components/pages/datenschutz'
 
 
 Vue.use(Router)
@@ -115,6 +116,13 @@ export default new Router(
                         meta: {auth: true}
                     },
                     {
+                        path: '/datenschutz',
+                        name: 'datenschutz',
+                        component: datenschutz,
+                        meta: {auth: true}
+                    },
+
+                    {
                         path: '/',
                         name: 'user',
                         component: {template: '<router-view/>'},
@@ -153,6 +161,12 @@ export default new Router(
                                 path: '/branchenanalyse/games',
                                 name: 'branchenanalyse-games',
                                 component: branchenanalyseGames
+                            },
+
+                            {
+                                path: '/branchenanalyse/vrar',
+                                name: 'branchenanalyse-vrar',
+                                component: branchenanalyseVRAR
                             },
                             {
                                 path: '/branchenanalyse/medienbranchen',
@@ -253,9 +267,9 @@ export default new Router(
                         component: methoden
                     },
                     {
-                        path: '/shop',
-                        name: 'shop',
-                        component: shop
+                        path: '/impressum',
+                        name: 'impressum',
+                        component: impressum
                     },
                 ]
             }

@@ -6,11 +6,19 @@ Vue.use(Vuex);
 
 export const store = new Vuex.Store({
     state: {
-        bundesland :  ""
+        bundesland :  "",
+        year: "",
+        markt: ""
     },
     getters : {
         bundesland : state => {
             return state.bundesland;
+        },
+        year : state => {
+            return state.year;
+        },
+        markt : state => {
+            return state.markt;
         }
     },
     mutations: {
@@ -70,18 +78,73 @@ export const store = new Vuex.Store({
                 default: state.bundesland = "Alle"
             }
         },
-        ADD_TODO : (state,payload) => {
-            state.todos.push(payload)
+        set_markt : (state,key) => {
+            switch (key) {
+                case 0 :
+                    state.markt = ""
+                    break;
+                case 1 :
+                    state.markt = "Buchmarkt"
+                    break;
+                case 2 :
+                    state.markt = "Clubwirtschaft"
+                    break;
+                case 3 :
+                    state.markt = "Designwirtschaft"
+                    break;
+                case 4 :
+                    state.markt = "Film"
+                    break;
+                case 5 :
+                    state.markt = "Musikwirtschaft"
+                    break;
+                case 6 :
+                    state.markt = "Pressemarkt"
+                    break;
+                case 7 :
+                    state.markt = "Rundfunk"
+                    break;
+                case 8 :
+                    state.markt = "Software/Games"
+                    break;
+                case 9 :
+                    state.markt = "Telekommunikation"
+                    break;
+                case 10 :
+                    state.markt = "Unterhaltungselektronik"
+                    break;
+                case 11 :
+                    state.markt = "Werbemarkt"
+                    break;
+                default: state.markt = "Alle"
+            }
         },
+
+    set_year : (state,key) => {
+    switch (key) {
+        case 0 :
+            state.year = ""
+            break;
+        case 1 :
+            state.year = "2013"
+            break;
+        case 2 :
+            state.year = "2014"
+            break;
+        case 3 :
+            state.year = "2015"
+            break;
+        case 4 :
+            state.year = "2016"
+            break;
+        case 5 :
+            state.year = "2017"
+            break;
+
+        default: state.year = "2017"
+    }
+},
     },
     actions:{
-        GET_TODO : async (context,payload) => {
-            let { data } = await Axios.get('http://yourwebsite.com/api/todo')
-            context.commit('SET_TODO',data)
-        },
-        SAVE_TODO : async (context,payload) => {
-            let { data } = await Axios.post('http://yourwebsite.com/api/todo')
-            context.commit('ADD_TODO',payload)
-        },
     },
 })

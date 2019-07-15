@@ -192,6 +192,16 @@
         font-size: 13px;
     }
 
+
+    .font-16 {
+        font-size: 16px;
+    }
+
+    .font-20 {
+        font-size: 20px;
+    }
+
+
     li:not(:first-child) > .el-menu-item-group__title {
         padding-top: 15px;
     }

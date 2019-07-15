@@ -52,7 +52,8 @@
               <el-menu-item index="2" :route="{'name':'branchenanalyse-branchenvergleich'}">Branchenvergleich</el-menu-item>
               <el-menu-item index="3" :route="{'name':'branchenanalyse-rundfunk'}">Rundfunk</el-menu-item>
               <el-menu-item index="4" :route="{'name':'branchenanalyse-games'}">Games</el-menu-item>
-              <el-menu-item index="5" :route="{'name':'branchenanalyse-sonderanalyse'}">Sonderanalysen (tba.)</el-menu-item>
+              <el-menu-item index="5" :route="{'name':'branchenanalyse-vrar'}">VR/AR</el-menu-item>
+              <el-menu-item index="6" :route="{'name':'branchenanalyse-sonderanalyse'}">Sonderanalysen (tba.)</el-menu-item>
             </el-menu-item-group>
           </el-submenu>
 
@@ -67,12 +68,6 @@
           <el-menu-item index="methoden" :route="{'name':'methoden'}">
             <i class="fa fa-chart-pie fa-fw"></i><span class="sidebar-title">Methoden</span>
           </el-menu-item>
-
-          <el-menu-item index="shop" :route="{'name':'shop'}">
-            <i class="fa fa-chart-pie fa-fw"></i><span class="sidebar-title">Shop</span>
-          </el-menu-item>
-
-
 
         </el-menu>
 

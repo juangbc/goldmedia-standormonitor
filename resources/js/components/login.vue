@@ -1,57 +1,62 @@
 <template>
-  <div class="main-page">
-      <el-menu class="menu">
-          <div class="float-left logo-navbar navbar float-left" tabindex="0">
-              <img class="full-width" :src="$pngPath"/>
-          </div>
+    <div class="main-page">
+        <el-menu class="menu">
+            <div class="float-left logo-navbar navbar float-left" tabindex="0">
+                <img class="full-width" :src="$pngPath"/>
+            </div>
+            <div class="beta-container">
+            <span>
+                BETA
+            </span>
+            </div>
+            <div>
+                <li role="menuitem" aria-haspopup="true" class="mobile-submenus el-submenu" tabindex="0"
+                    v-if="!loginClicked">
+                    <el-button class="login-button" type="text" @click="loginClick">
+                        <span>Login</span>
+                    </el-button>
+                </li>
+                <li role="menuitem" aria-haspopup="true" class="mobile-submenus el-submenu" tabindex="0"
+                    v-if="loginClicked">
+                    <el-button class="login-button" type="text" @click="returnLanding">
+                        <span>Return</span>
+                    </el-button>
+                </li>
+            </div>
+        </el-menu>
         <div>
-          <li role="menuitem" aria-haspopup="true" class="mobile-submenus el-submenu" tabindex="0"
-              v-if="!loginClicked">
-            <el-button class="login-button" type="text" @click="loginClick">
-            <span>Login</span>
-          </el-button>
-          </li>
-          <li role="menuitem" aria-haspopup="true" class="mobile-submenus el-submenu" tabindex="0"
-              v-if="loginClicked">
-            <el-button class="login-button" type="text" @click="returnLanding">
-              <span>Return</span>
-            </el-button>
-          </li>
-          </div>
-      </el-menu>
-    <div>
-      <el-menu class="el-menu-demo header-menu" mode="horizontal">
-          <div>
+            <el-menu class="el-menu-demo header-menu" mode="horizontal">
+                <div class="menu-div">
 
-            <li role="menuitem" aria-haspopup="true" class="mobile-submenus el-submenu navbar-subtitle" tabindex="0">
-              <router-link class="font-13" :to="{ name: 'about'}">
-                ABOUT
-              </router-link>
-            </li>
+                    <li role="menuitem" aria-haspopup="true" class="mobile-submenus el-submenu navbar-subtitle"
+                        tabindex="0">
+                        <router-link class="font-16 dark-blue" :to="{ name: 'about'}">
+                            About
+                        </router-link>
+                    </li>
 
-            <li role="menuitem" aria-haspopup="true" class="mobile-submenus el-submenu navbar-subtitle" tabindex="0">
-              <router-link class="font-13" :to="{ name: 'methodik'}">
-                METHODIK
-              </router-link>
-            </li>
+                    <li role="menuitem" aria-haspopup="true" class="mobile-submenus el-submenu navbar-subtitle"
+                        tabindex="0">
+                        <a class="font-16 dark-blue" href="#methodik">Methodik</a>
+                    </li>
 
-            <li role="menuitem" aria-haspopup="true" class="mobile-submenus el-submenu navbar-subtitle" tabindex="0">
-              <router-link class="font-13" :to="{ name: 'cases'}">
-                CASES
-              </router-link>
-            </li>
+                    <li role="menuitem" aria-haspopup="true" class="mobile-submenus el-submenu navbar-subtitle"
+                        tabindex="0">
+                        <router-link class="font-16 dark-blue" :to="{ name: 'cases'}">
+                            Cases
+                        </router-link>
+                    </li>
 
-            <li role="menuitem" aria-haspopup="true" class="mobile-submenus el-submenu navbar-subtitle" tabindex="0">
-              <router-link class="font-13" :to="{ name: 'contact'}">
-                KONTAKT
-              </router-link>
-            </li>
-          </div>
-      </el-menu>
+                    <li role="menuitem" aria-haspopup="true" class="mobile-submenus el-submenu navbar-subtitle"
+                        tabindex="0">
+                        <a class="font-16 dark-blue" href="#kontakt">Kontakt</a>
+                    </li>
+                </div>
+            </el-menu>
 
-    </div>
+        </div>
 
-    <span v-if="!loginClicked">
+        <span v-if="!loginClicked">
 
 <div class="main-column">
   <el-row>
@@ -97,7 +102,8 @@
             <div class="subtitle-images">Referenzen und Studien</div>
             <div>
               <el-col class="landing-page-column" :span="8">
-                <a href="https://www.goldmedia.com/aktuelles/info/article/mehr-beschaeftigte-mehr-umsatz-medienstandort-bayern-attraktiv-fuer-alle-branchen/" target="_blank">
+                <a href="https://www.goldmedia.com/aktuelles/info/article/mehr-beschaeftigte-mehr-umsatz-medienstandort-bayern-attraktiv-fuer-alle-branchen/"
+                   target="_blank">
                   <div class="image">
                     <img class="landing-page-image" :src="$pngStandortstudieBayern" alt/>
                     <h2 class="image-title"><span>Medienstandort Bayern 2019</span></h2>
@@ -114,7 +120,8 @@
                 </a>
               </el-col>
               <el-col class="landing-page-column" :span="8">
-                <a href="https://www.goldmedia.com/aktuelles/info/article/audio-visuelle-medien-in-nordrhein-westfalen-standortstudie-fuer-das-mediennetzwerkesnrw/" target="_blank">
+                <a href="https://www.goldmedia.com/aktuelles/info/article/audio-visuelle-medien-in-nordrhein-westfalen-standortstudie-fuer-das-mediennetzwerkesnrw/"
+                   target="_blank">
                   <div class="image">
                     <img class="landing-page-image" :src="$pngStandortstudieNRW" alt/>
                     <h2 class="image-title"><span>AV-Medienstandort NRW 2019</span></h2>
@@ -140,7 +147,8 @@
              </a>
         </el-col>
         <el-col class="landing-page-column" :span="8">
-          <a href="https://www.bmwi.de/Redaktion/DE/Publikationen/Studien/bedeutung-filmindustrie.pdf?__blob=publicationFile&v=18" target="_blank">
+          <a href="https://www.bmwi.de/Redaktion/DE/Publikationen/Studien/bedeutung-filmindustrie.pdf?__blob=publicationFile&v=18"
+             target="_blank">
             <div class="image">
               <img class="landing-page-image" :src="$pngStandortWirtschaftlicheBedeutungFilm" alt/>
               <h2 class="image-title"><span>Wirtschaftliche Bedeutung</span></h2>
@@ -150,7 +158,8 @@
         </el-col>
         <el-col class="landing-page-column" :span="8">
 
-          <a href="https://www.goldmedia.com/fileadmin/goldmedia/2015/Studien/2017/Standortstudie_HH/Goldmedia_Standortstudie_FFHSH_2017_dt.pdf" target="_blank">
+          <a href="https://www.goldmedia.com/fileadmin/goldmedia/2015/Studien/2017/Standortstudie_HH/Goldmedia_Standortstudie_FFHSH_2017_dt.pdf"
+             target="_blank">
             <div class="image">
               <img class="landing-page-image" :src="$pngStandortstudieBewegtbild" alt/>
               <h2 class="image-title"><span>Standortstudie: Bewegtbildbranche</span></h2>
@@ -180,10 +189,10 @@
         </el-card>
       </el-row>
 
-      <el-row >
+      <el-row>
         <el-card>
           <el-col :sm="24" :xs="24" :md="12" :lg="12">
-            <div class="subtitle">Methodik <br> und Inhalte </div>
+            <div id="methodik" class="subtitle">Methodik <br> und Inhalte </div>
           </el-col>
             <el-col :sm="24" :xs="24" :md="12" :lg="12">
             <div class="landing-page-textbox">
@@ -200,9 +209,12 @@
 
   <el-row>
     <el-card class="bottom-card">
-      <el-col :sm="24" :xs="24" :md="24" :lg="24">
-        <div class="landing-page-textbox bottom-card">
-          Kontaktieren Sie uns! Ihre Ansprechpartner sind <a href="mailto:mathias.birkel@goldmedia.de">Mathias Birkel</a> und
+          <el-col :sm="24" :xs="24" :md="12" :lg="12">
+            <div id="kontakt" class="subtitle">Kontaktieren <br>Sie uns! </div>
+          </el-col>
+      <el-col :sm="24" :xs="24" :md="12" :lg="12">
+        <div class="landing-page-textbox">
+          Ihre Ansprechpartner sind <a href="mailto:mathias.birkel@goldmedia.de">Mathias Birkel</a> und
           <a href="mailto:klaus.goldhammer@goldmedia.de">Prof. Dr. Klaus Goldhammer</a>
           oder telefonisch: 030-2462660. Gern präsentieren wir Ihnen die Vorteile und Möglichkeiten des Standortmonitors.
         </div>
@@ -213,367 +225,408 @@
     </div>
     </span>
 
-    <div v-if="loginClicked" class="login">
-    <div class="login-card">
-      <el-row>
-        <el-col :span="8"></el-col>
-        <el-col :span="8">
-          <el-card>
-            <div class="login-container">
-              <div>
-                <div class="logo-container center-div">
-                  <div class="bg-div-logo bg-primary"></div>
-                </div>
-              </div>
-              <el-form label-position="top" :model="ruleForm2" :rules="rules2" ref="ruleForm2" label-width="120px">
-                <el-form-item class="top10" label="Username" prop="username">
-                  <el-input type="text" v-model="ruleForm2.username" autocomplete="off"></el-input>
-                </el-form-item>
-                <el-form-item label="Password" prop="password">
-                  <el-input type="password" @keyup.native.enter="submitForm('ruleForm2')"
-                            v-model="ruleForm2.password"></el-input>
-                </el-form-item>
-                <el-form-item>
-                  <el-button class="full-width top10" type="primary" @click="submitForm('ruleForm2')">Submit</el-button>
-                </el-form-item>
+        <div v-if="loginClicked" class="login">
+            <div class="login-card">
+                <el-row>
+                    <el-col :span="8"></el-col>
+                    <el-col :span="8">
+                        <el-card>
+                            <div class="login-container">
+                                <div>
+                                    <div class="logo-container center-div">
+                                        <div class="bg-div-logo bg-primary"></div>
+                                    </div>
+                                </div>
+                                <el-form label-position="top" :model="ruleForm2" :rules="rules2" ref="ruleForm2"
+                                         label-width="120px">
+                                    <el-form-item class="top10" label="Username" prop="username">
+                                        <el-input type="text" v-model="ruleForm2.username"
+                                                  autocomplete="off"></el-input>
+                                    </el-form-item>
+                                    <el-form-item label="Password" prop="password">
+                                        <el-input type="password" @keyup.native.enter="submitForm('ruleForm2')"
+                                                  v-model="ruleForm2.password"></el-input>
+                                    </el-form-item>
+                                    <el-form-item>
+                                        <el-button class="full-width top10" type="primary"
+                                                   @click="submitForm('ruleForm2')">Submit
+                                        </el-button>
+                                    </el-form-item>
 
-                <router-link class="font-13" :to="{ name: 'passwordRecovery'}">
-                  Forgot password
-                </router-link>
+                                    <router-link class="font-13" :to="{ name: 'passwordRecovery'}">
+                                        Forgot password
+                                    </router-link>
 
-              </el-form>
+                                </el-form>
 
+                            </div>
+                        </el-card>
+
+                    </el-col>
+                </el-row>
             </div>
-          </el-card>
+        </div>
 
-        </el-col>
-      </el-row>
     </div>
-    </div>
-
-  </div>
 </template>
 <script>
 
-  import axios from 'axios'
+    import axios from 'axios'
 
-  export default {
-    data () {
-      var validatePass = (rule, value, callback) => {
-        if (value === '') {
-          callback(new Error('Please input email'))
-        } else {
-          callback()
-        }
-      }
-      var validatePass2 = (rule, value, callback) => {
-        if (value === '') {
-          callback(new Error('Please input password'))
-        } else {
-          callback()
-        }
-      }
-      var validatePass3 = (rule, value, callback) => {
-        if (this.loggedIn === false) {
-          callback(new Error('Wrong password/email combination'))
-        } else {
-          callback()
-        }
-      }
-      return {
-        loginClicked: false,
-        userData : {},
-        userMail : '',
-        ruleForm2: {
-          username: '',
-          password: ''
+    export default {
+        data() {
+            var validatePass = (rule, value, callback) => {
+                if (value === '') {
+                    callback(new Error('Please input email'))
+                } else {
+                    callback()
+                }
+            }
+            var validatePass2 = (rule, value, callback) => {
+                if (value === '') {
+                    callback(new Error('Please input password'))
+                } else {
+                    callback()
+                }
+            }
+            var validatePass3 = (rule, value, callback) => {
+                if (this.loggedIn === false) {
+                    callback(new Error('Wrong password/email combination'))
+                } else {
+                    callback()
+                }
+            }
+            return {
+                loginClicked: false,
+                userData: {},
+                userMail: '',
+                ruleForm2: {
+                    username: '',
+                    password: ''
+                },
+                rules2: {
+                    username: [
+                        {validator: validatePass, trigger: 'blur'}
+
+                    ],
+                    password: [
+                        {validator: validatePass2, trigger: 'click'},
+                        {validator: validatePass3, trigger: 'click'}
+                    ]
+                }
+            }
         },
-        rules2: {
-          username: [
-            {validator: validatePass, trigger: 'blur'}
+        methods: {
+            loginClick() {
+                this.loginClicked = true;
+            },
+            returnLanding() {
+                this.loginClicked = false;
+            },
+            submitForm(formName) {
+                let config = {
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
+                    }
+                }
+                axios.get(this.$apiBase + 'login', {
+                    params: {
+                        email: this.ruleForm2.username,
+                        password: this.ruleForm2.password
+                    }
+                }, config)
+                    .then(response => {
+                        this.userData = response.data.user_data[0];
+                        //console.log(response.data)
+                        this.loginResp = response.data.success;
+                        this.$session.start()
+                        this.$session.set('email', this.userData.EML)
+                        this.$session.set('user_type', this.userData.TYP)
 
-          ],
-          password: [
-            {validator: validatePass2, trigger: 'click'},
-            {validator: validatePass3, trigger: 'click'}
-          ]
-        }
-      }
-    },
-    methods: {
-      loginClick() {
-        this.loginClicked = true;
-      },
-      returnLanding() {
-        this.loginClicked = false;
-      },
-      submitForm (formName) {
-        let config = {
-          headers: {
-            'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
-          }
-        }
-        axios.get(this.$apiBase + 'login', {
-          params: {
-            email: this.ruleForm2.username,
-            password: this.ruleForm2.password
-          }
-        }, config)
-                .then(response => {
-                  this.userData = response.data.user_data[0];
-                  this.loginResp = response.data.success;
-                  this.$session.start()
-                  this.$session.set('email', this.userData.EML)
+                        if (this.loginResp === true) {
+                            this.$router.push({'name': 'home'})
+                            this.loggedIn = true
 
-                  if (this.loginResp === true) {
-                    this.$router.push({'name': 'home'})
-                    this.loggedIn = true
-
-                  } else {
-                    this.$refs[formName].validate((valid) => {
-                      if (!valid) {
-                        this.ruleForm2.password = ''
-                      }
+                        } else {
+                            this.$refs[formName].validate((valid) => {
+                                if (!valid) {
+                                    this.ruleForm2.password = ''
+                                }
+                            })
+                        }
                     })
-                  }
-                })
 
-      }
+            }
+        }
     }
-  }
 </script>
 
 <style scoped>
-  .subtitle-image-title {
-    margin-top: 2.4em;
-  }
-
-  .header-menu {
-    background-color: #F5F5F5 !important;
-  }
-
-  .main-title {
-    float: left;
-    width: 100%;
-  }
-  .login-button {
-    float: right;
-    font-style: inherit;
-    padding: 20px;
-    color: white;
-    font-size: 1.2em;
-  }
-
-  .subtitle-main {
-    float: left;
-    width: 100%;
-    font-size: 1.3em;
-    font-family: Segoe UI,Frutiger,Frutiger Linotype,Dejavu Sans,Helvetica Neue,Arial,sans-serif !important;
-  }
-
-  .login-card {
-    height: 100%;
-    margin-top: 100px;
-  }
-
-  .main-column {
-    width: 70%;
-    padding-left: 15%;
-    padding-top: 5%;
-    margin-top: 2%;
-  }
-  .login {
-    height: 800px;
-  }
-
-  .main-page {
-    background: url("http://standortmonitor.net/resources/js/landingPageBackgroundImage.png") repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-  }
-
-  .top-image {
-    max-width: 1000px;
-    width: 100%;
-  }
-
-
-  @media (max-width: 1300px) {
-    .subtitle {
-      margin-bottom: unset;
-      color: #455a64;
-      font-size: 2em;
-      padding-left: 0em !important;
-      padding-top: 0em !important;
+    .menu-div {
+        height: 60px;
+        float: left;
+        margin-left: 20%;
     }
 
-
-    .landing-page-textbox {
-      margin-left: unset !important;
-      font-size: 1em;
-    }
-  }
-
-
-  @media (max-width: 1700px) {
-    .subtitle {
-      margin-bottom: unset;
-      color: #455a64;
-      font-size: 2em;
-      padding-left: 0em !important;
-      padding-top: 1em !important;
+    .dark-blue {
+        color: #4c4c4c;
     }
 
-  }
-
-  @media (max-width: 750px) {
-
-    .landing-page-column {
-      width: 100%;
+    .subtitle-image-title {
+        margin-top: 2.4em;
     }
 
-    .subtitle-images {
-      font-size: 1.5em !important;
+    .header-menu {
+        padding: 0;
+        margin: 0 0 1px -1em;
+        font-family: Frutiger LT W04_65 Bold, Helvetica, Arial, sans-serif;
+        color: #455a64;
+        font-size: 1.3rem;
+        background: #fff !important;
     }
 
-    .subtitle {
-      font-size: 1.5em !important;
+    .main-title {
+        float: left;
+        width: 100%;
     }
 
-    .navbar-subtitle {
-      margin-left: unset !important;
+    .login-button {
+        float: right;
+        font-style: inherit;
+        color: white;
+        font-size: 1.2em;
+        padding-right: 10px;
+        margin-top: -10px;
     }
 
     .subtitle-main {
-      font-size: 0.8em !important;
+        float: left;
+        width: 100%;
+        font-size: 1.3em;
+        font-family: Segoe UI, Frutiger, Frutiger Linotype, Dejavu Sans, Helvetica Neue, Arial, sans-serif !important;
+    }
+
+    .login-card {
+        height: 100%;
+        margin-top: 100px;
+    }
+
+    .main-column {
+        width: 70%;
+        padding-left: 15%;
+        padding-top: 5%;
+        margin-top: 2%;
+    }
+
+    .login {
+        height: 800px;
+    }
+
+    .main-page {
+        background: url("http://standortmonitor.net/images/landingPageBackgroundImage.png") repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+
+    .top-image {
+        max-width: 1000px;
+        width: 100%;
+    }
+
+
+    @media (max-width: 1300px) {
+
+        .subtitle {
+            margin-bottom: unset;
+            color: #455a64;
+            font-size: 2em;
+            padding-left: 0em !important;
+            padding-top: 0em !important;
+        }
+
+
+        .landing-page-textbox {
+            margin-left: unset !important;
+            font-size: 1em;
+        }
+    }
+
+
+    @media (max-width: 1700px) {
+        .subtitle {
+            margin-bottom: unset;
+            color: #455a64;
+            font-size: 2em;
+            padding-left: 0em !important;
+            padding-top: 1em !important;
+        }
+    }
+
+    .beta-container span {
+        /*font-size: 0.9em;*/
+        font-size: 10px !important;
+        margin-top: 10px !important;
+    }
+
+    @media (max-width: 750px) {
+
+        .font-16 {
+            font-size: 13px;
+        }
+
+        .landing-page-column {
+            width: 100%;
+        }
+
+        .subtitle-images {
+            font-size: 1em !important;
+        }
+
+        .subtitle {
+            font-size: 1em !important;
+        }
+
+        .subtitle-main {
+            font-size: 0.8em !important;
+        }
+
+        .landing-page-textbox {
+            font-size: 0.8em !important;
+        }
+
+
+        .navbar-subtitle {
+            margin-left: 10px;
+            padding: unset !important;
+        }
+
+        .menu-div[data-v-172b28a4] {
+            margin-left: 15%;
+            height: 30px;
+        }
+    }
+
+    .navbar-subtitle {
+        float: right;
+        font-weight: 600;
+        padding: .7em 1em;
+    }
+
+    .landing-page-column {
+        padding: 1%;
+    }
+
+    .landing-page-title-image {
+        max-width: 700px;
     }
 
     .landing-page-textbox {
-      font-size: 1em !important;
+        font-size: 1.2em;;
+        line-height: 1.6;
+        font-family: Segoe UI, Frutiger, Frutiger Linotype, Dejavu Sans, Helvetica Neue, Arial, sans-serif !important;
+        color: #4c4c4c;
+        margin-left: -10%;
+        padding-right: 2em;
+        padding-top: 2em;
+        padding-bottom: 2em;
     }
+
+    .subtitle {
+        margin-bottom: 5px;
+        font-weight: 400;
+        font-family: Segoe UI, Frutiger, Frutiger Linotype, Dejavu Sans, Helvetica Neue, Arial, sans-serif !important;
+        color: #455a64;
+        font-size: 2.5em;
+        padding-top: 0.6em;
+        padding-left: 1em;
     }
 
-  .navbar-subtitle {
-    float: right;
-    margin-left: 20px;
-    font-weight: bold;
-    padding: 5px;
-  }
+    .subtitle-images {
+        margin-bottom: 5px;
+        font-weight: 400;
+        font-family: Segoe UI, Frutiger, Frutiger Linotype, Dejavu Sans, Helvetica Neue, Arial, sans-serif !important;
+        color: #455a64;
+        font-size: 2.7em;
+    }
 
-  .landing-page-column {
-    padding: 1%;
-  }
+    .landing-page-image {
+        width: 100%;
+    }
 
-  .landing-page-title-image {
-    max-width: 700px;
-  }
+    .gm-blau {
+        color: #5C7A96;
+    }
 
-  .landing-page-textbox {
-    font-size: 1.2em;;
-    line-height: 1.6;
-    font-family: Segoe UI,Frutiger,Frutiger Linotype,Dejavu Sans,Helvetica Neue,Arial,sans-serif !important;
-    color: #4c4c4c;
-    margin-left: -10%;
-    padding-right: 2em;
-    padding-top: 2em;
-    padding-bottom: 2em;
-  }
+    .logo-navbar {
+        padding: 20px 10px 8px 20px;
+        color: #fff;
+        max-width: 200px;
+    }
 
-  .subtitle {
-    margin-bottom: 5px;
-    font-weight: 400;
-    font-family: Segoe UI,Frutiger,Frutiger Linotype,Dejavu Sans,Helvetica Neue,Arial,sans-serif !important;
-    color: #455a64;
-    font-size: 2.5em;
-    padding-top: 0.6em;
-    padding-left: 1em;
-  }
+    ul.el-menu-demo.el-menu--horizontal.el-menu {
+        border-bottom: 0 !important;
+    }
 
-  .subtitle-images {
-    margin-bottom: 5px;
-    font-weight: 400;
-    font-family: Segoe UI,Frutiger,Frutiger Linotype,Dejavu Sans,Helvetica Neue,Arial,sans-serif !important;
-    color: #455a64;
-    font-size: 2.7em;
-  }
-  .landing-page-image {
-    width: 100%;
-  }
-  .gm-blau {
-    color: #5C7A96;
-  }
+    .el-menu {
+        background-color: #ab8852;
+    }
 
-  .logo-navbar {
-    width: 200px;
-    padding: 20px 10px 8px 20px;
-    color: #fff;
-  }
+    .menu {
+        background-color: #ab8852;
+        color: #fff;
+        height: 50px;
+    }
 
-  ul.el-menu-demo.el-menu--horizontal.el-menu {
-    border-bottom: 0 !important;
-  }
+    .logo-container {
+        width: 150px;
+        position: relative;
+    }
 
-  .el-menu {
-    background-color: #ab8852;
-  }
+    .z-index-logo {
+        z-index: 2;
+        position: relative;
+    }
 
-  .menu {
-    background-color: #ab8852;
-    color: #fff;
-    height: 50px;
-  }
+    .bg-div-logo {
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 10px;
+        z-index: 1;
+    }
 
-  .logo-container {
-    width: 150px;
-    position: relative;
-  }
+    .image {
+        position: relative;
+        width: 100%;
+    }
 
-  .z-index-logo {
-    z-index: 2;
-    position: relative;
-  }
+    h2 {
+        width: 100%;
+        position: absolute;
+        top: -18px;
+    }
 
-  .bg-div-logo {
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 10px;
-    z-index: 1;
-  }
-
-  .image {
-    position: relative;
-    width: 100%;
-  }
-
-  h2 {
-    width: 100%;
-    position: absolute;
-    top: -18px;
-  }
-
-  h2 span {
-    color: #455a64;
-    letter-spacing: -1px;
-    background: rgba(255,255,255,.8);
-    font: bold 15px/30px Helvetica, Sans-Serif;
-    padding: 10px;
-  }
+    h2 span {
+        color: #455a64;
+        letter-spacing: -1px;
+        background: rgba(255, 255, 255, .8);
+        font: bold 15px/30px Helvetica, Sans-Serif;
+        padding: 10px;
+    }
 
 
-  .image-title {
-    padding: 3px;
-  }
+    .image-title {
+        padding: 3px;
+    }
 
-  .el-row {
-    margin-top: 5px;
-  }
+    .el-row {
+        margin-top: 5px;
+    }
 
-  .bottom-card {
-    margin-bottom: 10px;
-    margin-left: unset;
-  }
+    .bottom-card {
+        margin-bottom: 10px;
+    }
 </style>

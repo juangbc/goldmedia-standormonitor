@@ -21,6 +21,16 @@ class backend extends Controller
         return response(['users' =>$users],200);
     }
 
+    public function getText(Request $request)
+    {
+        $text = DB::table('home_texts')
+            ->where([
+                ['uid',1]])
+            ->select('text')->get();
+
+        return response($text,200);
+    }
+
     public function deleteUser(Request $request)
     {
 
@@ -124,6 +134,17 @@ class backend extends Controller
         }
         $response['user_data'] = json_decode(json_encode($user), True);
         echo json_encode($response);
+
+        exit;
+    }
+
+    public function updateText(Request $request) {
+
+        $text = $request->input("text");
+
+        DB::table('home_texts')
+            ->where('uid', 1)
+            ->update(['text' => $text]);
 
         exit;
     }

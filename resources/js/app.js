@@ -47,7 +47,7 @@ Vue.use(require('vue-moment'))
 Vue.component('navbar', navbar)
 Vue.component('sidebar', sidebar)
 
-Vue.prototype.$apiBase1 = 'http://localhost/gmapi/resources/js/'
+Vue.prototype.$apiBase1 = 'http://localhost/gmapi/public/images/'
 Vue.prototype.$apiBase = 'http://localhost/gmapi/public/api/'
 Vue.prototype.$pngPath = Vue.prototype.$apiBase1+"GM-Logo-weiß - Kopie.png"
 Vue.prototype.$pngLandingPage = Vue.prototype.$apiBase1+"pngLandingPage2.png"
@@ -77,6 +77,29 @@ Vue.prototype.$bundesland = [
     {"caption": "Sachsen-Anhalt", "short": "ST", "key": 14},
     {"caption": "Schleswig-Holstein", "short": "SH", "key": 15},
     {"caption": "Thüringen", "short": "TH", "key": 16}
+]
+
+Vue.prototype.$markt = [
+    {"caption": "Alle", "short": "Not filtered", "key": 0},
+    {"caption": "Buchmarkt", "short": "BW", "key": 1},
+    {"caption": "Clubwirtschaft", "short": "BY", "key": 2},
+    {"caption": "Designwirtschaft", "short": "BE", "key": 3},
+    {"caption": "Film", "short": "BB", "key": 4},
+    {"caption": "Musikwirtschaft", "short": "HB", "key": 5},
+    {"caption": "Pressemarkt", "short": "HH", "key": 6},
+    {"caption": "Rundfunk", "short": "HE", "key": 7},
+    {"caption": "Software/Games", "short": "MV", "key": 8},
+    {"caption": "Telekommunikation", "short": "NI", "key": 9},
+    {"caption": "Unterhaltungselektronik", "short": "NW", "key": 10},
+    {"caption": "Werbemarkt", "short": "RP", "key": 11}
+]
+
+Vue.prototype.$year = [
+    {"caption": "2013", "key": 1},
+    {"caption": "2014", "key": 2},
+    {"caption": "2015", "key": 3},
+    {"caption": "2016", "key": 4},
+    {"caption": "2017", "key": 5},
 ]
 
 const app = new Vue({
