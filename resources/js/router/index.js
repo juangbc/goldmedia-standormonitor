@@ -95,11 +95,6 @@ export default new Router(
                 component: faq
             },
             {
-                path: '/platform/pages/disclaimer',
-                name: 'disclaimer',
-                component: disclaimer
-            },
-            {
                 path: '/',
                 name: 'main',
                 component: main,
@@ -270,6 +265,11 @@ export default new Router(
                         path: '/impressum',
                         name: 'impressum',
                         component: impressum
+                    },
+                    {
+                        path: '/platform/pages/disclaimer',
+                        name: 'disclaimer',
+                        component: disclaimer
                     },
                 ]
             }

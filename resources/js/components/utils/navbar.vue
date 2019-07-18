@@ -73,12 +73,6 @@
     import axios from 'axios'
 
     export default {
-        /*computed: {
-            pickerOptions2: function () {
-                let x = 0
-                return x
-            }
-        },*/
         data() {
             return {
                 userMail: '',
@@ -239,7 +233,7 @@
     .menu-div {
         height: 50px;
         float: left;
-        margin-left: 20%;
+        margin-left: 1%;
     }
 
     .menu {

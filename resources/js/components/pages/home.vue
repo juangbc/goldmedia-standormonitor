@@ -18,9 +18,13 @@
               <div class="subtitle">Live Ticker</div>
             </el-col>
             <el-col :sm="24" :xs="24" :md="24" :lg="24">
-              <div class="landing-page-textbox">
-                {{prev}}
+              <div v-if="userIsAdmin" contenteditable="true" class="landing-page-textbox content-text">
+                {{textOld}}
               </div>
+              <div v-if="!userIsAdmin" class="landing-page-textbox">
+                {{textOld}}
+              </div>
+              <el-button v-if="userIsAdmin" :loading="loading" class="save-button" @click="saveEdits()">save my edits</el-button>
             </el-col>
           </el-card>
         </el-row>
@@ -28,13 +32,16 @@
           <div>
           <el-card>
             <el-col :sm="24" :xs="24" :md="24" :lg="24">
-              <div class="subtitle">Live Ticker</div>
+              <div class="subtitle edit">Edit text</div>
             </el-col>
             <el-col :sm="24" :xs="24" :md="24" :lg="24">
-              <div>
-                <textarea v-model="text" :placeholder="prev" class="input-area"></textarea>
-              </div>
-              <el-button @click="saveEdits">save my edits</el-button>
+                <el-input
+                        type="textarea"
+                        :autosize="{ minRows: 8, maxRows: 40}"
+                        placeholder="Please input"
+                        v-model="textNew">
+                </el-input>
+              <el-button :loading="loading" class="save-button" @click="saveNewText(textNew)">save new text</el-button>
             </el-col>
           </el-card>
           </div>
@@ -52,11 +59,12 @@ export default {
   components: {
     'button-home': homeButton
   },
-  data () {
+  data() {
     return {
-      userIsAdmin : false,
-      prev : "this is an old text",
-      text : "",
+      loading: false,
+      userIsAdmin: false,
+      textOld: "",
+      textNew: "",
       loaded: {
         count: false
       },
@@ -84,20 +92,31 @@ export default {
         //mode: 'list'
       }, config)
               .then(response => {
-console.log(response.data[0].text);
-this.prev = response.data[0].text;
+                this.textOld = response.data[0].text;
               })
     },
     saveEdits() {
       axios.get(this.$apiBase + 'update-text', {
         method: 'get',
         params: {
-          text: this.text,
+          text: document.querySelector('.content-text').innerHTML,
           //userType: this.userType,
         }
       })
-    }
+      this.getText();
+      document.location.reload();
   },
+  saveNewText(text) {
+    axios.get(this.$apiBase + 'update-text', {
+      method: 'get',
+      params: {
+        text: text,
+      }
+    })
+    this.getText();
+    document.location.reload();
+}
+},
   mounted () {
     if (this.$session.get('user_type') === 1) {
       this.userIsAdmin = true;
@@ -108,6 +127,16 @@ this.prev = response.data[0].text;
 </script>
 
 <style scoped>
+
+  .edit {
+    padding-left: 0 !important;
+  }
+
+  .save-button {
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+
   .welcome {
     font-weight: 500;
     margin-bottom: 40px;
