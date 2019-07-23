@@ -92,11 +92,15 @@ export default {
       optionsAdmin: [
         {
           value: 0,
-          label: 'Normal account'
+          label: 'Test account'
         },
         {
           value: 1,
-          label: 'Test account'
+          label: 'Admin account'
+        },
+        {
+          value: 2,
+          label: 'Normal account'
         },
       ],
       pageNum: 1,
@@ -137,16 +141,13 @@ export default {
       } else if (!this.reg.test(this.ruleForm2.email)) {
         this.$message.error('Please enter a correct email address')
       } else {
-        console.log(this.userType);
 
-        if (this.userType !== 1 || this.userType !== 2) {
-          this.userType = 1;
+        if (this.userType !== 0 || this.userType !== 2) {
+          this.userType = 2;
         }
-
         axios.request(this.$apiBase + 'add-user', {
           method: 'get',
           params: {
-
             email: this.ruleForm2.email,
             userType: this.userType,
           }

@@ -34,6 +34,7 @@
             }
 
         </style>
+        <script async src="//cdn.iframe.ly/embed.js" charset="utf-8"></script>
         <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
         <script src='https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js'></script>
         <script src='https://cdn.jsdelivr.net/alasql/0.3/alasql.min.js'></script>
@@ -47,9 +48,7 @@
                 </div>
             </div>
 
-
             <script src="{{ asset('js/app.js') }}"></script>
-
 
     </body>
 </html>

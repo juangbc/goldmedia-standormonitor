@@ -1,70 +1,37 @@
 <template>
-  <div onload="checkEdits()" class="home-background">
+  <div class="home-background">
     <div class="home-menu">
-      <div class="welcome">
         <div class="centered-title">
           <div class="center-inner">
-            <div class="outer-logo"></div>
             <div class="subtitle">Goldmedia data viewer</div>
-            <div class="counter-div-frame">
             </div>
           </div>
-        </div>
       </div>
       <div class="cards top20">
-        <el-row>
-          <el-card>
-            <el-col :sm="24" :xs="24" :md="24" :lg="24">
-              <div class="subtitle">Live Ticker</div>
-            </el-col>
-            <el-col :sm="24" :xs="24" :md="24" :lg="24">
-              <div v-if="userIsAdmin" contenteditable="true" class="landing-page-textbox content-text">
-                {{textOld}}
-              </div>
-              <div v-if="!userIsAdmin" class="landing-page-textbox">
-                {{textOld}}
-              </div>
-              <el-button v-if="userIsAdmin" :loading="loading" class="save-button" @click="saveEdits()">save my edits</el-button>
-            </el-col>
-          </el-card>
-        </el-row>
-        <el-row v-if="userIsAdmin">
+        <el-row style="height: 1000px">
           <div>
-          <el-card>
-            <el-col :sm="24" :xs="24" :md="24" :lg="24">
-              <div class="subtitle edit">Edit text</div>
-            </el-col>
-            <el-col :sm="24" :xs="24" :md="24" :lg="24">
-                <el-input
-                        type="textarea"
-                        :autosize="{ minRows: 8, maxRows: 40}"
-                        placeholder="Please input"
-                        v-model="textNew">
-                </el-input>
-              <el-button :loading="loading" class="save-button" @click="saveNewText(textNew)">save new text</el-button>
-            </el-col>
-          </el-card>
+            <el-card>
+              <el-col :sm="24" :xs="24" :md="24" :lg="24">
+                <iframe width="100%" height="1000px" src="http://localhost/gmapi/public/wordpress/" frameborder="0" allowfullscreen></iframe>
+              </el-col>
+            </el-card>
           </div>
         </el-row>
       </div>
     </div>
-  </div>
 </template>
 
 <script>
-import homeButton from 'C:/xampp/htdocs/gmapi/resources/js/components/utils/home-button'
 import axios from 'axios'
 
 export default {
   components: {
-    'button-home': homeButton
+
   },
   data() {
     return {
       loading: false,
       userIsAdmin: false,
-      textOld: "",
-      textNew: "",
       loaded: {
         count: false
       },
@@ -81,93 +48,18 @@ export default {
     }
   },
   methods: {
-    getText() {
-      let config = {
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
-        }
-      }
-      let $apiBase = this.$apiBase + 'get-text';
-      axios.get($apiBase, {
-        //mode: 'list'
-      }, config)
-              .then(response => {
-                this.textOld = response.data[0].text;
-              })
-    },
-    saveEdits() {
-      axios.get(this.$apiBase + 'update-text', {
-        method: 'get',
-        params: {
-          text: document.querySelector('.content-text').innerHTML,
-          //userType: this.userType,
-        }
-      })
-      this.getText();
-      document.location.reload();
-  },
-  saveNewText(text) {
-    axios.get(this.$apiBase + 'update-text', {
-      method: 'get',
-      params: {
-        text: text,
-      }
-    })
-    this.getText();
-    document.location.reload();
-}
 },
   mounted () {
-    if (this.$session.get('user_type') === 1) {
-      this.userIsAdmin = true;
-    }
-    this.getText();
     }
 }
 </script>
 
 <style scoped>
 
-  .edit {
-    padding-left: 0 !important;
-  }
-
-  .save-button {
-    margin-bottom: 10px;
-    margin-top: 10px;
-  }
-
-  .welcome {
-    font-weight: 500;
-    margin-bottom: 40px;
-    color: #5c7a96;
-    width: 100%;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-  }
-
   .subtitle {
     margin-top: 10px;
     font-size: 30px;
     text-align: left;
-  }
-
-  .counter-div-frame {
-    margin-top: 20px;
-    font-size: 25px;
-    text-align: left;
-    color: #777777;
-    font-weight: lighter;
-  }
-
-  @media only screen and (max-width: 800px) {
-    .home-menu {
-      margin-left: 0 !important;
-      margin-right: 0 !important;
-    }
   }
 
   .home-menu {
@@ -180,84 +72,8 @@ export default {
     display: block;
   }
 
-  .outer-logo {
-    width: 100%;
-  }
-
   .home-background {
     background-image: linear-gradient(-180deg, #FFFFFF 0%, #f0f0f0 100%);
-  }
-
-  .menu-div {
-    height: 50px;
-    float: left;
-    margin-left: 20%;
-  }
-
-  .dark-blue {
-    color: #455a64;
-  }
-
-  .subtitle-image-title {
-    margin-top: 2.4em;
-  }
-
-  .header-menu {
-    padding: 0;
-    margin: 0 0 1px -1em;
-    font-family: Frutiger LT W04_65 Bold, Helvetica, Arial, sans-serif;
-    color: #455a64;
-    font-size: 2.3rem;
-    background: #fff !important;
-  }
-
-  .main-title {
-    float: left;
-    width: 100%;
-  }
-
-  .login-button {
-    float: right;
-    font-style: inherit;
-    padding: 20px;
-    color: white;
-    font-size: 1.2em;
-  }
-
-  .subtitle-main {
-    float: left;
-    width: 100%;
-    font-size: 1.3em;
-    font-family: Segoe UI, Frutiger, Frutiger Linotype, Dejavu Sans, Helvetica Neue, Arial, sans-serif !important;
-  }
-
-  .login-card {
-    height: 100%;
-    margin-top: 100px;
-  }
-
-  .main-column {
-    width: 70%;
-    padding-left: 15%;
-    padding-top: 5%;
-    margin-top: 2%;
-  }
-
-  .login {
-    height: 800px;
-  }
-
-  .main-page {
-    background: url("http://standortmonitor.net/images/landingPageBackgroundImage.png") repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-  }
-
-  .top-image {
-    max-width: 1000px;
-    width: 100%;
   }
 
   @media (max-width: 1300px) {
@@ -270,11 +86,6 @@ export default {
       padding-top: 0em !important;
     }
 
-
-    .landing-page-textbox {
-      margin-left: unset !important;
-      font-size: 1em;
-    }
   }
 
 
@@ -288,62 +99,15 @@ export default {
     }
   }
 
-  @media (max-width: 1000px) {
-    /*.menu-div {
-        width: 100%;
-    }*/
-  }
-
   @media (max-width: 750px) {
-
-    .font-16 {
-      font-size: 13px;
-    }
-
-    .landing-page-column {
-      width: 100%;
-    }
-
-    .subtitle-images {
-      font-size: 1.5em !important;
+    .home-menu {
+      margin-left: 0 !important;
+      margin-right: 0 !important;
     }
 
     .subtitle {
       font-size: 1.5em !important;
     }
-
-    .subtitle-main {
-      font-size: 0.8em !important;
-    }
-
-    .landing-page-textbox {
-      font-size: 1em !important;
-    }
-  }
-
-  .navbar-subtitle {
-    float: right;
-    margin-left: 20px;
-    font-weight: bold;
-  }
-
-  .landing-page-column {
-    padding: 1%;
-  }
-
-  .landing-page-title-image {
-    max-width: 700px;
-  }
-
-  .landing-page-textbox {
-    font-size: 1.2em;;
-    line-height: 1.6;
-    font-family: Segoe UI, Frutiger, Frutiger Linotype, Dejavu Sans, Helvetica Neue, Arial, sans-serif !important;
-    color: #4c4c4c;
-    margin-left: 5%;
-    padding-right: 2em;
-    padding-top: 2em;
-    padding-bottom: 2em;
   }
 
   .subtitle {
@@ -356,40 +120,12 @@ export default {
     padding-left: 1em;
   }
 
-  .subtitle-images {
-    margin-bottom: 5px;
-    font-weight: 400;
-    font-family: Segoe UI, Frutiger, Frutiger Linotype, Dejavu Sans, Helvetica Neue, Arial, sans-serif !important;
-    color: #455a64;
-    font-size: 2.7em;
-  }
-
-  .landing-page-image {
-    width: 100%;
-  }
-
-  .gm-blau {
-    color: #5C7A96;
-  }
-
-  .logo-navbar {
-    width: 200px;
-    padding: 20px 10px 8px 20px;
-    color: #fff;
-  }
-
   ul.el-menu-demo.el-menu--horizontal.el-menu {
     border-bottom: 0 !important;
   }
 
   .el-menu {
     background-color: #ab8852;
-  }
-
-  .menu {
-    background-color: #ab8852;
-    color: #fff;
-    height: 50px;
   }
 
   .logo-container {
@@ -411,15 +147,6 @@ export default {
     z-index: 1;
   }
 
-  .image {
-    position: relative;
-    width: 100%;
-  }
-
-  .input-area {
-    width: 100%;
-    height: 300px;
-  }
   h2 {
     width: 100%;
     position: absolute;
@@ -432,11 +159,6 @@ export default {
     background: rgba(255, 255, 255, .8);
     font: bold 15px/30px Helvetica, Sans-Serif;
     padding: 10px;
-  }
-
-
-  .image-title {
-    padding: 3px;
   }
 
   .el-row {

@@ -115,7 +115,7 @@ class backend extends Controller
 
         $user = DB::table('gm_users')
             ->where('EML', $request->input("email"))
-            ->select('uid','EML','TYP','creator_uid','data_protection')->get();
+            ->select('uid','EML','TYP','creator_uid','data_protection','api_key')->get();
 
         $request->session()->put('user', $user);
         $request->session()->put('email', $request->input("email"));

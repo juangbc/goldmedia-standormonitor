@@ -25,7 +25,7 @@
             </div>
         </el-menu>
         <div>
-            <el-menu class="el-menu-demo header-menu" mode="horizontal">
+            <el-menu v-if="!loginClicked" class="el-menu-demo header-menu" mode="horizontal">
                 <div class="menu-div">
 
                     <li role="menuitem" aria-haspopup="true" class="mobile-submenus el-submenu navbar-subtitle"
@@ -58,120 +58,117 @@
 
         <span v-if="!loginClicked">
 
-<div class="main-column">
-  <el-row>
-    <el-card>
-        <div class="gm-blau">
-          <div class="subtitle-images main-title">
-            STANDORTMONITOR
-          </div>
-          <div class="subtitle-main">
-            Medien- und Kreativstandorte in Deutschland.<br>
-            Laufend aktualisierte Daten, Fakten, Grafiken interaktiv
-          </div>
-        </div>
-      <div>
-        <img class="top-image" :src="$pngLandingPage"/>
-      </div>
-    </el-card>
-  </el-row>
-
-  <el-row>
+    <div class="main-column">
+      <el-row>
         <el-card>
-          <el-col :sm="24" :xs="24" :md="12" :lg="12">
-            <div class="subtitle">Standortmonitoring <br>als interaktive <br> Datenbank</div>
-          </el-col>
-            <el-col :sm="24" :xs="24" :md="12" :lg="12">
-            <div class="landing-page-textbox">
-              <span>
-              Der Goldmedia Standortmonitor aggregiert erstmals belastbare Zahlen und Fakten für alle Regionen und alle Teilmärkte der
-              gesamten Kreativwirtschaft in Deutschland von der Länderperspektive bis auf die Ebene der Städte und Landkreise.
-
-              Das Kompendium an Daten und Fakten ist als interaktive digitale Datenbank aufbereitet und wird laufend um neue Daten ergänzt. Die gesamtwirtschaftliche
-              Bedeutung der Medien- und Kreativindustrien geht weit über die Kernbranche hinaus und hat Effekte auf vor- und nachgelagerte Märkte.
-              Sie sind Impulsgeber für Innovationen und Wirtschaftswachstum.
-              </span>
+            <div class="gm-blau">
+              <div class="subtitle-images main-title">
+                STANDORTMONITOR
+              </div>
+              <div class="subtitle-main">
+                Medien- und Kreativstandorte in Deutschland.<br>
+                Laufend aktualisierte Daten, Fakten, Grafiken interaktiv
+              </div>
             </div>
-          </el-col>
+          <div>
+            <img class="top-image" :src="$pngLandingPage"/>
+          </div>
         </el-card>
       </el-row>
 
       <el-row>
+            <el-card>
+              <el-col :sm="24" :xs="24" :md="12" :lg="12">
+                <div class="subtitle">Standortmonitoring <br>als interaktive <br> Datenbank</div>
+              </el-col>
+                <el-col :sm="24" :xs="24" :md="12" :lg="12">
+                <div class="landing-page-textbox">
+                  <span>
+                  Der Goldmedia Standortmonitor aggregiert erstmals belastbare Zahlen und Fakten für alle Regionen und alle Teilmärkte der
+                  gesamten Kreativwirtschaft in Deutschland von der Länderperspektive bis auf die Ebene der Städte und Landkreise.
+
+                  Das Kompendium an Daten und Fakten ist als interaktive digitale Datenbank aufbereitet und wird laufend um neue Daten ergänzt. Die gesamtwirtschaftliche
+                  Bedeutung der Medien- und Kreativindustrien geht weit über die Kernbranche hinaus und hat Effekte auf vor- und nachgelagerte Märkte.
+                  Sie sind Impulsgeber für Innovationen und Wirtschaftswachstum.
+                  </span>
+                </div>
+              </el-col>
+            </el-card>
+          </el-row>
+
+          <el-row>
+            <el-card>
+
+                <div class="subtitle-images">Referenzen und Studien</div>
+                <div>
+                  <el-col class="landing-page-column" :span="8">
+                    <a href="https://www.goldmedia.com/aktuelles/info/article/mehr-beschaeftigte-mehr-umsatz-medienstandort-bayern-attraktiv-fuer-alle-branchen/"
+                       target="_blank">
+                      <div class="image">
+                        <img class="landing-page-image" :src="$pngStandortstudieBayern" alt/>
+                        <h2 class="image-title"><span>Medienstandort Bayern 2019</span></h2>
+                      </div>
+                    </a>
+                  </el-col>
+
+                  <el-col class="landing-page-column" :span="8">
+                    <a href="https://www.goldmedia.com/produkt/study/produzentenstudie-2018/" target="_blank">
+                      <div class="image">
+                        <img class="landing-page-image" :src="$pngFilmproduktion" alt/>
+                        <h2 class="image-title"><span>Produzentenstudie 2018</span></h2>
+                      </div>
+                    </a>
+                  </el-col>
+                  <el-col class="landing-page-column" :span="8">
+                    <a href="https://www.goldmedia.com/aktuelles/info/article/audio-visuelle-medien-in-nordrhein-westfalen-standortstudie-fuer-das-mediennetzwerkesnrw/"
+                       target="_blank">
+                      <div class="image">
+                        <img class="landing-page-image" :src="$pngStandortstudieNRW" alt/>
+                        <h2 class="image-title"><span>AV-Medienstandort NRW 2019</span></h2>
+                      </div>
+                    </a>
+                  </el-col>
+                </div>
+
+            </el-card>
+          </el-row>
+
+      <el-row>
         <el-card>
+          <div>
+            <el-col class="landing-page-column" :span="8">
+              <a href="https://wila-rundfunk.de/" target="_blank">
+                <div class="image">
+                  <img class="landing-page-image" :src="$pngStandortstudieWila" alt/>
+                  <h2 class="image-title"><span>Wirtschaftliche</span></h2>
+                  <h2 class="image-title subtitle-image-title"><span>Lage des Rundfunks</span></h2>
+                </div>
+                 </a>
+            </el-col>
+            <el-col class="landing-page-column" :span="8">
+              <a href="https://www.bmwi.de/Redaktion/DE/Publikationen/Studien/bedeutung-filmindustrie.pdf?__blob=publicationFile&v=18"
+                 target="_blank">
+                <div class="image">
+                  <img class="landing-page-image" :src="$pngStandortWirtschaftlicheBedeutungFilm" alt/>
+                  <h2 class="image-title"><span>Wirtschaftliche Bedeutung</span></h2>
+                  <h2 class="image-title subtitle-image-title"><span>der Filmindustrie in Deutschland</span></h2>
+                </div>
+              </a>
+            </el-col>
+            <el-col class="landing-page-column" :span="8">
+              <a href="https://www.goldmedia.com/fileadmin/goldmedia/2015/Studien/2017/Standortstudie_HH/Goldmedia_Standortstudie_FFHSH_2017_dt.pdf"
+                 target="_blank">
+                <div class="image">
+                  <img class="landing-page-image" :src="$pngStandortstudieBewegtbild" alt/>
+                  <h2 class="image-title"><span>Standortstudie: Bewegtbildbranche</span></h2>
+                  <h2 class="image-title subtitle-image-title"><span> in Hamburg und Schleswig-Holstein 2017</span></h2>
+                </div>
+              </a>
 
-            <div class="subtitle-images">Referenzen und Studien</div>
-            <div>
-              <el-col class="landing-page-column" :span="8">
-                <a href="https://www.goldmedia.com/aktuelles/info/article/mehr-beschaeftigte-mehr-umsatz-medienstandort-bayern-attraktiv-fuer-alle-branchen/"
-                   target="_blank">
-                  <div class="image">
-                    <img class="landing-page-image" :src="$pngStandortstudieBayern" alt/>
-                    <h2 class="image-title"><span>Medienstandort Bayern 2019</span></h2>
-                  </div>
-                </a>
-              </el-col>
-
-              <el-col class="landing-page-column" :span="8">
-                <a href="https://www.goldmedia.com/produkt/study/produzentenstudie-2018/" target="_blank">
-                  <div class="image">
-                    <img class="landing-page-image" :src="$pngFilmproduktion" alt/>
-                    <h2 class="image-title"><span>Produzentenstudie 2018</span></h2>
-                  </div>
-                </a>
-              </el-col>
-              <el-col class="landing-page-column" :span="8">
-                <a href="https://www.goldmedia.com/aktuelles/info/article/audio-visuelle-medien-in-nordrhein-westfalen-standortstudie-fuer-das-mediennetzwerkesnrw/"
-                   target="_blank">
-                  <div class="image">
-                    <img class="landing-page-image" :src="$pngStandortstudieNRW" alt/>
-                    <h2 class="image-title"><span>AV-Medienstandort NRW 2019</span></h2>
-                  </div>
-                </a>
-              </el-col>
-            </div>
-
+            </el-col>
+          </div>
         </el-card>
       </el-row>
-
-  <el-row>
-    <el-card>
-
-      <div>
-        <el-col class="landing-page-column" :span="8">
-          <a href="https://wila-rundfunk.de/" target="_blank">
-            <div class="image">
-              <img class="landing-page-image" :src="$pngStandortstudieWila" alt/>
-              <h2 class="image-title"><span>Wirtschaftliche</span></h2>
-              <h2 class="image-title subtitle-image-title"><span>Lage des Rundfunks</span></h2>
-            </div>
-             </a>
-        </el-col>
-        <el-col class="landing-page-column" :span="8">
-          <a href="https://www.bmwi.de/Redaktion/DE/Publikationen/Studien/bedeutung-filmindustrie.pdf?__blob=publicationFile&v=18"
-             target="_blank">
-            <div class="image">
-              <img class="landing-page-image" :src="$pngStandortWirtschaftlicheBedeutungFilm" alt/>
-              <h2 class="image-title"><span>Wirtschaftliche Bedeutung</span></h2>
-              <h2 class="image-title subtitle-image-title"><span>der Filmindustrie in Deutschland</span></h2>
-            </div>
-          </a>
-        </el-col>
-        <el-col class="landing-page-column" :span="8">
-
-          <a href="https://www.goldmedia.com/fileadmin/goldmedia/2015/Studien/2017/Standortstudie_HH/Goldmedia_Standortstudie_FFHSH_2017_dt.pdf"
-             target="_blank">
-            <div class="image">
-              <img class="landing-page-image" :src="$pngStandortstudieBewegtbild" alt/>
-              <h2 class="image-title"><span>Standortstudie: Bewegtbildbranche</span></h2>
-              <h2 class="image-title subtitle-image-title"><span> in Hamburg und Schleswig-Holstein 2017</span></h2>
-            </div>
-          </a>
-
-        </el-col>
-      </div>
-
-    </el-card>
-  </el-row>
 
       <el-row>
         <el-card>
@@ -337,11 +334,11 @@
                 }, config)
                     .then(response => {
                         this.userData = response.data.user_data[0];
-                        //console.log(response.data)
                         this.loginResp = response.data.success;
                         this.$session.start()
                         this.$session.set('email', this.userData.EML)
                         this.$session.set('user_type', this.userData.TYP)
+                        this.$session.set('api_key', this.userData.api_key)
 
                         if (this.loginResp === true) {
                             this.$router.push({'name': 'home'})
@@ -465,7 +462,6 @@
     }
 
     .beta-container span {
-        /*font-size: 0.9em;*/
         font-size: 10px !important;
         margin-top: 10px !important;
     }
@@ -516,10 +512,6 @@
 
     .landing-page-column {
         padding: 1%;
-    }
-
-    .landing-page-title-image {
-        max-width: 700px;
     }
 
     .landing-page-textbox {

@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import loginPage from '../components/login'
 import passwordReset from '../components/password-reset'
 import changePassword from '../components/change-password'
+import passwordRecovery from '../components/password-recovery'
 import main from '../components/main'
 import userManagement from '../components/user-management'
 import disclaimer from '../components/pages/disclaimer'
@@ -43,7 +44,6 @@ import navbar from '../components/utils/navbar'
 import home from '../components/pages/home'
 import datenschutz from '../components/pages/datenschutz'
 
-
 Vue.use(Router)
 
 export default new Router(
@@ -67,6 +67,11 @@ export default new Router(
                 path: '/password-reset',
                 name: 'passwordReset',
                 component: passwordReset
+            },
+            {
+                path: '/password-recovery',
+                name: 'passwordRecovery',
+                component: passwordRecovery
             },
             {
                 path: '/about',

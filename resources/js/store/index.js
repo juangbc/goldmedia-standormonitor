@@ -1,21 +1,16 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import Axios from 'axios'
 
 Vue.use(Vuex);
 
 export const store = new Vuex.Store({
     state: {
         bundesland :  "",
-        year: "",
         markt: ""
     },
     getters : {
         bundesland : state => {
             return state.bundesland;
-        },
-        year : state => {
-            return state.year;
         },
         markt : state => {
             return state.markt;
@@ -120,30 +115,6 @@ export const store = new Vuex.Store({
             }
         },
 
-    set_year : (state,key) => {
-    switch (key) {
-        case 0 :
-            state.year = ""
-            break;
-        case 1 :
-            state.year = "2013"
-            break;
-        case 2 :
-            state.year = "2014"
-            break;
-        case 3 :
-            state.year = "2015"
-            break;
-        case 4 :
-            state.year = "2016"
-            break;
-        case 5 :
-            state.year = "2017"
-            break;
-
-        default: state.year = "2017"
-    }
-},
     },
     actions:{
     },

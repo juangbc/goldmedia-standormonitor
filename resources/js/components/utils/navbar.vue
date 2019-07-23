@@ -199,6 +199,21 @@
             padding-left: 0.3em;
             padding-top: 1.2em;
         }
+
+
+        .font-16 {
+            font-size: 13px;
+        }
+
+        .navbar-subtitle {
+            margin-left: 10px;
+            padding: unset !important;
+        }
+
+        .menu-div {
+            margin-left: 15%;
+            height: 30px;
+        }
     }
 
     .container-flex2 {
@@ -255,23 +270,6 @@
         background: #fff !important;
     }
 
-    @media (max-width: 750px) {
-
-        .font-16 {
-            font-size: 13px;
-        }
-
-        .navbar-subtitle {
-            margin-left: 10px;
-            padding: unset !important;
-        }
-
-        .menu-div {
-            margin-left: 15%;
-            height: 30px;
-        }
-    }
-
     .navbar-subtitle {
         float: right;
         font-weight: 600;
@@ -293,7 +291,6 @@
     }
 
     .beta-container span {
-        /*font-size: 0.9em;*/
         font-size: 10px !important;
         margin-top: 10px !important;
     }

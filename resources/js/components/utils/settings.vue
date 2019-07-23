@@ -19,17 +19,6 @@
         </el-select>
       </div>
       <div class="top10">
-        <h4 class="bot10">Nach Jahr filtern</h4>
-        <el-select v-model="defaultSettings.year" placeholder="Select">
-          <el-option
-                  v-for="item in $year"
-                  :key="item.key"
-                  :label="item.caption"
-                  :value="item.key">
-          </el-option>
-        </el-select>
-      </div>
-      <div class="top10">
         <h4 class="bot10">Nach Markt Filtern</h4>
         <el-select v-model="defaultSettings.markt" placeholder="Select">
           <el-option
@@ -57,10 +46,7 @@ export default {
 data() {
   return {
     defaultSettings: {
-      expanded: true,
-      dates: [null, null],
       bundesland:  0,
-      year : 5,
       markt : 0,
       admin: null,
       market: null,
@@ -70,7 +56,6 @@ data() {
   methods: {
     saveChanges() {
       this.$store.commit('set_bundesland', this.defaultSettings.bundesland)
-      this.$store.commit('set_year', this.defaultSettings.year)
       this.$store.commit('set_markt', this.defaultSettings.markt)
 
     },

@@ -94,14 +94,6 @@ Vue.prototype.$markt = [
     {"caption": "Werbemarkt", "short": "RP", "key": 11}
 ]
 
-Vue.prototype.$year = [
-    {"caption": "2013", "key": 1},
-    {"caption": "2014", "key": 2},
-    {"caption": "2015", "key": 3},
-    {"caption": "2016", "key": 4},
-    {"caption": "2017", "key": 5},
-]
-
 const app = new Vue({
     el: '#app',
     store,

@@ -2,7 +2,7 @@
   <div>
     <div class="sidebar">
       <el-aside width="240px">
-        <el-menu :router="true" :default-active="activeLink" :unique-opened="true"
+        <el-menu class="main-menu" :router="true" :default-active="activeLink" :unique-opened="true"
                  background-color="#393d49"
                  text-color="#e0e0e0"
                  active-text-color="#eac166">
@@ -44,7 +44,6 @@
             </el-menu-item-group>
           </el-submenu>
 
-
           <el-submenu index="5">
             <template slot="title"><i class="fa fa-tv fa-fw "></i><span class="sidebar-title">Branchen</span></template>
             <el-menu-item-group>
@@ -57,7 +56,7 @@
             </el-menu-item-group>
           </el-submenu>
 
-          <el-submenu index="6">
+          <el-submenu index="6" v-if="this.$session.get('user_type') === 1">
             <template slot="title"><i class="fa fa-chart-pie fa-fw"></i><span class="sidebar-title">User</span>
             </template>
             <el-menu-item-group>

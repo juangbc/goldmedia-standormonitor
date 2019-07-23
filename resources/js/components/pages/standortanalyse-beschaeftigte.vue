@@ -23,8 +23,7 @@
                     width: "100%",
                     height: "100%",
                     'Bundesland': "",
-                    'Teilmärkte' : "",
-                    'YEAR(Jahr)' : ""
+                    'Teilmärkte' : ""
                 }
             }
         },
@@ -37,11 +36,6 @@
 
                 if (this.$store.getters.markt.length > 0) {
                     this.options['Teilmärkte'] = this.$store.getters.markt;
-                }
-
-
-                if (this.$store.getters.year.length > 0) {
-                    this.options['YEAR(Jahr)'] = this.$store.getters.year;
                 }
 
                 this.viz = new tableau.Viz(this.$refs.tableau, this.url, this.options)
