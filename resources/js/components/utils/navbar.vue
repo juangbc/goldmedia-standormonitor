@@ -48,18 +48,38 @@
         <div>
             <el-menu class="el-menu-demo header-menu" mode="horizontal">
                 <div class="menu-div">
-
                     <li role="menuitem" aria-haspopup="true" class="mobile-submenus el-submenu navbar-subtitle"
                         tabindex="0">
-                        <router-link class="font-16 dark-blue" :to="{ name: 'about'}">
-                            About
+                        <router-link class="font-16 dark-blue" :to="{ name: 'methoden'}">
+                            Methoden
                         </router-link>
                     </li>
 
                     <li role="menuitem" aria-haspopup="true" class="mobile-submenus el-submenu navbar-subtitle"
                         tabindex="0">
-                        <router-link class="font-16 dark-blue" :to="{ name: 'cases'}">
-                            Cases
+                        <router-link class="font-16 dark-blue" :to="{ name: 'faq'}">
+                            Faq
+                        </router-link>
+                    </li>
+
+                    <li role="menuitem" aria-haspopup="true" class="mobile-submenus el-submenu navbar-subtitle"
+                        tabindex="0">
+                        <router-link class="font-16 dark-blue" :to="{ name: 'disclaimer'}">
+                            Disclaimer
+                        </router-link>
+                    </li>
+
+                    <li role="menuitem" aria-haspopup="true" class="mobile-submenus el-submenu navbar-subtitle"
+                        tabindex="0">
+                        <router-link class="font-16 dark-blue" :to="{ name: 'impressum'}">
+                            Impressum
+                        </router-link>
+                    </li>
+
+                    <li role="menuitem" aria-haspopup="true" class="mobile-submenus el-submenu navbar-subtitle"
+                        tabindex="0">
+                        <router-link class="font-16 dark-blue" :to="{ name: 'kontakt'}">
+                            Kontakt
                         </router-link>
                     </li>
 

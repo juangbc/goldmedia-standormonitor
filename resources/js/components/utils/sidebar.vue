@@ -16,10 +16,10 @@
           </el-menu-item>
 
           <el-submenu index="2">
-            <template slot="title"><i class="fa fa-eye fa-fw "></i><span class="sidebar-title">Standort</span></template>
+            <template slot="title"><i class="fa fa-eye fa-fw "></i><span class="sidebar-title">Standortanalyse</span></template>
             <el-menu-item-group>
-              <el-menu-item index="1" :route="{'name':'standortanalyse-basisdaten'}">Basisdaten</el-menu-item>
-              <el-menu-item index="2" :route="{'name':'standortanalyse-beschaeftigte'}">Beschäftigte</el-menu-item>
+              <el-menu-item index="1" :route="{'name':'standortanalyse-beschaeftigte'}">Beschäftigte: Übersicht</el-menu-item>
+              <el-menu-item index="2" :route="{'name':'standortanalyse-beschaeftigte-analyse'}">Beschäftigte: Analyse</el-menu-item>
               <el-menu-item index="3" :route="{'name':'standortanalyse-umsaetze'}">Umsätze</el-menu-item>
               <el-menu-item index="4" :route="{'name':'standortanalyse-unternehmen'}">Unternehmen</el-menu-item>
             </el-menu-item-group>
@@ -37,26 +37,40 @@
           <el-submenu index="4">
             <template slot="title"><i class="fas fa-chart-area"></i><span class="sidebar-title">Vergleiche</span></template>
             <el-menu-item-group>
-              <el-menu-item index="1" :route="{'name':'vergleichsanalyse-bundesvergleich'}">Bundesvergleich</el-menu-item>
-              <el-menu-item index="2" :route="{'name':'vergleichsanalyse-laendervergleich'}">Ländervergleich</el-menu-item>
-              <el-menu-item index="3" :route="{'name':'vergleichsanalyse-staerken'}">Stärken und Schwächen</el-menu-item>
-              <el-menu-item index="4" :route="{'name':'vergleichsanalyse-zeitreihenvergleich'}">Zeitreihenvergleich</el-menu-item>
+              <el-menu-item index="1" :route="{'name':'vergleichsanalyse-bundesvergleich'}">Bundesvergleich: Übersicht</el-menu-item>
+              <el-menu-item index="2" :route="{'name':'vergleichsanalyse-analyse'}">Bundesvergleich: Analyse</el-menu-item>
+              <el-menu-item index="3" :route="{'name':'vergleichsanalyse-laendervergleich'}">Ländervergleich</el-menu-item>
+              <el-menu-item index="4" :route="{'name':'vergleichsanalyse-staerken'}">Stärken und Schwächen</el-menu-item>
+              <el-menu-item index="5" :route="{'name':'vergleichsanalyse-zeitreihenvergleich-1'}">Zeitreihenvergleich 1</el-menu-item>
+              <el-menu-item index="6" :route="{'name':'vergleichsanalyse-zeitreihenvergleich-2'}">Zeitreihenvergleich 2</el-menu-item>
+              <el-menu-item index="7" :route="{'name':'vergleichsanalyse-zeitreihenvergleich-3'}">Zeitreihenvergleich 3</el-menu-item>
+              <el-menu-item index="8" :route="{'name':'vergleichsanalyse-zeitreihenvergleich-4'}">Zeitreihenvergleich 4</el-menu-item>
             </el-menu-item-group>
           </el-submenu>
 
           <el-submenu index="5">
             <template slot="title"><i class="fa fa-tv fa-fw "></i><span class="sidebar-title">Branchen</span></template>
             <el-menu-item-group>
-              <el-menu-item index="1" :route="{'name':'branchenanalyse-medienbranchen'}">Medienbranchen</el-menu-item>
-              <el-menu-item index="2" :route="{'name':'branchenanalyse-branchenvergleich'}">Branchenvergleich</el-menu-item>
-              <el-menu-item index="3" :route="{'name':'branchenanalyse-rundfunk'}">Rundfunk</el-menu-item>
-              <el-menu-item index="4" :route="{'name':'branchenanalyse-games'}">Games</el-menu-item>
-              <el-menu-item index="5" :route="{'name':'branchenanalyse-vrar'}">VR/AR</el-menu-item>
-              <el-menu-item index="6" :route="{'name':'branchenanalyse-sonderanalyse'}">Sonderanalysen (tba.)</el-menu-item>
+              <el-menu-item index="1" :route="{'name':'branchenanalyse-medienbranchen'}">Medienbranchen: Übersicht</el-menu-item>
+              <el-menu-item index="2" :route="{'name':'branchenanalyse-medienbranchen-analyse'}">Medienbranchen: Analyse</el-menu-item>
+              <el-menu-item index="3" :route="{'name':'branchenanalyse-branchenvergleich-1'}">Branchenvergleich 1</el-menu-item>
+              <el-menu-item index="4" :route="{'name':'branchenanalyse-branchenvergleich'}">Branchenvergleich 2</el-menu-item>
+              <el-menu-item index="5" :route="{'name':'branchenanalyse-branchenvergleich'}">Branchenvergleich 3</el-menu-item>
+              <el-menu-item index="6" :route="{'name':'branchenanalyse-branchenvergleich'}">Branchenvergleich 4</el-menu-item>
             </el-menu-item-group>
           </el-submenu>
 
-          <el-submenu index="6" v-if="this.$session.get('user_type') === 1">
+
+          <el-submenu index="6">
+            <template slot="title"><i class="fa fa-tv fa-fw "></i><span class="sidebar-title">Sonderanalysen</span></template>
+            <el-menu-item-group>
+              <el-menu-item index="1" :route="{'name':'branchenanalyse-rundfunk'}">WiLa Rundfunk</el-menu-item>
+              <el-menu-item index="2" :route="{'name':'branchenanalyse-games'}">Games tba.</el-menu-item>
+              <el-menu-item index="3" :route="{'name':'branchenanalyse-vrar'}">VR/AR tba.</el-menu-item>
+            </el-menu-item-group>
+          </el-submenu>
+
+          <el-submenu index="7" v-if="this.$session.get('user_type') === 1">
             <template slot="title"><i class="fa fa-chart-pie fa-fw"></i><span class="sidebar-title">User</span>
             </template>
             <el-menu-item-group>
@@ -70,16 +84,6 @@
 
         </el-menu>
 
-        <div class="sidebar-bot footer-sidebar">
-          <div class="top20 font-sidebar">
-            <a href="mailto:research@goldmedia.de">Contact</a> |
-            <router-link :to="{ name: 'faq'}">FAQ</router-link>
-            |
-            <router-link :to="{ name: 'disclaimer'}">Disclaimer</router-link>
-            |
-            <router-link :to="{ name: 'impressum'}">Impressum</router-link>
-          </div>
-        </div>
       </el-aside>
     </div>
   </div>

@@ -14,20 +14,28 @@ import zeitreihenanalyseUmsaetze from '../components/pages/zeitreihenanalyse-ums
 import zeitreihenanalyseUnternehmen from '../components/pages/zeitreihenanalyse-unternehmen'
 
 import vergleichsanalyseBundesvergleich from '../components/pages/vergleichsanalyse-bundesvergleich'
+import vergleichsanalyseBundesvergleichAnalyse from '../components/pages/vergleichsanalyse-bundesvergleich-analyse'
 import vergleichsanalyseLaendervergleich from '../components/pages/vergleichsanalyse-laendervergleich'
 import vergleichsanalyseStaerken from '../components/pages/vergleichsanalyse-staerken'
-import vergleichsanalyseZeitreihenvergleich from '../components/pages/vergleichsanalyse-zeitreihenvergleich'
+import vergleichsanalyseZeitreihenvergleich1 from '../components/pages/vergleichsanalyse-zeitreihenvergleich-1'
+import vergleichsanalyseZeitreihenvergleich2 from '../components/pages/vergleichsanalyse-zeitreihenvergleich-2'
+import vergleichsanalyseZeitreihenvergleich3 from '../components/pages/vergleichsanalyse-zeitreihenvergleich-3'
+import vergleichsanalyseZeitreihenvergleich4 from '../components/pages/vergleichsanalyse-zeitreihenvergleich-4'
 
 import standortanalyseUnternehmen from '../components/pages/standortanalyse-unternehmen'
 import standortanalyseUmsaetze from '../components/pages/standortanalyse-umsaetze'
-import standortanalyseBeschaeftigte from '../components/pages/standortanalyse-beschaeftigte'
-import standortanalyseBasisdaten from '../components/pages/standortanalyse-basisdaten'
+import standortanalyseBeschaeftigteUebersicht from '../components/pages/standortanalyse-beschaeftigte-uebersicht'
+import standortanalyseBeschaeftigteAnalyse from '../components/pages/standortanalyse-beschaeftigte-analyse'
 
 import branchenanalyseSonderanalyse from '../components/pages/branchenanalyse-sonderanalyse'
 import branchenanalyseRundfunk from '../components/pages/branchenanalyse-rundfunk'
 import branchenanalyseMedienbranchen from '../components/pages/branchenanalyse-medienbranchen'
+import branchenanalyseMedienbranchenAnalyse from '../components/pages/branchenanalyse-medienbranchen-analyse'
 import branchenanalyseGames from '../components/pages/branchenanalyse-games'
-import branchenanalyseBranchenvergleich from '../components/pages/branchenanalyse-branchenvergleich'
+import branchenanalyseBranchenvergleich1 from '../components/pages/branchenanalyse-branchenvergleich-1'
+import branchenanalyseBranchenvergleich2 from '../components/pages/branchenanalyse-branchenvergleich-2'
+import branchenanalyseBranchenvergleich3 from '../components/pages/branchenanalyse-branchenvergleich-3'
+import branchenanalyseBranchenvergleich4 from '../components/pages/branchenanalyse-branchenvergleich-4'
 import branchenanalyseVRAR from '../components/pages/branchenanalyse-vrar'
 
 import contact from '../components/pages/contact'
@@ -153,9 +161,24 @@ export default new Router(
                         component: {template: '<router-view/>'},
                         children: [
                             {
-                                path: '/branchenanalyse/branchenvergleich',
-                                name: 'branchenanalyse-branchenvergleich',
-                                component: branchenanalyseBranchenvergleich
+                                path: '/branchenanalyse/branchenvergleich-1',
+                                name: 'branchenanalyse-branchenvergleich-1',
+                                component: branchenanalyseBranchenvergleich1
+                            },
+                            {
+                                path: '/branchenanalyse/branchenvergleich-2',
+                                name: 'branchenanalyse-branchenvergleich-2',
+                                component: branchenanalyseBranchenvergleich2
+                            },
+                            {
+                                path: '/branchenanalyse/branchenvergleich-3',
+                                name: 'branchenanalyse-branchenvergleich-3',
+                                component: branchenanalyseBranchenvergleich3
+                            },
+                            {
+                                path: '/branchenanalyse/branchenvergleich-4',
+                                name: 'branchenanalyse-branchenvergleich-4',
+                                component: branchenanalyseBranchenvergleich4
                             },
                             {
                                 path: '/branchenanalyse/games',
@@ -172,6 +195,11 @@ export default new Router(
                                 path: '/branchenanalyse/medienbranchen',
                                 name: 'branchenanalyse-medienbranchen',
                                 component: branchenanalyseMedienbranchen
+                            },
+                            {
+                                path: '/branchenanalyse/medienbranchen-analyse',
+                                name: 'branchenanalyse-medienbranchen-analyse',
+                                component: branchenanalyseMedienbranchenAnalyse
                             },
                             {
                                 path: '/branchenanalyse/rundfunk',
@@ -191,14 +219,14 @@ export default new Router(
                         component: {template: '<router-view/>'},
                         children: [
                             {
-                                path: '/standortanalyse/basisdaten',
-                                name: 'standortanalyse-basisdaten',
-                                component: standortanalyseBasisdaten
+                                path: '/standortanalyse/beschaeftigte-analyse',
+                                name: 'standortanalyse-beschaeftigte-analyse',
+                                component: standortanalyseBeschaeftigteAnalyse
                             },
                             {
                                 path: '/standortanalyse/beschaeftigte',
                                 name: 'standortanalyse-beschaeftigte',
-                                component: standortanalyseBeschaeftigte
+                                component: standortanalyseBeschaeftigteUebersicht
                             },
                             {
                                 path: '/standortanalyse/umsaetze',
@@ -223,6 +251,11 @@ export default new Router(
                                 component: vergleichsanalyseBundesvergleich
                             },
                             {
+                                path: '/vergleichsanalyse/bundesvergleich-analyse',
+                                name: 'vergleichsanalyse-bundesvergleich-analyse',
+                                component: vergleichsanalyseBundesvergleichAnalyse
+                            },
+                            {
                                 path: '/vergleichsanalyse/laendervergleich',
                                 name: 'vergleichsanalyse-laendervergleich',
                                 component: vergleichsanalyseLaendervergleich
@@ -233,9 +266,24 @@ export default new Router(
                                 component: vergleichsanalyseStaerken
                             },
                             {
-                                path: '/vergleichsanalyse/zeitreihenvergleich',
-                                name: 'vergleichsanalyse-zeitreihenvergleich',
-                                component: vergleichsanalyseZeitreihenvergleich
+                                path: '/vergleichsanalyse/zeitreihenvergleich-1',
+                                name: 'vergleichsanalyse-zeitreihenvergleich-1',
+                                component: vergleichsanalyseZeitreihenvergleich1
+                            },
+                            {
+                                path: '/vergleichsanalyse/zeitreihenvergleich-2',
+                                name: 'vergleichsanalyse-zeitreihenvergleich-2',
+                                component: vergleichsanalyseZeitreihenvergleich2
+                            },
+                            {
+                                path: '/vergleichsanalyse/zeitreihenvergleich-3',
+                                name: 'vergleichsanalyse-zeitreihenvergleich-3',
+                                component: vergleichsanalyseZeitreihenvergleich3
+                            },
+                            {
+                                path: '/vergleichsanalyse/zeitreihenvergleich-4',
+                                name: 'vergleichsanalyse-zeitreihenvergleich-4',
+                                component: vergleichsanalyseZeitreihenvergleich4
                             },
                         ]
                     },

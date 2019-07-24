@@ -225,11 +225,7 @@ export default {
   computed: {
     userTypeCurrent: function () {
       return 1
-      // this.$parent.$parent.$parent.$parent.sessionData.userType * 1
     }
-    /* sessionData: function () {
-      return this.$parent.$parent.$parent.$parent.sessionData
-    } */
   },
   mounted () {
     this.getNormalUserList()
