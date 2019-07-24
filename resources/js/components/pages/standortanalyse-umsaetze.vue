@@ -17,15 +17,13 @@
             return {
                 loading: true,
                 url: "https://eu-west-1a.online.tableau.com/t/goldmedia/views/" +
-                    "StandortmonitorV_1_7_TP/2_3Umsatz?iframeSizedToWindow=true&:embed=y&:showAppBanner=false&:display_count=no&:showVizHome=no&:origin=viz_share_link",
+                    "StandortmonitorV_4_0/2_4Umstze?iframeSizedToWindow=true&:embed=y&:showAppBanner=false&:display_count=no&:showVizHome=no&:origin=viz_share_link",
                 options: {
                     hideTabs: true,
                     width: "100%",
                     height: "100%",
                     'Bundesland': "",
                     'Teilmärkte' : "",
-                    'YEAR(Jahr)' : "",
-                    'Aggregation1' : "Unterhaltungselektronik"
                 }
             }
         },
@@ -38,11 +36,6 @@
 
                 if (this.$store.getters.markt.length > 0) {
                     this.options['Teilmärkte'] = this.$store.getters.markt;
-                }
-
-
-                if (this.$store.getters.year.length > 0) {
-                    this.options['YEAR(Jahr)'] = this.$store.getters.year;
                 }
 
                 this.viz = new tableau.Viz(this.$refs.tableau, this.url, this.options)

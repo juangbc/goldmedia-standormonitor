@@ -38,7 +38,7 @@ import branchenanalyseBranchenvergleich3 from '../components/pages/branchenanaly
 import branchenanalyseBranchenvergleich4 from '../components/pages/branchenanalyse-branchenvergleich-4'
 import branchenanalyseVRAR from '../components/pages/branchenanalyse-vrar'
 
-import contact from '../components/pages/contact'
+import kontakt from '../components/pages/kontakt'
 import about from '../components/pages/about'
 import cases from '../components/pages/cases'
 import methodik from '../components/pages/methodik'
@@ -87,11 +87,6 @@ export default new Router(
                 component: about
             },
             {
-                path: '/contact',
-                name: 'contact',
-                component: contact
-            },
-            {
                 path: '/cases',
                 name: 'cases',
                 component: cases
@@ -129,7 +124,11 @@ export default new Router(
                         component: datenschutz,
                         meta: {auth: true}
                     },
-
+                    {
+                        path: '/kontakt',
+                        name: 'kontakt',
+                        component: kontakt
+                    },
                     {
                         path: '/',
                         name: 'user',

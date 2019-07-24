@@ -2,7 +2,7 @@
     <div id="app">
         <vue-headful
                 title="Standortmonitor"
-                description="VOD Ratings dashboard"
+                description="Goldmedia Standortmonitor"
         />
 
         <link rel="stylesheet"

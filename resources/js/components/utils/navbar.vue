@@ -49,35 +49,35 @@
             <el-menu class="el-menu-demo header-menu" mode="horizontal">
                 <div class="menu-div">
                     <li role="menuitem" aria-haspopup="true" class="mobile-submenus el-submenu navbar-subtitle"
-                        tabindex="0">
+                        tabindex="1">
                         <router-link class="font-16 dark-blue" :to="{ name: 'methoden'}">
                             Methoden
                         </router-link>
                     </li>
 
                     <li role="menuitem" aria-haspopup="true" class="mobile-submenus el-submenu navbar-subtitle"
-                        tabindex="0">
+                        tabindex="2">
                         <router-link class="font-16 dark-blue" :to="{ name: 'faq'}">
                             Faq
                         </router-link>
                     </li>
 
                     <li role="menuitem" aria-haspopup="true" class="mobile-submenus el-submenu navbar-subtitle"
-                        tabindex="0">
+                        tabindex="3">
                         <router-link class="font-16 dark-blue" :to="{ name: 'disclaimer'}">
                             Disclaimer
                         </router-link>
                     </li>
 
                     <li role="menuitem" aria-haspopup="true" class="mobile-submenus el-submenu navbar-subtitle"
-                        tabindex="0">
+                        tabindex="4">
                         <router-link class="font-16 dark-blue" :to="{ name: 'impressum'}">
                             Impressum
                         </router-link>
                     </li>
 
                     <li role="menuitem" aria-haspopup="true" class="mobile-submenus el-submenu navbar-subtitle"
-                        tabindex="0">
+                        tabindex="5">
                         <router-link class="font-16 dark-blue" :to="{ name: 'kontakt'}">
                             Kontakt
                         </router-link>
@@ -269,6 +269,7 @@
         height: 50px;
         float: left;
         margin-left: 1%;
+        display: flex;
     }
 
     .menu {
@@ -291,7 +292,6 @@
     }
 
     .navbar-subtitle {
-        float: right;
         font-weight: 600;
         padding: .7em 1em;
     }

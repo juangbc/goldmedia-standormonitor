@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="top20" v-show="!passwordChanged" style="width: 60%">
+    <div class="top20 container" v-show="!passwordChanged">
       <el-form :model="ruleForm2" status-icon :rules="rules2" ref="ruleForm2" label-width="120px" class="demo-ruleForm">
         <el-form-item label="Old password" prop="password">
           <el-input type="password" autocomplete="off" v-model="ruleForm2.password">
@@ -124,5 +124,9 @@ export default {
 </script>
 
 <style scoped>
+
+  .container {
+    width: 60%;
+  }
 
 </style>
