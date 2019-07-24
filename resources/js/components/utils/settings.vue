@@ -1,13 +1,67 @@
 <template>
   <div>
-  <div>Profile settings</div>
+
+    <el-card
+            title="Default profile settings"
+            :visible.sync="defaultSettings.expanded"
+            width="400px">
+      <div>Hier können Sie Filter für Ihre Profil-Einstellungen speichern.</div>
+
+      <div class="top10">
+        <h4 class="bot10">Nach Bundesland filtern</h4>
+        <el-select v-model="defaultSettings.bundesland" placeholder="Select">
+          <el-option
+                  v-for="item in $bundesland"
+                  :key="item.key"
+                  :label="item.caption"
+                  :value="item.key">
+          </el-option>
+        </el-select>
+      </div>
+      <div class="top10">
+        <h4 class="bot10">Nach Markt Filtern</h4>
+        <el-select v-model="defaultSettings.markt" placeholder="Select">
+          <el-option
+                  v-for="item in $markt"
+                  :key="item.key"
+                  :label="item.caption"
+                  :value="item.key">
+          </el-option>
+        </el-select>
+      </div>
+
+      <div class="top20">
+        <el-button @click="saveChanges" type="primary"><i class="fa fa-save"></i> Save settings</el-button>
+      </div>
+
+    </el-card>
   </div>
+
 </template>
 
 <script>
 import axios from 'axios'
 
 export default {
+data() {
+  return {
+    defaultSettings: {
+      bundesland:  0,
+      markt : 0,
+      admin: null,
+      market: null,
+    }
+  }
+},
+  methods: {
+    saveChanges() {
+      this.$store.commit('set_bundesland', this.defaultSettings.bundesland)
+      this.$store.commit('set_markt', this.defaultSettings.markt)
+
+    },
+  },
+  mounted() {
+  }
   }
 </script>
 

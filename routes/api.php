@@ -21,7 +21,7 @@ Route::get('get-user-names','backend@getUserNames');
 
 Route::post('delete-user','backend@deleteUser');
 
-Route::post('add-user','backend@addUser');
+Route::get('add-user','backend@addUser');
 
 Route::get('/','backend@index');
 
@@ -32,3 +32,7 @@ Route::get('logout','backend@logout');
 Route::get('change-password','backend@changePassword');
 
 Route::get('load-user','backend@loadUser');
+
+Route::get('update-text','backend@updateText');
+
+Route::get('get-text','backend@getText');

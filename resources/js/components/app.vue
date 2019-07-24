@@ -19,7 +19,6 @@
 
 <script>
     import VueSession from 'vue-session'
-    import axios from 'axios'
     import Vue from 'vue'
 
     Vue.use(VueSession)
@@ -36,19 +35,6 @@
                 },
             }
         },
-        methods: {
-           logout () {
-                axios
-                  .get(this.$apiBase + 'api/user.php?mode=logout')
-                  .then(response => {
-                    this.$router.push({'name': 'loginPage'})
-                  })
-               },
-        },
-        mounted () {
-        },
-        watch: {
-        }
     }
 
 </script>
@@ -205,6 +191,16 @@
     .font-13 {
         font-size: 13px;
     }
+
+
+    .font-16 {
+        font-size: 16px;
+    }
+
+    .font-20 {
+        font-size: 20px;
+    }
+
 
     li:not(:first-child) > .el-menu-item-group__title {
         padding-top: 15px;

@@ -1,28 +1,34 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
-use Illuminate\Database\Eloquent\Model;
-use App\User;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Collection;
-use Illuminate\Support\Fluent;
-
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Hash;
 
 class backend extends Controller
 {
 
     public function getUserNames(Request $request)
     {
-
         $users = DB::table('gm_users')
-            ->where('deleted',0)
+            ->where([
+                ['deleted',0],
+                ['TYP', '<>', 1]])
             ->orderBy('uid','asc')
             ->select('uid','EML','TYP')->get();
 
         return response(['users' =>$users],200);
+    }
+
+    public function getText(Request $request)
+    {
+        $text = DB::table('home_texts')
+            ->where([
+                ['uid',1]])
+            ->select('text')->get();
+
+        return response($text,200);
     }
 
     public function deleteUser(Request $request)
@@ -37,40 +43,20 @@ class backend extends Controller
 
     public function addUser(Request $request)
     {
+
+        if( $request->input("userType") == 1){
+            $response['message'] = "can't create admin user";
+            return $response;
+        }
+        $password = Str::random(8);
+        $hashed_password = Hash::make($password);
+        $api_key = Str::random(12);
+
         $users = DB::table('gm_users')->insert([
-            ['email' => $request->input("email"), 'uid' => 999],
+            ['EML' => $request->input("email"),'HSH' => $hashed_password,'TYP' => $request->input("userType"),"api_key" => $api_key,'creator_uid' => "1"]
         ]);
 
-        return response(['users' =>$users],200);
-    }
-
-    public function loadUser(Request $request)
-    {
-        //session(['key' => 'value']);
-        //return $request->session()->get('user');
-        //$response =  json_decode(json_encode($usi), True);
-        //echo json_encode($response);
-        //exit;
-        /*$user = DB::table('gm_users')
-            ->where('EML',  $request->input("email"))
-            ->select('uid','EML','TYP','HSH','creator_uid','data_protection')->get();*/
-        //$response['user_data'] =  json_decode(json_encode($user), True);
-        //echo json_encode($response);
-        /*if (strlen($request->input("email")) >= 1) {
-            $request->session()->put('email', $request->input("email"));
-        }*/
-        //$request->session()->put('user', $user);
-//        echo $request->session()->get('user');
-        //$data = $request->session()->all();
-        $data = session('key');
-        echo json_encode($data);
-        //print_r()
-        //dd(session('user'));
-        //var_dump('user');
-        //var_dump()
-        //echo "hh";
-        //response(['success' =>$success,'user' =>$user],200);
-        exit;
+        return response(['users' =>$users, 'password' =>$password], 200);
     }
 
     public function isPasswordCorrect(Request $request) {
@@ -91,7 +77,7 @@ class backend extends Controller
     }
 
     public function changePassword(Request $request) {
-        $response = ["success" => false];
+        $response = [];
 
         $hash = DB::table('gm_users')
             ->where('EML', $request->input("email"))
@@ -106,6 +92,7 @@ class backend extends Controller
             $response['success'] = true;
         }
         else {
+            $response['success'] = false;
             return json_encode($response);
         }
 
@@ -116,10 +103,10 @@ class backend extends Controller
         $hashOldString = implode(' ', $array[0]);
         $hashNew = password_hash($request->input("password"), PASSWORD_BCRYPT);
 
-        DB::table('gm_users')->where('HSH',$hashOldString)->update(['HSH'=>$hashNew]);
+        $changed = DB::table('gm_users')->where('HSH',$hashOldString)->update(['HSH'=>$hashNew]);
+        $response['pw_updated'] = $changed;
 
         return json_encode($response);
-
     }
 
     public function login(Request $request)
@@ -128,7 +115,7 @@ class backend extends Controller
 
         $user = DB::table('gm_users')
             ->where('EML', $request->input("email"))
-            ->select('uid','EML','TYP','creator_uid','data_protection')->get();
+            ->select('uid','EML','TYP','creator_uid','data_protection','api_key')->get();
 
         $request->session()->put('user', $user);
         $request->session()->put('email', $request->input("email"));
@@ -151,12 +138,19 @@ class backend extends Controller
         exit;
     }
 
+    public function updateText(Request $request) {
+
+        $text = $request->input("text");
+
+        DB::table('home_texts')
+            ->where('uid', 1)
+            ->update(['text' => $text]);
+
+        exit;
+    }
+
     public function logout(Request $request) {
-       // $request->session()->flush();
+       $request->session()->flush();
     }
 
-
-    public function index() {
-        echo "data lad";
-    }
 }

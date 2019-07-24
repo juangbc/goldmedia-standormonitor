@@ -8,7 +8,6 @@
         <div id="app">
             <div id="tableau" ref="tableau"></div>
         </div>
-
     </div>
 </template>
 
@@ -18,26 +17,35 @@
             return {
                 loading: true,
                 url: "https://eu-west-1a.online.tableau.com/t/goldmedia/views/" +
-                    "StandortmonitorV_1_2/Dashboard2?iframeSizedToWindow=true&:embed=y&:showAppBanner=false&:display_count=no&:showVizHome=no&:origin=viz_share_link",
+                    "StandortmonitorV_1_7_TP/2_2Beschftigte2?iframeSizedToWindow=true&:embed=y&:showAppBanner=false&:display_count=no&:showVizHome=no&:origin=viz_share_link",
                 options: {
                     hideTabs: true,
                     width: "100%",
-                    height: "100%"
+                    height: "100%",
+                    'Bundesland': "",
+                    'Teilmärkte' : ""
                 }
             }
         },
         methods: {
-            initViz: function () {
-                let viz = new tableau.Viz(this.$refs.tableau, this.url, this.options);
+            initViz() {
 
+                if (this.$store.getters.bundesland.length > 0) {
+                    this.options['Bundesland'] = this.$store.getters.bundesland;
+                }
+
+                if (this.$store.getters.markt.length > 0) {
+                    this.options['Teilmärkte'] = this.$store.getters.markt;
+                }
+
+                this.viz = new tableau.Viz(this.$refs.tableau, this.url, this.options)
                 this.loading = false;
-            }
+            },
         },
         mounted: function () {
-            this.initViz()
+            this.initViz();
         }
     }
-
 </script>
 
 <style scoped>

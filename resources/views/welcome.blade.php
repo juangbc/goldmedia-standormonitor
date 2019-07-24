@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -28,11 +29,16 @@
                 height: 100%;
             }
 
-        </style>
+            .content {
+                height: 100%;
+            }
 
-        <script type="text/javascript" src="https://public.tableau.com/javascripts/api/tableau-2.min.js"></script>
+        </style>
+        <script async src="//cdn.iframe.ly/embed.js" charset="utf-8"></script>
+        <script src='https://code.jquery.com/jquery-2.2.4.min.js'></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js'></script>
+        <script src='https://cdn.jsdelivr.net/alasql/0.3/alasql.min.js'></script>
         <script src="https://online.tableau.com/javascripts/api/tableau-2.min.js"></script>
-        <script type='text/javascript' src='https://eu-west-1a.online.tableau.com/javascripts/api/viz_v1.js'></script>
     </head>
     <body>
             <div class="content">
@@ -42,9 +48,7 @@
                 </div>
             </div>
 
-
             <script src="{{ asset('js/app.js') }}"></script>
-
 
     </body>
 </html>
