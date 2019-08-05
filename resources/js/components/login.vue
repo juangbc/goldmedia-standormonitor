@@ -67,8 +67,8 @@
                                     STANDORTMONITOR
                                 </div>
                                 <div class="subtitle-main">
-                                    Medien- und Kreativstandorte in Deutschland.<br>
-                                    Laufend aktualisierte Daten, Fakten, Grafiken interaktiv
+                                    MEDIEN- UND KREATIVSTANDORTE IN DEUTSCHLAND.<br>
+                                    LAUFEND AKTUALISIERTE DATEN, FAKTEN, GRAFIKEN INTERAKTIV
                                 </div>
                             </div>
                             <div>
@@ -97,7 +97,7 @@
 
                         <el-card class="card">
 
-                            <div class="subtitle-images">Referenzen und Studien</div>
+                            <div class="subtitle">Referenzen und Studien</div>
                             <div class="padding-left-box">
                                 <el-col class="landing-page-column" :span="8">
                                     <a href="https://www.goldmedia.com/aktuelles/info/article/mehr-beschaeftigte-mehr-umsatz-medienstandort-bayern-attraktiv-fuer-alle-branchen/"
@@ -440,8 +440,8 @@
         font-weight: bold;
         margin-bottom: 5px;
         font-family: Segoe UI, Frutiger, Frutiger Linotype, Dejavu Sans, Helvetica Neue, Arial, sans-serif !important;
-        color: #455a64;
-        font-size: 2.7em;
+        color: #000000;
+        font-size: 48px;
     }
 
     .login-button {
@@ -459,10 +459,10 @@
     }
 
     .subtitle-main {
-        float: left;
-        width: 100%;
-        font-size: 1.3em;
+        font-size: 18px;
+        color: #333333;
         font-family: Segoe UI, Frutiger, Frutiger Linotype, Dejavu Sans, Helvetica Neue, Arial, sans-serif !important;
+
     }
 
     .login-card {
@@ -539,10 +539,6 @@
             width: 100%;
         }
 
-        .subtitle-images {
-            font-size: 1em !important;
-        }
-
         .subtitle {
             font-size: 1em !important;
         }
@@ -584,26 +580,16 @@
 
     .subtitle {
         margin-bottom: 5px;
-        font-weight: 400;
+        font-weight: bold;
         font-family: Segoe UI, Frutiger, Frutiger Linotype, Dejavu Sans, Helvetica Neue, Arial, sans-serif !important;
-        color: #455a64;
-        font-size: 2.5em;
+        color: #333333;
+        font-size: 36px;
         padding-top: 5px;
         padding-left: 15px;
     }
 
     .subtitle-color{
         color: #455a64;
-    }
-
-    .subtitle-images {
-        margin-bottom: 5px;
-        font-weight: 400;
-        font-family: Segoe UI, Frutiger, Frutiger Linotype, Dejavu Sans, Helvetica Neue, Arial, sans-serif !important;
-        color: #455a64;
-        font-size: 2.5em;
-        padding-top: 5px;
-        padding-left: 15px;
     }
 
     .padding-left-box{
