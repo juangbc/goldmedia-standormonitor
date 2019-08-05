@@ -31,6 +31,7 @@ import branchenanalyseSonderanalyse from '../components/pages/branchenanalyse-so
 import branchenanalyseRundfunk from '../components/pages/branchenanalyse-rundfunk'
 import branchenanalyseMedienbranchen from '../components/pages/branchenanalyse-medienbranchen'
 import branchenanalyseMedienbranchenAnalyse from '../components/pages/branchenanalyse-medienbranchen-analyse'
+import branchenanalyseMedienbranchenWZAnalyse from '../components/pages/branchenanalyse-medienbranchen-WZ-analyse'
 import branchenanalyseGames from '../components/pages/branchenanalyse-games'
 import branchenanalyseBranchenvergleich1 from '../components/pages/branchenanalyse-branchenvergleich-1'
 import branchenanalyseBranchenvergleich2 from '../components/pages/branchenanalyse-branchenvergleich-2'
@@ -98,11 +99,6 @@ export default new Router(
                 component: methodik
             },
             {
-                path: '/platform/pages/faq',
-                name: 'faq',
-                component: faq
-            },
-            {
                 path: '/',
                 name: 'main',
                 component: main,
@@ -148,6 +144,11 @@ export default new Router(
                                 meta: {auth: true}
                             }
                         ]
+                    },
+                    {
+                        path: '/platform/pages/faq',
+                        name: 'faq',
+                        component: faq
                     },
                     {
                         path: '/overview',
@@ -199,6 +200,11 @@ export default new Router(
                                 path: '/branchenanalyse/medienbranchen-analyse',
                                 name: 'branchenanalyse-medienbranchen-analyse',
                                 component: branchenanalyseMedienbranchenAnalyse
+                            },
+                            {
+                                path: '/branchenanalyse/medienbranchen-WZ-analyse',
+                                name: 'branchenanalyse-medienbranchen-WZ-analyse',
+                                component: branchenanalyseMedienbranchenWZAnalyse
                             },
                             {
                                 path: '/branchenanalyse/rundfunk',

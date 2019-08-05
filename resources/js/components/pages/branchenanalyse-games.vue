@@ -1,13 +1,6 @@
 <template>
     <div>
-        <el-table
-                v-show="loading"
-                v-loading="loading"
-                style="width: 100%">
-        </el-table>
-        <div id="app">
-            <div id="tableau" ref="tableau"></div>
-        </div>
+TBA.
 
     </div>
 </template>

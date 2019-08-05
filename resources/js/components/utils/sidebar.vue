@@ -38,7 +38,7 @@
             <template slot="title"><i class="fas fa-chart-area"></i><span class="sidebar-title">Vergleiche</span></template>
             <el-menu-item-group>
               <el-menu-item index="1" :route="{'name':'vergleichsanalyse-bundesvergleich'}">Bundesvergleich: Übersicht</el-menu-item>
-              <el-menu-item index="2" :route="{'name':'vergleichsanalyse-analyse'}">Bundesvergleich: Analyse</el-menu-item>
+              <el-menu-item index="2" :route="{'name':'vergleichsanalyse-bundesvergleich-analyse'}">Bundesvergleich: Analyse</el-menu-item>
               <el-menu-item index="3" :route="{'name':'vergleichsanalyse-laendervergleich'}">Ländervergleich</el-menu-item>
               <el-menu-item index="4" :route="{'name':'vergleichsanalyse-staerken'}">Stärken und Schwächen</el-menu-item>
               <el-menu-item index="5" :route="{'name':'vergleichsanalyse-zeitreihenvergleich-1'}">Zeitreihenvergleich 1</el-menu-item>
@@ -53,10 +53,11 @@
             <el-menu-item-group>
               <el-menu-item index="1" :route="{'name':'branchenanalyse-medienbranchen'}">Medienbranchen: Übersicht</el-menu-item>
               <el-menu-item index="2" :route="{'name':'branchenanalyse-medienbranchen-analyse'}">Medienbranchen: Analyse</el-menu-item>
-              <el-menu-item index="3" :route="{'name':'branchenanalyse-branchenvergleich-1'}">Branchenvergleich 1</el-menu-item>
-              <el-menu-item index="4" :route="{'name':'branchenanalyse-branchenvergleich'}">Branchenvergleich 2</el-menu-item>
-              <el-menu-item index="5" :route="{'name':'branchenanalyse-branchenvergleich'}">Branchenvergleich 3</el-menu-item>
-              <el-menu-item index="6" :route="{'name':'branchenanalyse-branchenvergleich'}">Branchenvergleich 4</el-menu-item>
+              <el-menu-item index="3" :route="{'name':'branchenanalyse-medienbranchen-WZ-analyse'}">Medienbranchen: WZ-Analyse</el-menu-item>
+              <el-menu-item index="4" :route="{'name':'branchenanalyse-branchenvergleich-1'}">Branchenvergleich 1</el-menu-item>
+              <el-menu-item index="5" :route="{'name':'branchenanalyse-branchenvergleich-2'}">Branchenvergleich 2</el-menu-item>
+              <el-menu-item index="6" :route="{'name':'branchenanalyse-branchenvergleich-3'}">Branchenvergleich 3</el-menu-item>
+              <el-menu-item index="7" :route="{'name':'branchenanalyse-branchenvergleich-4'}">Branchenvergleich 4</el-menu-item>
             </el-menu-item-group>
           </el-submenu>
 
