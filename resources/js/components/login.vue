@@ -5,7 +5,7 @@
             <el-row class="no-margin-top menu-bg">
                 <el-col :span="gridSizeBorder"></el-col>
                 <el-col :span="gridSize" :xs="24">
-                    <div class="menu flexbox-nav">
+                    <div class="menu flexbox-nav left10">
                         <div class="logo-box">
                             <div class="logo-navbar float-left" tabindex="0">
                                 <div>
@@ -32,7 +32,7 @@
                 <el-row class="no-margin-top">
                     <el-col :span="gridSizeBorder"></el-col>
                     <el-col :span="gridSize" :xs="24">
-                        <div class="flexbox-nav2">
+                        <div class="flexbox-nav2 left10">
                             <div class="nav2-item">
                                 <router-link :to="{ name: 'about'}">
                                     About

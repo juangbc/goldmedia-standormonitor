@@ -157,6 +157,10 @@
         margin-left: 5px !important;
     }
 
+    .left10{
+        margin-left: 10px;
+    }
+
     .float-left {
         float: left;
     }
