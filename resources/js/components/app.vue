@@ -141,6 +141,14 @@
         margin-top: 5px;
     }
 
+    .top0 {
+        margin-top: 0;
+    }
+
+    .bot0{
+        margin-bottom: 0;
+    }
+
     .right5 {
         margin-right: 5px;
     }
@@ -169,7 +177,7 @@
     }
 
     .no-margin-top {
-        margin-top: 0;
+        margin-top: 0 !important;
     }
 
     .no-margin-bot {
