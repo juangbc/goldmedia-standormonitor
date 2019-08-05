@@ -79,7 +79,7 @@ export default {
 
   .main {
     min-height: 100vh;
-    /*padding: unset !important;*/
+    padding: 0 !important;
     margin-top: 0;
     background-color: #f0f0f0;
   }

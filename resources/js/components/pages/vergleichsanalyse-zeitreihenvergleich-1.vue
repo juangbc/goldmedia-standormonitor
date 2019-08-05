@@ -17,7 +17,7 @@
             return {
                 loading: true,
                 url: "https://eu-west-1a.online.tableau.com/t/goldmedia/views/" +
-                    "StandortmonitorV_4_0/4_5ZeitverlaufBesch_Bevlkerung?iframeSizedToWindow=true&:embed=y&:showAppBanner=false&:display_count=no&:showVizHome=no&:origin=viz_share_link",
+                    "Standortmonitor/4_5ZeitverlaufBesch_Bevlkerung?iframeSizedToWindow=true&:embed=y&:showAppBanner=false&:display_count=no&:showVizHome=no&:origin=viz_share_link",
                 options: {
                     hideTabs: true,
                     width: "100%",
