@@ -36,3 +36,4 @@ Route::get('load-user','backend@loadUser');
 Route::get('update-text','backend@updateText');
 
 Route::get('get-text','backend@getText');
+

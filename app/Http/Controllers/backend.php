@@ -21,16 +21,6 @@ class backend extends Controller
         return response(['users' =>$users],200);
     }
 
-    public function getText(Request $request)
-    {
-        $text = DB::table('home_texts')
-            ->where([
-                ['uid',1]])
-            ->select('text')->get();
-
-        return response($text,200);
-    }
-
     public function deleteUser(Request $request)
     {
 
@@ -41,7 +31,7 @@ class backend extends Controller
         return response(['users' =>$users],200);
     }
 
-    public function addUser(Request $request)
+        public function addUser(Request $request)
     {
 
         if( $request->input("userType") == 1){
@@ -119,6 +109,7 @@ class backend extends Controller
 
         $request->session()->put('user', $user);
         $request->session()->put('email', $request->input("email"));
+        $request->session()->save();
 
         $hash = DB::table('gm_users')
             ->where('EML', $request->input("email"))
@@ -135,21 +126,17 @@ class backend extends Controller
         $response['user_data'] = json_decode(json_encode($user), True);
         echo json_encode($response);
 
-        exit;
-    }
-
-    public function updateText(Request $request) {
-
-        $text = $request->input("text");
-
-        DB::table('home_texts')
-            ->where('uid', 1)
-            ->update(['text' => $text]);
-
-        exit;
     }
 
     public function logout(Request $request) {
+
+        //echo json_encode(session('email'));
+        //exit;
+        //echo json_encode($request->session()->all());
+        //exit;
+        //echo json_encode($request->session()->exists('goldmedia'));
+        //exit;
+
        $request->session()->flush();
     }
 

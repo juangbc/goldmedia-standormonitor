@@ -145,7 +145,7 @@ export default {
         if (this.userType !== 0 || this.userType !== 2) {
           this.userType = 2;
         }
-        axios.request(this.$apiBase + 'add-user', {
+        axios.request(this.$apiBase + 'api/add-user', {
           method: 'get',
           params: {
             email: this.ruleForm2.email,
@@ -173,7 +173,7 @@ export default {
         }
       }
       console.log(email);
-      axios.request(this.$apiBase + 'delete-user', {
+      axios.request(this.$apiBase + 'api/delete-user', {
         method: 'post',
         params: {
           email: email,
@@ -189,7 +189,7 @@ export default {
           'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
         }
       }
-      let $apiBase = this.$apiBase +'get-user-names';
+      let $apiBase = this.$apiBase +'api/get-user-names';
       axios.get($apiBase, {
         //mode: 'list'
       }, config)

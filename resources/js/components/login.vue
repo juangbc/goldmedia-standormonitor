@@ -204,6 +204,17 @@
         </el-card>
       </el-row>
 
+        <el-row>
+    <el-card>
+      <el-col :sm="24" :xs="24" :md="24" :lg="24">
+        <div class="landing-page-textbox">
+         <iframe width="100%" height="1000px" :src="this.url"
+                 frameborder="0" allowfullscreen></iframe>
+        </div>
+      </el-col>
+    </el-card>
+  </el-row>
+
   <el-row>
     <el-card class="bottom-card">
           <el-col :sm="24" :xs="24" :md="12" :lg="12">
@@ -219,9 +230,9 @@
     </el-card>
   </el-row>
 
+
     </div>
     </span>
-
         <div v-if="loginClicked" class="login">
             <div class="login-card">
                 <el-row>
@@ -294,6 +305,7 @@
                 }
             }
             return {
+                url: this.$apiBase+"wordpress/latest-posts-landing/",
                 loginClicked: false,
                 userData: {},
                 userMail: '',
@@ -326,7 +338,7 @@
                         'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
                     }
                 }
-                axios.get(this.$apiBase + 'login', {
+                axios.get(this.$apiBase + 'api/login', {
                     params: {
                         email: this.ruleForm2.username,
                         password: this.ruleForm2.password
@@ -339,7 +351,6 @@
                         this.$session.set('email', this.userData.EML)
                         this.$session.set('user_type', this.userData.TYP)
                         this.$session.set('api_key', this.userData.api_key)
-console.log(this.$session.getAll());
 
 
                         if (this.loginResp === true) {

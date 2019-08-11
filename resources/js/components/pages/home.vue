@@ -12,7 +12,7 @@
           <div>
             <el-card>
               <el-col :sm="24" :xs="24" :md="24" :lg="24">
-                <iframe width="100%" height="1000px" src="http://localhost/gmapi/public/wordpress/" frameborder="0" allowfullscreen></iframe>
+                <iframe width="100%" height="1000px" :src=this.wpurl frameborder="0" allowfullscreen></iframe>
               </el-col>
             </el-card>
           </div>
@@ -30,6 +30,7 @@ export default {
   },
   data() {
     return {
+      wpurl: this.$apiBase + "/wordpress/latest-posts-home/",
       loading: false,
       userIsAdmin: false,
       loaded: {

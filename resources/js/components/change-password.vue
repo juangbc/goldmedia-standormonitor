@@ -97,7 +97,7 @@ export default {
         }
       }
       if (this.ruleForm2.pass === this.ruleForm2.checkPass) {
-        axios.get(this.$apiBase + 'change-password', {
+        axios.get(this.$apiBase + 'api/change-password', {
           params: {
             email: this.$session.get('email'),
             oldPassword: this.ruleForm2.password,

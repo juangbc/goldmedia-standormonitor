@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import loginPage from '../components/login'
-import passwordReset from '../components/password-reset'
 import changePassword from '../components/change-password'
 import passwordRecovery from '../components/password-recovery'
 import main from '../components/main'
@@ -49,6 +48,7 @@ import methoden from '../components/pages/methoden'
 
 import overview from '../components/pages/overview'
 import settings from '../components/utils/settings'
+import footer from '../components/utils/footer'
 import navbar from '../components/utils/navbar'
 import home from '../components/pages/home'
 import datenschutz from '../components/pages/datenschutz'
@@ -73,9 +73,9 @@ export default new Router(
                 component: navbar
             },
             {
-                path: '/password-reset',
-                name: 'passwordReset',
-                component: passwordReset
+                path: '/',
+                name: 'footer',
+                component: footer
             },
             {
                 path: '/password-recovery',

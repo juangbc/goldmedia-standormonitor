@@ -47,17 +47,18 @@ Vue.use(require('vue-moment'))
 Vue.component('navbar', navbar)
 Vue.component('sidebar', sidebar)
 
-Vue.prototype.$apiBase1 = 'http://localhost/gmapi/public/images/'
-Vue.prototype.$apiBase = 'http://localhost/gmapi/public/api/'
-Vue.prototype.$pngPath = Vue.prototype.$apiBase1+"GM-Logo-weiß - Kopie.png"
-Vue.prototype.$pngLandingPage = Vue.prototype.$apiBase1+"pngLandingPage2.png"
-Vue.prototype.$pngFilmproduktion = Vue.prototype.$apiBase1+"filmproduktion.jpg"
-Vue.prototype.$pngStandortstudieBayern = Vue.prototype.$apiBase1+"Standortstudie_Bayern.jpg"
-Vue.prototype.$pngStandortstudieNRW = Vue.prototype.$apiBase1+"Standortstudie_NRW.jpg"
-Vue.prototype.$pngStandortstudieBewegtbild = Vue.prototype.$apiBase1+"Bewegtbild_Studie.jpg"
-Vue.prototype.$pngStandortstudieWila = Vue.prototype.$apiBase1+"Wirtschaftliche_Lage_Rundfunk.jpg"
-Vue.prototype.$pngStandortWirtschaftlicheBedeutungFilm = Vue.prototype.$apiBase1+"Wirtschaftliche_Bedeutung_Filmindustrie.jpg"
-Vue.prototype.$pngLandingPageBackground = Vue.prototype.$apiBase1+"landingPageBackgroundImage.png"
+Vue.prototype.$apiBase = 'http://localhost/gmapi/public/'
+Vue.prototype.$apiBaseResources =  Vue.prototype.$apiBase + 'images/'
+Vue.prototype.$apiBaseBackend = Vue.prototype.$apiBase + 'api/'
+Vue.prototype.$pngPath = Vue.prototype.$apiBaseResources+"GM-Logo-weiß - Kopie.png"
+Vue.prototype.$pngLandingPage = Vue.prototype.$apiBaseResources+"pngLandingPage2.png"
+Vue.prototype.$pngFilmproduktion = Vue.prototype.$apiBaseResources+"filmproduktion.jpg"
+Vue.prototype.$pngStandortstudieBayern = Vue.prototype.$apiBaseResources+"Standortstudie_Bayern.jpg"
+Vue.prototype.$pngStandortstudieNRW = Vue.prototype.$apiBaseResources+"Standortstudie_NRW.jpg"
+Vue.prototype.$pngStandortstudieBewegtbild = Vue.prototype.$apiBaseResources+"Bewegtbild_Studie.jpg"
+Vue.prototype.$pngStandortstudieWila = Vue.prototype.$apiBaseResources+"Wirtschaftliche_Lage_Rundfunk.jpg"
+Vue.prototype.$pngStandortWirtschaftlicheBedeutungFilm = Vue.prototype.$apiBaseResources+"Wirtschaftliche_Bedeutung_Filmindustrie.jpg"
+Vue.prototype.$pngLandingPageBackground = Vue.prototype.$apiBaseResources+"landingPageBackgroundImage.png"
 
 Vue.prototype.$bundesland = [
     {"caption": "Alle", "short": "Not filtered", "key": 0},

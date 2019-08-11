@@ -79,10 +79,6 @@
             </el-menu-item-group>
           </el-submenu>
 
-          <el-menu-item index="methoden" :route="{'name':'methoden'}">
-            <i class="fa fa-chart-pie fa-fw"></i><span class="sidebar-title">Methoden</span>
-          </el-menu-item>
-
         </el-menu>
 
       </el-aside>

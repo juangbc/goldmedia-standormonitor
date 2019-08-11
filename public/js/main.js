@@ -14,7 +14,6 @@ import Element from 'element-ui'
 import vueHeadful from 'vue-headful'
 import StarRating from 'vue-star-rating'
 import '../theme/index.css'
-import { i18n } from './plugins/i18n.js'
 import vueLoader from 'vue-loader'
 // Vue.prototype.$pngPath = Vue.prototype+'admin/components/vod-logo.png'
 // C:\Users\Juan\WebstormProjects\standortmonitor\src\components\vod-logo.png

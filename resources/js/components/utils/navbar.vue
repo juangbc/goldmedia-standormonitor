@@ -26,7 +26,8 @@
                     </span>
                 </div>
             </li>
-            <li role="menuitem" aria-haspopup="true" class="mobile-submenus el-submenu flex-item2">
+            <li role="menuitem" aria-haspopup="true" class="mobile-submenus el-submenu flex-item2" style="min-width: 150px;
+    max-width: 50%;">
                 <el-dropdown @command="handleRoute">
                     <div class="el-submenu__title">
                     <span>
@@ -36,8 +37,7 @@
                     </span>
                     </div>
                     <el-dropdown-menu slot="dropdown">
-                        <el-dropdown-item command="changePassword"><i class="fa fa-key"></i> Change password
-                        </el-dropdown-item>
+                        <el-dropdown-item command="changePassword"><i class="fa fa-key"></i> Change password</el-dropdown-item>
                         <el-dropdown-item command="logout"><i class="fa fa-sign-out-alt"></i> Logout</el-dropdown-item>
                     </el-dropdown-menu>
                 </el-dropdown>
@@ -45,48 +45,6 @@
 </div>
         </ul>
 
-        <div>
-            <el-menu class="el-menu-demo header-menu" mode="horizontal">
-                <div class="menu-div">
-                    <li role="menuitem" aria-haspopup="true" class="mobile-submenus el-submenu navbar-subtitle"
-                        tabindex="1">
-                        <router-link class="font-16 dark-blue" :to="{ name: 'methoden'}">
-                            Methoden
-                        </router-link>
-                    </li>
-
-                    <li role="menuitem" aria-haspopup="true" class="mobile-submenus el-submenu navbar-subtitle"
-                        tabindex="2">
-                        <router-link class="font-16 dark-blue" :to="{ name: 'faq'}">
-                            Faq
-                        </router-link>
-                    </li>
-
-                    <li role="menuitem" aria-haspopup="true" class="mobile-submenus el-submenu navbar-subtitle"
-                        tabindex="3">
-                        <router-link class="font-16 dark-blue" :to="{ name: 'disclaimer'}">
-                            Disclaimer
-                        </router-link>
-                    </li>
-
-                    <li role="menuitem" aria-haspopup="true" class="mobile-submenus el-submenu navbar-subtitle"
-                        tabindex="4">
-                        <router-link class="font-16 dark-blue" :to="{ name: 'impressum'}">
-                            Impressum
-                        </router-link>
-                    </li>
-
-                    <li role="menuitem" aria-haspopup="true" class="mobile-submenus el-submenu navbar-subtitle"
-                        tabindex="5">
-                        <router-link class="font-16 dark-blue" :to="{ name: 'kontakt'}">
-                            Kontakt
-                        </router-link>
-                    </li>
-
-                </div>
-            </el-menu>
-
-        </div>
     </div>
 </template>
 <script>
@@ -128,7 +86,7 @@
             },
             logout() {
                 axios
-                    .get(this.$apiBase + 'logout')
+                    .get(this.$apiBase + 'api/logout')
                     .then(response => {
                         this.$router.push({'name': 'loginPage'});
                     })
@@ -145,16 +103,7 @@
             },
             close() {
                 this.defaultSettings.expanded = false
-                this.$notify({
-                    title: 'Success',
-                    message: 'Successfully saved default settings',
-                    type: 'success'
-                })
-
             },
-            saveChanges() {
-
-            }
         },
         mounted() {
             this.userMail = this.$session.get('email');

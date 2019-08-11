@@ -31,7 +31,9 @@
       </div>
 
       <div class="top20">
-        <el-button @click="saveChanges" type="primary"><i class="fa fa-save"></i> Save settings</el-button>
+        <el-button @click="saveChanges" type="primary"><i class="fa fa-save"></i> Save settings
+        </el-button>
+        <el-button size="mini" v-if="changesSaved" type="success" icon="el-icon-check" circle></el-button>
       </div>
 
     </el-card>
@@ -45,11 +47,13 @@ import axios from 'axios'
 export default {
 data() {
   return {
+    changesSaved: false,
     defaultSettings: {
       bundesland:  0,
       markt : 0,
       admin: null,
       market: null,
+
     }
   }
 },
@@ -57,10 +61,15 @@ data() {
     saveChanges() {
       this.$store.commit('set_bundesland', this.defaultSettings.bundesland)
       this.$store.commit('set_markt', this.defaultSettings.markt)
-
+      this.$notify({
+        title: 'Success',
+        message: 'Successfully saved default settings',
+        type: 'success'
+      })
     },
   },
   mounted() {
+this.changesSaved = false;
   }
   }
 </script>
