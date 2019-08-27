@@ -169,6 +169,10 @@
         float: right;
     }
 
+    .align-center{
+        text-align: center;
+    }
+
     .clearfix {
         display: block;
         content: "";

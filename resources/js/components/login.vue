@@ -64,7 +64,7 @@
                                     LAUFEND AKTUALISIERTE DATEN, FAKTEN, GRAFIKEN INTERAKTIV
                                 </div>
                             </div>
-                            <div>
+                            <div class="align-center">
                                 <img class="top-image" :src="$pngLandingPage"/>
                             </div>
                         </el-card>
