@@ -5,11 +5,11 @@
         <ul role="menubar" class="el-menu-demo el-menu--horizontal el-menu menu container-flex">
             <div class="element-flex">
                 <div class="container-logo">
-                <div class="logo-navbar navbar float-left" tabindex="0">
-                <router-link :to="{ name: 'home'}">
-                    <img class="full-width" :src="$pngPath"/>
-                </router-link>
-            </div>
+                    <div class="logo-navbar navbar float-left" tabindex="0">
+                        <router-link :to="{ name: 'home'}">
+                            <img class="full-width" :src="$pngPath"/>
+                        </router-link>
+                    </div>
                 </div>
                 <div class="beta-container">
             <span>
@@ -17,76 +17,26 @@
             </span>
                 </div>
             </div>
-<div class="element-flex container-flex container-flex2">
-    <li role="menuitem" aria-haspopup="true" class="mobile-submenus el-submenu flex-item2">
-                <div @click="openSettings" class="el-submenu__title">
-                    <span>
-                    <i class="white fa fa-fw fa-cog black"></i>
-                    <span class="white"> Default settings</span>
-                    </span>
-                </div>
-            </li>
-            <li role="menuitem" aria-haspopup="true" class="mobile-submenus el-submenu flex-item2">
-                <el-dropdown @command="handleRoute">
-                    <div class="el-submenu__title">
+            <div class="element-flex container-flex container-flex2">
+                <li role="menuitem" aria-haspopup="true" class="mobile-submenus el-submenu flex-item2">
+                    <el-dropdown @command="handleRoute">
+                        <div class="el-submenu__title">
                     <span>
                       <i class="fa fa-fw fa-user"></i>
                       <span class="white">{{userMail}}</span>
                       <i class="el-submenu__icon-arrow el-icon-arrow-down"></i>
                     </span>
-                    </div>
-                    <el-dropdown-menu slot="dropdown">
-                        <el-dropdown-item command="changePassword"><i class="fa fa-key"></i> Change password
-                        </el-dropdown-item>
-                        <el-dropdown-item command="logout"><i class="fa fa-sign-out-alt"></i> Logout</el-dropdown-item>
-                    </el-dropdown-menu>
-                </el-dropdown>
-            </li>
-</div>
+                        </div>
+                        <el-dropdown-menu slot="dropdown">
+                            <el-dropdown-item command="changePassword"><i class="fa fa-key"></i> Change password
+                            </el-dropdown-item>
+                            <el-dropdown-item command="logout"><i class="fa fa-sign-out-alt"></i> Logout
+                            </el-dropdown-item>
+                        </el-dropdown-menu>
+                    </el-dropdown>
+                </li>
+            </div>
         </ul>
-
-        <div>
-            <el-menu class="el-menu-demo header-menu" mode="horizontal">
-                <div class="menu-div">
-                    <li role="menuitem" aria-haspopup="true" class="mobile-submenus el-submenu navbar-subtitle"
-                        tabindex="1">
-                        <router-link class="font-16 dark-blue" :to="{ name: 'methoden'}">
-                            Methoden
-                        </router-link>
-                    </li>
-
-                    <li role="menuitem" aria-haspopup="true" class="mobile-submenus el-submenu navbar-subtitle"
-                        tabindex="2">
-                        <router-link class="font-16 dark-blue" :to="{ name: 'faq'}">
-                            Faq
-                        </router-link>
-                    </li>
-
-                    <li role="menuitem" aria-haspopup="true" class="mobile-submenus el-submenu navbar-subtitle"
-                        tabindex="3">
-                        <router-link class="font-16 dark-blue" :to="{ name: 'disclaimer'}">
-                            Disclaimer
-                        </router-link>
-                    </li>
-
-                    <li role="menuitem" aria-haspopup="true" class="mobile-submenus el-submenu navbar-subtitle"
-                        tabindex="4">
-                        <router-link class="font-16 dark-blue" :to="{ name: 'impressum'}">
-                            Impressum
-                        </router-link>
-                    </li>
-
-                    <li role="menuitem" aria-haspopup="true" class="mobile-submenus el-submenu navbar-subtitle"
-                        tabindex="5">
-                        <router-link class="font-16 dark-blue" :to="{ name: 'kontakt'}">
-                            Kontakt
-                        </router-link>
-                    </li>
-
-                </div>
-            </el-menu>
-
-        </div>
     </div>
 </template>
 <script>
@@ -132,9 +82,6 @@
                     .then(response => {
                         this.$router.push({'name': 'loginPage'});
                     })
-            },
-            openSettings() {
-                this.$router.push({'name': 'settings'})
             },
             handleRoute(route) {
                 if (route === 'logout') {
@@ -220,7 +167,6 @@
             padding-top: 1.2em;
         }
 
-
         .font-16 {
             font-size: 13px;
         }
@@ -265,6 +211,7 @@
         transition: transform .3s, -webkit-transform .3s;
         font-size: 12px;
     }
+
     .menu-div {
         height: 50px;
         float: left;

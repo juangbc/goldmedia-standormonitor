@@ -48,7 +48,6 @@ import impressum from '../components/pages/impressum'
 import methoden from '../components/pages/methoden'
 
 import overview from '../components/pages/overview'
-import settings from '../components/utils/settings'
 import navbar from '../components/utils/navbar'
 import home from '../components/pages/home'
 import datenschutz from '../components/pages/datenschutz'
@@ -107,12 +106,6 @@ export default new Router(
                         path: '/home',
                         name: 'home',
                         component: home
-                    },
-                    {
-                        path: '/settings',
-                        name: 'settings',
-                        component: settings,
-                        meta: {auth: true}
                     },
                     {
                         path: '/datenschutz',
