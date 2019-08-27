@@ -17,13 +17,13 @@
             return {
                 loading: true,
                 url: "https://eu-west-1a.online.tableau.com/t/goldmedia/views/" +
-                    "Standortmonitor/5_6MedienbranchenVergleich-Umstze?iframeSizedToWindow=true&:embed=y&:showAppBanner=false&:display_count=no&:showVizHome=no&:origin=viz_share_link",
+                    "Standortmonitor/6_1bersicht?iframeSizedToWindow=true&:embed=y&:showAppBanner=false&:display_count=no&:showVizHome=no&:origin=viz_share_link",
                 options: {
                     hideTabs: true,
                     width: "100%",
                     height: "100%",
                     'Bundesland': "",
-                    'Teilmärkte' : "",
+                    'Teilmärkte' : ""
                 }
             }
         },

@@ -17,7 +17,7 @@
             return {
                 loading: true,
                 url: "https://eu-west-1a.online.tableau.com/t/goldmedia/views/" +
-                    "Standortmonitor/5_7MedienbranchenVergleichSteuerpflichtige?iframeSizedToWindow=true&:embed=y&:showAppBanner=false&:display_count=no&:showVizHome=no&:origin=viz_share_link",
+                    "Standortmonitor/2_5BeschftigteAnalyse?iframeSizedToWindow=true&:embed=y&:showAppBanner=false&:display_count=no&:showVizHome=no&:origin=viz_share_link",
                 options: {
                     hideTabs: true,
                     width: "100%",

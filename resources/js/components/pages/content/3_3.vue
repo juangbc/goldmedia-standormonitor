@@ -17,7 +17,7 @@
             return {
                 loading: true,
                 url: "https://eu-west-1a.online.tableau.com/t/goldmedia/views/" +
-                    "Standortmonitor/4_1Bundesvergleichbersicht?iframeSizedToWindow=true&:embed=y&:showAppBanner=false&:display_count=no&:showVizHome=no&:origin=viz_share_link",
+                    "Standortmonitor/3_3Beschftigte?iframeSizedToWindow=true&:embed=y&:showAppBanner=false&:display_count=no&:showVizHome=no&:origin=viz_share_link",
                 options: {
                     hideTabs: true,
                     width: "100%",

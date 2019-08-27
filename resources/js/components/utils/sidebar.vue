@@ -12,102 +12,66 @@
                     </el-menu-item>
 
                     <el-submenu index="2">
-                        <template slot="title"><i class="fa fa-eye fa-fw "></i><span class="sidebar-title">Standortanalyse</span>
+                        <template slot="title"><i class="fa fa-chart-area fa-fw"></i><span class="sidebar-title">Standorte</span>
                         </template>
                         <el-menu-item-group>
-                            <el-menu-item index="1" :route="{'name':'standortanalyse-beschaeftigte'}">Beschäftigte:
-                                Übersicht
-                            </el-menu-item>
-                            <el-menu-item index="2" :route="{'name':'standortanalyse-beschaeftigte-analyse'}">
-                                Beschäftigte: Analyse
-                            </el-menu-item>
-                            <el-menu-item index="3" :route="{'name':'standortanalyse-umsaetze'}">Umsätze</el-menu-item>
-                            <el-menu-item index="4" :route="{'name':'standortanalyse-unternehmen'}">Unternehmen
-                            </el-menu-item>
+                            <el-menu-item index="1" :route="{'name':'2_1'}">Umsätze</el-menu-item>
+                            <el-menu-item index="2" :route="{'name':'2_2'}">Unternehmen</el-menu-item>
+                            <el-menu-item index="3" :route="{'name':'2_3'}">Beschäftigte Landkreise</el-menu-item>
+                            <el-menu-item index="4" :route="{'name':'2_4'}">Beschäftigte Teilmärkte</el-menu-item>
+                            <el-menu-item index="5" :route="{'name':'2_5'}">Beschäftigte Analyse</el-menu-item>
+                            <el-menu-item index="6" :route="{'name':'2_6'}">Stärken und Schwächen</el-menu-item>
                         </el-menu-item-group>
                     </el-submenu>
 
                     <el-submenu index="3">
-                        <template slot="title"><i class="fa far fa-calendar-times fa-fw"></i><span
+                        <template slot="title"><i class="fa fa-chart-area fa-fw"></i><span
                             class="sidebar-title">Zeitreihen</span></template>
                         <el-menu-item-group>
-                            <el-menu-item index="1" :route="{'name':'zeitreihenanalyse-beschaeftigte'}">Beschäftigte
-                            </el-menu-item>
-                            <el-menu-item index="2" :route="{'name':'zeitreihenanalyse-umsaetze'}">Umsätze
-                            </el-menu-item>
-                            <el-menu-item index="3" :route="{'name':'zeitreihenanalyse-unternehmen'}">Unternehmen
-                            </el-menu-item>
+                            <el-menu-item index="1" :route="{'name':'3_1'}">Umsätze</el-menu-item>
+                            <el-menu-item index="2" :route="{'name':'3_2'}">Unternehmen</el-menu-item>
+                            <el-menu-item index="3" :route="{'name':'3_3'}">Beschäftigte</el-menu-item>
                         </el-menu-item-group>
                     </el-submenu>
 
                     <el-submenu index="4">
-                        <template slot="title"><i class="fas fa-chart-area"></i><span
-                            class="sidebar-title">Vergleiche</span></template>
+                        <template slot="title"><i class="fa fa-fw fa-chart-area"></i><span
+                            class="sidebar-title">Bundesvergleich</span></template>
                         <el-menu-item-group>
-                            <el-menu-item index="1" :route="{'name':'vergleichsanalyse-bundesvergleich'}">
-                                Bundesvergleich: Übersicht
-                            </el-menu-item>
-                            <el-menu-item index="2" :route="{'name':'vergleichsanalyse-bundesvergleich-analyse'}">
-                                Bundesvergleich: Analyse
-                            </el-menu-item>
-                            <el-menu-item index="3" :route="{'name':'vergleichsanalyse-laendervergleich'}">
-                                Ländervergleich
-                            </el-menu-item>
-                            <el-menu-item index="4" :route="{'name':'vergleichsanalyse-staerken'}">Stärken und
-                                Schwächen
-                            </el-menu-item>
-                            <el-menu-item index="5" :route="{'name':'vergleichsanalyse-zeitreihenvergleich-1'}">
-                                Zeitreihenvergleich 1
-                            </el-menu-item>
-                            <el-menu-item index="6" :route="{'name':'vergleichsanalyse-zeitreihenvergleich-2'}">
-                                Zeitreihenvergleich 2
-                            </el-menu-item>
-                            <el-menu-item index="7" :route="{'name':'vergleichsanalyse-zeitreihenvergleich-3'}">
-                                Zeitreihenvergleich 3
-                            </el-menu-item>
-                            <el-menu-item index="8" :route="{'name':'vergleichsanalyse-zeitreihenvergleich-4'}">
-                                Zeitreihenvergleich 4
-                            </el-menu-item>
+                            <el-menu-item index="1" :route="{'name':'4_1'}">Übersicht</el-menu-item>
+                            <el-menu-item index="2" :route="{'name':'4_2'}">Bundesvergleich</el-menu-item>
+                            <el-menu-item index="3" :route="{'name':'4_3'}">Detailanalyse</el-menu-item>
                         </el-menu-item-group>
                     </el-submenu>
 
                     <el-submenu index="5">
-                        <template slot="title"><i class="fa fa-tv fa-fw "></i><span
-                            class="sidebar-title">Branchen</span></template>
+                        <template slot="title"><i class="fa fa-chart-area fa-fw "></i><span
+                            class="sidebar-title">4-Länder Vergleich</span></template>
                         <el-menu-item-group>
-                            <el-menu-item index="1" :route="{'name':'branchenanalyse-medienbranchen'}">Medienbranchen:
-                                Übersicht
-                            </el-menu-item>
-                            <el-menu-item index="2" :route="{'name':'branchenanalyse-medienbranchen-analyse'}">
-                                Medienbranchen: Analyse
-                            </el-menu-item>
-                            <el-menu-item index="3" :route="{'name':'branchenanalyse-medienbranchen-WZ-analyse'}">
-                                Medienbranchen: WZ-Analyse
-                            </el-menu-item>
-                            <el-menu-item index="4" :route="{'name':'branchenanalyse-branchenvergleich-1'}">
-                                Branchenvergleich 1
-                            </el-menu-item>
-                            <el-menu-item index="5" :route="{'name':'branchenanalyse-branchenvergleich-2'}">
-                                Branchenvergleich 2
-                            </el-menu-item>
-                            <el-menu-item index="6" :route="{'name':'branchenanalyse-branchenvergleich-3'}">
-                                Branchenvergleich 3
-                            </el-menu-item>
-                            <el-menu-item index="7" :route="{'name':'branchenanalyse-branchenvergleich-4'}">
-                                Branchenvergleich 4
-                            </el-menu-item>
+                            <el-menu-item index="1" :route="{'name':'5_1'}">Umsätze</el-menu-item>
+                            <el-menu-item index="2" :route="{'name':'5_2'}">Unternehmen</el-menu-item>
+                            <el-menu-item index="3" :route="{'name':'5_3'}">Beschäftigte</el-menu-item>
                         </el-menu-item-group>
                     </el-submenu>
 
-
                     <el-submenu index="6">
-                        <template slot="title"><i class="fa fa-tv fa-fw "></i><span
-                            class="sidebar-title">Sonderanalysen</span></template>
+                        <template slot="title"><i class="fa fa-chart-area fa-fw "></i><span
+                            class="sidebar-title">Index-Analysen</span></template>
                         <el-menu-item-group>
-                            <el-menu-item index="1" :route="{'name':'branchenanalyse-rundfunk'}">WiLa Rundfunk
-                            </el-menu-item>
-                            <el-menu-item index="2" :route="{'name':'branchenanalyse-games'}">Games tba.</el-menu-item>
-                            <el-menu-item index="3" :route="{'name':'branchenanalyse-vrar'}">VR/AR tba.</el-menu-item>
+                            <el-menu-item index="1" :route="{'name':'6_1'}">Übersicht</el-menu-item>
+                            <el-menu-item index="2" :route="{'name':'6_2'}">Umsatz pro Beschäftigten</el-menu-item>
+                            <el-menu-item index="3" :route="{'name':'6_3'}">Umsatz pro Unternehmen</el-menu-item>
+                            <el-menu-item index="4" :route="{'name':'6_4'}">Unternehmen pro EW</el-menu-item>
+                            <el-menu-item index="5" :route="{'name':'6_5'}">Beschäftigtenanteil</el-menu-item>
+                        </el-menu-item-group>
+                    </el-submenu>
+
+                    <el-submenu index="special">
+                        <template slot="title"><i class="fa fa-chart-area fa-fw "></i><span
+                            class="sidebar-title">Spezial-Analysen</span></template>
+                        <el-menu-item-group>
+                            <el-menu-item index="1" :route="{'name':'7_1'}">Wettbewerbsanalyse</el-menu-item>
+                            <el-menu-item index="2" :route="{'name':'7_2'}">WZ-Klassen-Analyse</el-menu-item>
                         </el-menu-item-group>
                     </el-submenu>
 

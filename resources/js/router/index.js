@@ -9,35 +9,33 @@ import userManagement from '../components/user-management'
 import disclaimer from '../components/pages/disclaimer'
 import faq from '../components/pages/faq'
 
-import zeitreihenanalyseBeschaeftigte from '../components/pages/zeitreihenanalyse-beschaeftigte'
-import zeitreihenanalyseUmsaetze from '../components/pages/zeitreihenanalyse-umsaetze'
-import zeitreihenanalyseUnternehmen from '../components/pages/zeitreihenanalyse-unternehmen'
+import p2_1 from '../components/pages/content/2_1'
+import p2_2 from '../components/pages/content/2_2'
+import p2_3 from '../components/pages/content/2_3'
+import p2_4 from '../components/pages/content/2_4'
+import p2_5 from '../components/pages/content/2_5'
+import p2_6 from '../components/pages/content/2_6'
 
-import vergleichsanalyseBundesvergleich from '../components/pages/vergleichsanalyse-bundesvergleich'
-import vergleichsanalyseBundesvergleichAnalyse from '../components/pages/vergleichsanalyse-bundesvergleich-analyse'
-import vergleichsanalyseLaendervergleich from '../components/pages/vergleichsanalyse-laendervergleich'
-import vergleichsanalyseStaerken from '../components/pages/vergleichsanalyse-staerken'
-import vergleichsanalyseZeitreihenvergleich1 from '../components/pages/vergleichsanalyse-zeitreihenvergleich-1'
-import vergleichsanalyseZeitreihenvergleich2 from '../components/pages/vergleichsanalyse-zeitreihenvergleich-2'
-import vergleichsanalyseZeitreihenvergleich3 from '../components/pages/vergleichsanalyse-zeitreihenvergleich-3'
-import vergleichsanalyseZeitreihenvergleich4 from '../components/pages/vergleichsanalyse-zeitreihenvergleich-4'
+import p3_1 from '../components/pages/content/3_1'
+import p3_2 from '../components/pages/content/3_2'
+import p3_3 from '../components/pages/content/3_3'
 
-import standortanalyseUnternehmen from '../components/pages/standortanalyse-unternehmen'
-import standortanalyseUmsaetze from '../components/pages/standortanalyse-umsaetze'
-import standortanalyseBeschaeftigteUebersicht from '../components/pages/standortanalyse-beschaeftigte-uebersicht'
-import standortanalyseBeschaeftigteAnalyse from '../components/pages/standortanalyse-beschaeftigte-analyse'
+import p4_1 from '../components/pages/content/4_1'
+import p4_2 from '../components/pages/content/4_2'
+import p4_3 from '../components/pages/content/4_3'
 
-import branchenanalyseSonderanalyse from '../components/pages/branchenanalyse-sonderanalyse'
-import branchenanalyseRundfunk from '../components/pages/branchenanalyse-rundfunk'
-import branchenanalyseMedienbranchen from '../components/pages/branchenanalyse-medienbranchen'
-import branchenanalyseMedienbranchenAnalyse from '../components/pages/branchenanalyse-medienbranchen-analyse'
-import branchenanalyseMedienbranchenWZAnalyse from '../components/pages/branchenanalyse-medienbranchen-WZ-analyse'
-import branchenanalyseGames from '../components/pages/branchenanalyse-games'
-import branchenanalyseBranchenvergleich1 from '../components/pages/branchenanalyse-branchenvergleich-1'
-import branchenanalyseBranchenvergleich2 from '../components/pages/branchenanalyse-branchenvergleich-2'
-import branchenanalyseBranchenvergleich3 from '../components/pages/branchenanalyse-branchenvergleich-3'
-import branchenanalyseBranchenvergleich4 from '../components/pages/branchenanalyse-branchenvergleich-4'
-import branchenanalyseVRAR from '../components/pages/branchenanalyse-vrar'
+import p5_1 from '../components/pages/content/5_1'
+import p5_2 from '../components/pages/content/5_2'
+import p5_3 from '../components/pages/content/5_3'
+
+import p6_1 from '../components/pages/content/6_1'
+import p6_2 from '../components/pages/content/6_2'
+import p6_3 from '../components/pages/content/6_3'
+import p6_4 from '../components/pages/content/6_4'
+import p6_5 from '../components/pages/content/6_5'
+
+import p7_1 from '../components/pages/content/7_1'
+import p7_2 from '../components/pages/content/7_2'
 
 import kontakt from '../components/pages/kontakt'
 import methodik from '../components/pages/methodik'
@@ -137,161 +135,154 @@ export default new Router(
                         component: overview
                     },
                     {
-                        path: '/branchenanalyse',
-                        name: 'branchenanalyse',
+                        path: '/standorte',
+                        name: 'standorte',
                         component: {template: '<router-view/>'},
                         children: [
                             {
-                                path: '/branchenanalyse/branchenvergleich-1',
-                                name: 'branchenanalyse-branchenvergleich-1',
-                                component: branchenanalyseBranchenvergleich1
+                                path: '/standorte/1',
+                                name: '2_1',
+                                component: p2_1
                             },
                             {
-                                path: '/branchenanalyse/branchenvergleich-2',
-                                name: 'branchenanalyse-branchenvergleich-2',
-                                component: branchenanalyseBranchenvergleich2
+                                path: '/standorte/2',
+                                name: '2_2',
+                                component: p2_2
                             },
                             {
-                                path: '/branchenanalyse/branchenvergleich-3',
-                                name: 'branchenanalyse-branchenvergleich-3',
-                                component: branchenanalyseBranchenvergleich3
+                                path: '/standorte/3',
+                                name: '2_3',
+                                component: p2_3
                             },
                             {
-                                path: '/branchenanalyse/branchenvergleich-4',
-                                name: 'branchenanalyse-branchenvergleich-4',
-                                component: branchenanalyseBranchenvergleich4
+                                path: '/standorte/4',
+                                name: '2_4',
+                                component: p2_4
                             },
                             {
-                                path: '/branchenanalyse/games',
-                                name: 'branchenanalyse-games',
-                                component: branchenanalyseGames
-                            },
-
-                            {
-                                path: '/branchenanalyse/vrar',
-                                name: 'branchenanalyse-vrar',
-                                component: branchenanalyseVRAR
+                                path: '/standorte/5',
+                                name: '2_5',
+                                component: p2_5
                             },
                             {
-                                path: '/branchenanalyse/medienbranchen',
-                                name: 'branchenanalyse-medienbranchen',
-                                component: branchenanalyseMedienbranchen
-                            },
-                            {
-                                path: '/branchenanalyse/medienbranchen-analyse',
-                                name: 'branchenanalyse-medienbranchen-analyse',
-                                component: branchenanalyseMedienbranchenAnalyse
-                            },
-                            {
-                                path: '/branchenanalyse/medienbranchen-WZ-analyse',
-                                name: 'branchenanalyse-medienbranchen-WZ-analyse',
-                                component: branchenanalyseMedienbranchenWZAnalyse
-                            },
-                            {
-                                path: '/branchenanalyse/rundfunk',
-                                name: 'branchenanalyse-rundfunk',
-                                component: branchenanalyseRundfunk
-                            },
-                            {
-                                path: '/branchenanalyse/sonderanalyse',
-                                name: 'branchenanalyse-sonderanalyse',
-                                component: branchenanalyseSonderanalyse
+                                path: '/standorte/6',
+                                name: '2_6',
+                                component: p2_6
                             },
                         ]
                     },
                     {
-                        path: '/standortanalyse',
-                        name: 'standortanalyse',
+                        path: '/zeitreihen',
+                        name: 'zeitreihen',
                         component: {template: '<router-view/>'},
                         children: [
                             {
-                                path: '/standortanalyse/beschaeftigte-analyse',
-                                name: 'standortanalyse-beschaeftigte-analyse',
-                                component: standortanalyseBeschaeftigteAnalyse
+                                path: '/zeitreihen/1',
+                                name: '3_1',
+                                component: p3_1
                             },
                             {
-                                path: '/standortanalyse/beschaeftigte',
-                                name: 'standortanalyse-beschaeftigte',
-                                component: standortanalyseBeschaeftigteUebersicht
+                                path: '/zeitreihen/2',
+                                name: '3_2',
+                                component: p3_2
                             },
                             {
-                                path: '/standortanalyse/umsaetze',
-                                name: 'standortanalyse-umsaetze',
-                                component: standortanalyseUmsaetze
-                            },
-                            {
-                                path: '/standortanalyse/unternehmen',
-                                name: 'standortanalyse-unternehmen',
-                                component: standortanalyseUnternehmen
+                                path: '/zeitreihen/3',
+                                name: '3_3',
+                                component: p3_3
                             },
                         ]
                     },
                     {
-                        path: '/vergleichsanalyse',
-                        name: 'vergleichsanalyse',
+                        path: '/bundesvergleich',
+                        name: 'bundesvergleich',
                         component: {template: '<router-view/>'},
                         children: [
                             {
-                                path: '/vergleichsanalyse/bundesvergleich',
-                                name: 'vergleichsanalyse-bundesvergleich',
-                                component: vergleichsanalyseBundesvergleich
+                                path: '/bundesvergleich/1',
+                                name: '4_1',
+                                component: p4_1
                             },
                             {
-                                path: '/vergleichsanalyse/bundesvergleich-analyse',
-                                name: 'vergleichsanalyse-bundesvergleich-analyse',
-                                component: vergleichsanalyseBundesvergleichAnalyse
+                                path: '/bundesvergleich/2',
+                                name: '4_2',
+                                component: p4_2
                             },
                             {
-                                path: '/vergleichsanalyse/laendervergleich',
-                                name: 'vergleichsanalyse-laendervergleich',
-                                component: vergleichsanalyseLaendervergleich
-                            },
-                            {
-                                path: '/vergleichsanalyse/staerken',
-                                name: 'vergleichsanalyse-staerken',
-                                component: vergleichsanalyseStaerken
-                            },
-                            {
-                                path: '/vergleichsanalyse/zeitreihenvergleich-1',
-                                name: 'vergleichsanalyse-zeitreihenvergleich-1',
-                                component: vergleichsanalyseZeitreihenvergleich1
-                            },
-                            {
-                                path: '/vergleichsanalyse/zeitreihenvergleich-2',
-                                name: 'vergleichsanalyse-zeitreihenvergleich-2',
-                                component: vergleichsanalyseZeitreihenvergleich2
-                            },
-                            {
-                                path: '/vergleichsanalyse/zeitreihenvergleich-3',
-                                name: 'vergleichsanalyse-zeitreihenvergleich-3',
-                                component: vergleichsanalyseZeitreihenvergleich3
-                            },
-                            {
-                                path: '/vergleichsanalyse/zeitreihenvergleich-4',
-                                name: 'vergleichsanalyse-zeitreihenvergleich-4',
-                                component: vergleichsanalyseZeitreihenvergleich4
+                                path: '/bundesvergleich/3',
+                                name: '4_3',
+                                component: p4_3
                             },
                         ]
                     },
                     {
-                        path: '/zeitreihenanalyse',
-                        name: 'zeitreihenanalyse',
+                        path: '/4laender',
+                        name: '4laender',
                         component: {template: '<router-view/>'},
                         children: [
                             {
-                                path: '/zeitreihenanalyse/beschaeftigte',
-                                name: 'zeitreihenanalyse-beschaeftigte',
-                                component: zeitreihenanalyseBeschaeftigte
+                                path: '/4laender/1',
+                                name: '5_1',
+                                component: p5_1
                             },
                             {
-                                path: '/zeitreihenanalyse/umsaetze',
-                                name: 'zeitreihenanalyse-umsaetze',
-                                component: zeitreihenanalyseUmsaetze
+                                path: '/4laender/2',
+                                name: '5_2',
+                                component: p5_2
                             },
                             {
-                                path: '/zeitreihenanalyse/unternehmen',
-                                name: 'zeitreihenanalyse-unternehmen',
-                                component: zeitreihenanalyseUnternehmen
+                                path: '/4laender/3',
+                                name: '5_3',
+                                component: p5_3
+                            },
+                        ]
+                    },
+                    {
+                        path: '/index-analysen',
+                        name: 'indexanalysen',
+                        component: {template: '<router-view/>'},
+                        children: [
+                            {
+                                path: '/index-analysen/1',
+                                name: '6_1',
+                                component: p6_1
+                            },
+                            {
+                                path: '/index-analysen/2',
+                                name: '6_2',
+                                component: p6_2
+                            },
+                            {
+                                path: '/index-analysen/3',
+                                name: '6_3',
+                                component: p6_3
+                            },
+                            {
+                                path: '/index-analysen/4',
+                                name: '6_4',
+                                component: p6_4
+                            },
+                            {
+                                path: '/index-analysen/5',
+                                name: '6_5',
+                                component: p6_5
+                            },
+                        ]
+                    },
+                    {
+                        path: '/spezial-analysen',
+                        name: 'spezialanalysen',
+                        component: {template: '<router-view/>'},
+                        children: [
+                            {
+                                path: '/spezial-analysen/1',
+                                name: '7_1',
+                                component: p7_1
+                            },
+                            {
+                                path: '/spezial-analysen/2',
+                                name: '7_2',
+                                component: p7_2
                             },
                         ]
                     },
