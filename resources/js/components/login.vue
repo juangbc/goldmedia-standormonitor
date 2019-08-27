@@ -34,17 +34,10 @@
                     <el-col :span="gridSize" :xs="24">
                         <div class="flexbox-nav2 left10">
                             <div class="nav2-item">
-                                <router-link :to="{ name: 'about'}">
-                                    About
-                                </router-link>
-                            </div>
-                            <div class="nav2-item">
                                 <a href="#methodik">Methodik</a>
                             </div>
                             <div class="nav2-item">
-                                <router-link :to="{ name: 'cases'}">
-                                    Cases
-                                </router-link>
+                                <a href="#referenzen">Cases</a>
                             </div>
                             <div class="nav2-item">
                                 <a href="#kontakt">Kontakt</a>
@@ -97,7 +90,7 @@
 
                         <el-card class="card">
 
-                            <div class="subtitle">Referenzen und Studien</div>
+                            <div id="referenzen" class="subtitle">Referenzen und Studien</div>
                             <div class="padding-left-box">
                                 <el-col class="landing-page-column" :span="8">
                                     <a href="https://www.goldmedia.com/aktuelles/info/article/mehr-beschaeftigte-mehr-umsatz-medienstandort-bayern-attraktiv-fuer-alle-branchen/"

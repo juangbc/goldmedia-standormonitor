@@ -40,8 +40,6 @@ import branchenanalyseBranchenvergleich4 from '../components/pages/branchenanaly
 import branchenanalyseVRAR from '../components/pages/branchenanalyse-vrar'
 
 import kontakt from '../components/pages/kontakt'
-import about from '../components/pages/about'
-import cases from '../components/pages/cases'
 import methodik from '../components/pages/methodik'
 
 import impressum from '../components/pages/impressum'
@@ -80,16 +78,6 @@ export default new Router(
                 path: '/password-recovery',
                 name: 'passwordRecovery',
                 component: passwordRecovery
-            },
-            {
-                path: '/about',
-                name: 'about',
-                component: about
-            },
-            {
-                path: '/cases',
-                name: 'cases',
-                component: cases
             },
 
             {

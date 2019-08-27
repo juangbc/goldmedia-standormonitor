@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="sidebar">
+        <div class="sidebar" :class="{'mobile':mobile}">
             <el-aside width="240px">
                 <el-menu class="main-menu" :router="true" :default-active="activeLink" :unique-opened="true"
                          background-color="#393d49"

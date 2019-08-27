@@ -3,19 +3,24 @@
 <template>
     <div>
         <ul role="menubar" class="el-menu-demo el-menu--horizontal el-menu menu container-flex">
-            <div class="element-flex">
-                <div class="container-logo">
-                    <div class="logo-navbar navbar float-left" tabindex="0">
+            <div class="element-flex flexbox-nav">
+                <div class="logo-box">
+                    <div class="control-box float-left">
+                        <el-tooltip effect="dark" content="Toggle sidebar" placement="top-start">
+                            <i class="fas fa-bars pointer" @click="sidebarCollapsed.val = !sidebarCollapsed.val"></i>
+                        </el-tooltip>
+                    </div>
+                    <div class="logo-navbar float-left" tabindex="0">
                         <router-link :to="{ name: 'home'}">
                             <img class="full-width" :src="$pngPath"/>
                         </router-link>
                     </div>
+                    <div class="logo-sup float-left">
+                        BETA
+                    </div>
+                    <div class="clearfix"></div>
                 </div>
-                <div class="beta-container">
-            <span>
-                BETA
-            </span>
-                </div>
+
             </div>
             <div class="element-flex container-flex container-flex2">
                 <li role="menuitem" aria-haspopup="true" class="mobile-submenus el-submenu flex-item2">
@@ -70,7 +75,8 @@
             data: {
                 type: Boolean,
                 default: () => false
-            }
+            },
+            sidebarCollapsed:{}
         },
         methods: {
             handleClick(tab) {
@@ -124,10 +130,31 @@
         display: flex;
     }
 
+    .control-box{
+        margin-left: 20px;
+        margin-top: 4px;
+        margin-right: 10px;
+    }
+
+    .flexbox-nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
     .logo-navbar {
         width: 100%;
-        max-width: 200px;
-        padding: 20px 10px 8px 20px;
+        max-width: 192px;
+        margin-top: 5px;
+    }
+
+    .logo-box {
+        height: 27px;
+    }
+
+    .logo-sup {
+        margin-left: 2px;
+        font-size: 10px;
     }
 
     ul.el-menu-demo.el-menu--horizontal.el-menu {
@@ -160,11 +187,6 @@
 
         .white {
             font-size: 0.7em;
-        }
-
-        .logo-navbar {
-            padding-left: 0.3em;
-            padding-top: 1.2em;
         }
 
         .font-16 {
@@ -241,12 +263,6 @@
     .navbar-subtitle {
         font-weight: 600;
         padding: .7em 1em;
-    }
-
-    .logo-navbar {
-        padding: 20px 10px 8px 20px;
-        color: #fff;
-        max-width: 200px;
     }
 
     ul.el-menu-demo.el-menu--horizontal.el-menu {
