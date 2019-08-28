@@ -45,7 +45,6 @@ import methoden from '../components/pages/methoden'
 
 import overview from '../components/pages/overview'
 import navbar from '../components/utils/navbar'
-import home from '../components/pages/home'
 import datenschutz from '../components/pages/datenschutz'
 
 Vue.use(Router)
@@ -88,11 +87,6 @@ export default new Router(
                 name: 'main',
                 component: main,
                 children: [
-                    {
-                        path: '/home',
-                        name: 'home',
-                        component: home
-                    },
                     {
                         path: '/datenschutz',
                         name: 'datenschutz',

@@ -346,11 +346,10 @@
                         this.$session.set('email', this.userData.EML)
                         this.$session.set('user_type', this.userData.TYP)
                         this.$session.set('api_key', this.userData.api_key)
-console.log(this.$session.getAll());
 
 
                         if (this.loginResp === true) {
-                            this.$router.push({'name': 'home'})
+                            this.$router.push({'name': 'overview'})
                             this.loggedIn = true
 
                         } else {
@@ -611,7 +610,7 @@ console.log(this.$session.getAll());
     .menu {
         background-color: #ab8852;
         color: #fff;
-        height: 50px;
+        height: 47px;
     }
 
     .z-index-logo {

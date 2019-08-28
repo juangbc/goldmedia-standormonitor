@@ -11,7 +11,7 @@
                         </el-tooltip>
                     </div>
                     <div class="logo-navbar float-left" tabindex="0">
-                        <router-link :to="{ name: 'home'}">
+                        <router-link :to="{ name: 'overview'}">
                             <img class="full-width" :src="$pngPath"/>
                         </router-link>
                     </div>
@@ -26,11 +26,11 @@
                 <li role="menuitem" aria-haspopup="true" class="mobile-submenus el-submenu flex-item2">
                     <el-dropdown @command="handleRoute">
                         <div class="el-submenu__title">
-                    <span>
+                    <div>
                       <i class="fa fa-fw fa-user"></i>
                       <span class="white">{{userMail}}</span>
                       <i class="el-submenu__icon-arrow el-icon-arrow-down"></i>
-                    </span>
+                    </div>
                         </div>
                         <el-dropdown-menu slot="dropdown">
                             <el-dropdown-item command="changePassword"><i class="fa fa-key"></i> Change password
@@ -165,13 +165,15 @@
         background-color: #ab8852;
     }
 
-    .el-menu--horizontal > .el-submenu .el-submenu__title:hover, .el-submenu__title:focus {
+    .el-submenu .el-submenu__title:hover, .el-submenu__title:focus {
         background-color: #eac166 !important;
         color: #6b6b6b !important;
     }
 
-    .el-menu--horizontal > .el-submenu .el-submenu__title {
+    .el-submenu .el-submenu__title {
         color: #f2f2f2 !important;
+        height: 47px !important;
+        line-height: 47px !important;
     }
 
     .el-submenu__title {
@@ -244,7 +246,7 @@
     .menu {
         background-color: #ab8852;
         color: #fff;
-        height: 55px;
+        height: 47px;
     }
 
     .dark-blue {
