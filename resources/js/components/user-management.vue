@@ -141,10 +141,6 @@ export default {
       } else if (!this.reg.test(this.ruleForm2.email)) {
         this.$message.error('Please enter a correct email address')
       } else {
-
-        if (this.userType !== 0 || this.userType !== 2) {
-          this.userType = 2;
-        }
         axios.request(this.$apiBase + 'add-user', {
           method: 'get',
           params: {

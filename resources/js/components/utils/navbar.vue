@@ -15,12 +15,12 @@
                             <img class="full-width" :src="$pngPath"/>
                         </router-link>
                     </div>
-                    <div class="logo-sup float-left">
-                        BETA
-                    </div>
                     <div class="clearfix"></div>
                 </div>
 
+            </div>
+            <div class="element-flex container-mid">
+                BETA
             </div>
             <div class="element-flex container-flex container-flex2">
                 <li role="menuitem" aria-haspopup="true" class="mobile-submenus el-submenu flex-item2">
@@ -123,7 +123,7 @@
 <style scoped>
 
     .element-flex {
-        width: 50%;
+        width: 33%;
     }
 
     .container-flex {
@@ -144,8 +144,8 @@
 
     .logo-navbar {
         width: 100%;
-        max-width: 192px;
-        margin-top: 5px;
+        max-width: 125px;
+        margin-top: 3px;
     }
 
     .logo-box {
@@ -172,8 +172,8 @@
 
     .el-submenu .el-submenu__title {
         color: #f2f2f2 !important;
-        height: 47px !important;
-        line-height: 47px !important;
+        height: 39px !important;
+        line-height: 39px !important;
     }
 
     .el-submenu__title {
@@ -204,6 +204,13 @@
             margin-left: 15%;
             height: 30px;
         }
+    }
+
+    .container-mid {
+        justify-content: center;
+        text-align: center;
+        font-size: 14px;
+        padding-top: 10px;
     }
 
     .container-flex2 {
@@ -246,7 +253,7 @@
     .menu {
         background-color: #ab8852;
         color: #fff;
-        height: 47px;
+        height: 39px;
     }
 
     .dark-blue {

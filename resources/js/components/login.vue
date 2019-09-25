@@ -6,24 +6,30 @@
                 <el-col :span="gridSizeBorder"></el-col>
                 <el-col :span="gridSize" :xs="24">
                     <div class="menu flexbox-nav left10">
-                        <div class="logo-box">
-                            <div class="logo-navbar float-left" tabindex="0">
-                                <div>
-                                    <img class="full-width" :src="$pngPath"/>
+                        <div class="element-flex">
+                            <div class="logo-box">
+                                <div class="logo-navbar float-left" tabindex="0">
+                                    <div>
+                                        <img class="full-width" :src="$pngPath"/>
+                                    </div>
                                 </div>
+                                <div class="clearfix"></div>
                             </div>
-                            <div class="logo-sup float-left">
+                        </div>
+                        <div class="element-flex">
+                            <div class="container-mid">
                                 BETA
                             </div>
-                            <div class="clearfix"></div>
                         </div>
-                        <div class="right5">
-                            <el-button size="small" v-if="!loginClicked" class="login-button" @click="loginClick">
-                                Login
-                            </el-button>
-                            <el-button size="small" v-if="loginClicked" class="login-button" @click="returnLanding">
-                                Go Back
-                            </el-button>
+                        <div class="element-flex">
+                            <div class="align-right">
+                                <el-button size="mini" v-if="!loginClicked" class="login-button" @click="loginClick">
+                                    Login
+                                </el-button>
+                                <el-button size="mini" v-if="loginClicked" class="login-button" @click="returnLanding">
+                                    Go Back
+                                </el-button>
+                            </div>
                         </div>
                     </div>
                 </el-col>
@@ -368,6 +374,21 @@
 
 <style scoped>
 
+    .element-flex {
+        width: 33%;
+    }
+
+    .align-right{
+        text-align: right;
+    }
+
+    .container-mid {
+        justify-content: center;
+        text-align: center;
+        font-size: 14px;
+    }
+
+
     .flexbox-nav {
         display: flex;
         align-items: center;
@@ -469,7 +490,7 @@
     }
 
     .main-page {
-        background: url("http://standortmonitor.net/images/landingPageBackgroundImage.png") repeat center center fixed;
+        background: url("https://standortmonitor.net/images/landingPageBackgroundImage.png") repeat center center fixed;
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
@@ -610,7 +631,7 @@
     .menu {
         background-color: #ab8852;
         color: #fff;
-        height: 47px;
+        height: 39px;
     }
 
     .z-index-logo {

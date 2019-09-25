@@ -8,11 +8,12 @@
                          active-text-color="#eac166">
 
                     <el-menu-item index="overview" :route="{'name':'overview'}">
-                        <i class="fa fa-chart-pie fa-fw"></i><span class="sidebar-title">Übersicht</span>
+                        <i class="fa fa-home fa-fw"></i><span class="sidebar-title">Übersicht</span>
                     </el-menu-item>
 
                     <el-submenu index="2">
-                        <template slot="title"><i class="fa fa-chart-area fa-fw"></i><span class="sidebar-title">Standorte</span>
+                        <template slot="title">
+                                <i class="fa fa-map-pin fa-fw" :class="{'menu-active': routeActive('2_')}"></i><span :class="{'menu-active': routeActive('2_')}" class="sidebar-title">Standorte</span>
                         </template>
                         <el-menu-item-group>
                             <el-menu-item index="2_1" :route="{'name':'2_1'}">Umsätze</el-menu-item>
@@ -25,8 +26,8 @@
                     </el-submenu>
 
                     <el-submenu index="3">
-                        <template slot="title"><i class="fa fa-chart-area fa-fw"></i><span
-                            class="sidebar-title">Zeitreihen</span></template>
+                        <template slot="title"><i class="fa fa-chart-bar fa-fw" :class="{'menu-active': routeActive('3_')}"></i><span
+                            :class="{'menu-active': routeActive('3_')}" class="sidebar-title">Zeitreihen</span></template>
                         <el-menu-item-group>
                             <el-menu-item index="3_1" :route="{'name':'3_1'}">Umsätze</el-menu-item>
                             <el-menu-item index="3_2" :route="{'name':'3_2'}">Unternehmen</el-menu-item>
@@ -35,8 +36,8 @@
                     </el-submenu>
 
                     <el-submenu index="4">
-                        <template slot="title"><i class="fa fa-fw fa-chart-area"></i><span
-                            class="sidebar-title">Bundesvergleich</span></template>
+                        <template slot="title"><i class="fa fa-fw fa-braille" :class="{'menu-active': routeActive('4_')}"></i><span
+                            :class="{'menu-active': routeActive('4_')}" class="sidebar-title">Bundesvergleich</span></template>
                         <el-menu-item-group>
                             <el-menu-item index="4_1" :route="{'name':'4_1'}">Übersicht</el-menu-item>
                             <el-menu-item index="4_2" :route="{'name':'4_2'}">Bundesvergleich</el-menu-item>
@@ -45,8 +46,8 @@
                     </el-submenu>
 
                     <el-submenu index="5">
-                        <template slot="title"><i class="fa fa-chart-area fa-fw "></i><span
-                            class="sidebar-title">4-Länder Vergleich</span></template>
+                        <template slot="title"><i class="fa fa-th-large fa-fw " :class="{'menu-active': routeActive('5_')}"></i><span
+                            :class="{'menu-active': routeActive('5_')}" class="sidebar-title">4-Länder Vergleich</span></template>
                         <el-menu-item-group>
                             <el-menu-item index="5_1" :route="{'name':'5_1'}">Umsätze</el-menu-item>
                             <el-menu-item index="5_2" :route="{'name':'5_2'}">Unternehmen</el-menu-item>
@@ -55,8 +56,8 @@
                     </el-submenu>
 
                     <el-submenu index="6">
-                        <template slot="title"><i class="fa fa-chart-area fa-fw "></i><span
-                            class="sidebar-title">Index-Analysen</span></template>
+                        <template slot="title"><i class="fa fa-sort-amount-up fa-fw" :class="{'menu-active': routeActive('6_')}"></i><span
+                            :class="{'menu-active': routeActive('6_')}" class="sidebar-title">Index-Analysen</span></template>
                         <el-menu-item-group>
                             <el-menu-item index="6_1" :route="{'name':'6_1'}">Übersicht</el-menu-item>
                             <el-menu-item index="6_2" :route="{'name':'6_2'}">Umsatz pro Beschäftigten</el-menu-item>
@@ -67,11 +68,12 @@
                     </el-submenu>
 
                     <el-submenu index="special">
-                        <template slot="title"><i class="fa fa-chart-area fa-fw "></i><span
-                            class="sidebar-title">Spezial-Analysen</span></template>
+                        <template slot="title"><i class="fa fa-lightbulb fa-fw " :class="{'menu-active': routeActive('7_')}"></i><span
+                            :class="{'menu-active': routeActive('7_')}" class="sidebar-title">Spezial-Analysen</span></template>
                         <el-menu-item-group>
-                            <el-menu-item index="7_1" :route="{'name':'7_1'}">Wettbewerbsanalyse</el-menu-item>
+                            <el-menu-item index="7_1" :route="{'name':'7_1'}">Teilmarkt-Analyse</el-menu-item>
                             <el-menu-item index="7_2" :route="{'name':'7_2'}">WZ-Klassen-Analyse</el-menu-item>
+                            <el-menu-item index="7_3" :route="{'name':'7_3'}">Wettbewerbsanalyse</el-menu-item>
                         </el-menu-item-group>
                     </el-submenu>
 
@@ -89,8 +91,6 @@
                     <div class="top20 font-sidebar">
                         <div>
                             <router-link :to="{ name: 'methoden'}">Methoden</router-link>
-                            |
-                            <router-link :to="{ name: 'faq'}">FAQ</router-link>
                             |
                             <router-link :to="{ name: 'disclaimer'}">Disclaimer</router-link>
                         </div>
@@ -131,11 +131,22 @@
         mounted: function () {
             this.activeLink = this.$route.matched[this.$route.matched.length - 1].name
         },
-        computed: {}
+        methods: {
+            routeActive(routeIdentifier) {
+                if(this.$route.name.includes(routeIdentifier)){
+                    return true;
+                }
+                return false;
+            },
+        },
     }
 </script>
 
 <style scoped>
+
+    .menu-active{
+        color: rgb(234, 193, 102) !important;
+    }
 
     .sidebar-bot {
         text-align: center;

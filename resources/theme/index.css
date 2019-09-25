@@ -406,7 +406,7 @@ a:hover, a:active {
 --------------------------*/
 @font-face {
   font-family: 'element-icons';
-    src: url("/gmapi/public/fonts/element-icons.woff") format("woff"), url("/gmapi/public/fonts/element-icons.ttf") format("truetype");
+    src: url("/gm-standortmonitor/public/fonts/element-icons.woff") format("woff"), url("/gm-standortmonitor/public/fonts/element-icons.ttf") format("truetype");
   /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
   font-weight: normal;
   font-style: normal;
