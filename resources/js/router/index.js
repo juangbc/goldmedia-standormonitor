@@ -36,6 +36,7 @@ import p6_5 from '../components/pages/content/6_5'
 
 import p7_1 from '../components/pages/content/7_1'
 import p7_2 from '../components/pages/content/7_2'
+import p7_3 from '../components/pages/content/7_3'
 
 import kontakt from '../components/pages/kontakt'
 import methodik from '../components/pages/methodik'
@@ -277,6 +278,11 @@ export default new Router(
                                 path: '/spezial-analysen/2',
                                 name: '7_2',
                                 component: p7_2
+                            },
+                            {
+                                path: '/spezial-analysen/3',
+                                name: '7_3',
+                                component: p7_3
                             },
                         ]
                     },
