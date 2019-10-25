@@ -275,6 +275,11 @@
                 </div>
             </div>
         </div>
+        <div class="footer-login">
+            <router-link :to="{ name: 'imprint'}">
+                Impressum
+            </router-link>
+        </div>
     </div>
 </template>
 <script>
@@ -373,6 +378,16 @@
 </script>
 
 <style scoped>
+
+    .footer-login{
+        position: relative;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        z-index: 3;
+        text-align: center;
+        font-size: 14px;
+        background: rgba(255, 255, 255, 0.5);
+    }
 
     .element-flex {
         width: 33%;

@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import loginPage from '../components/login'
+import imprintPage from '../components/imprint-page'
 import passwordReset from '../components/password-reset'
 import changePassword from '../components/change-password'
 import passwordRecovery from '../components/password-recovery'
@@ -61,6 +62,11 @@ export default new Router(
                 path: '/login',
                 name: 'loginPage',
                 component: loginPage
+            },
+            {
+                path: '/imprint',
+                name: 'imprint',
+                component: imprintPage
             },
             {
                 path: '/',
