@@ -25,9 +25,11 @@
                 </el-col>
                 <el-col :sm="24" :xs="24" :md="24" :lg="24">
                     <div class="landing-page-textbox content-text">
-                        Oranienburger Str. 27, 10117 Berlin, Tel.: +49-30-246 266-0, Fax: +49-30-246 266-66,
-                        <a href="mailto:Info@Goldmedia.de"> Info@Goldmedia.de,</a>
-                        <a href="https://www.Goldmedia.com"> www.Goldmedia.com,</a>
+                        Oranienburger Str. 27, 10117 Berlin<br>
+                        Tel.: +49-30-246 266-0<br>
+                        Fax: +49-30-246 266-66<br>
+                        <a href="mailto:Info@Goldmedia.de"> Info@Goldmedia.de</a><br>
+                        <a href="https://www.Goldmedia.com"> www.Goldmedia.com</a><br>
                         Geschäftsführung: Prof. Dr. Klaus Goldhammer, Dr. André Wiegand
                     </div>
                 </el-col>
