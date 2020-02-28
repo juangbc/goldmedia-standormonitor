@@ -14,8 +14,6 @@ import p2_1 from '../components/pages/content/2_1'
 import p2_2 from '../components/pages/content/2_2'
 import p2_3 from '../components/pages/content/2_3'
 import p2_4 from '../components/pages/content/2_4'
-import p2_5 from '../components/pages/content/2_5'
-import p2_6 from '../components/pages/content/2_6'
 
 import p3_1 from '../components/pages/content/3_1'
 import p3_2 from '../components/pages/content/3_2'
@@ -32,8 +30,6 @@ import p5_3 from '../components/pages/content/5_3'
 import p6_1 from '../components/pages/content/6_1'
 import p6_2 from '../components/pages/content/6_2'
 import p6_3 from '../components/pages/content/6_3'
-import p6_4 from '../components/pages/content/6_4'
-import p6_5 from '../components/pages/content/6_5'
 
 import p7_1 from '../components/pages/content/7_1'
 import p7_2 from '../components/pages/content/7_2'
@@ -160,16 +156,6 @@ export default new Router(
                                 name: '2_4',
                                 component: p2_4
                             },
-                            {
-                                path: '/standorte/5',
-                                name: '2_5',
-                                component: p2_5
-                            },
-                            {
-                                path: '/standorte/6',
-                                name: '2_6',
-                                component: p2_6
-                            },
                         ]
                     },
                     {
@@ -257,16 +243,6 @@ export default new Router(
                                 path: '/index-analysen/3',
                                 name: '6_3',
                                 component: p6_3
-                            },
-                            {
-                                path: '/index-analysen/4',
-                                name: '6_4',
-                                component: p6_4
-                            },
-                            {
-                                path: '/index-analysen/5',
-                                name: '6_5',
-                                component: p6_5
                             },
                         ]
                     },

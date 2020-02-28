@@ -16,8 +16,7 @@
         data() {
             return {
                 loading: true,
-                url: "https://eu-west-1a.online.tableau.com/t/goldmedia/views/" +
-                    "Standortmonitor/2_1Umstze?:embed=yes&:toolbar=no",
+                url: "https://eu-west-1a.online.tableau.com/t/goldmedia/views/Standortmonitor_15826424386730/2_1_1Umsatz?:embed=yes&:toolbar=no",
                 options: {
                     hideTabs: true,
                     width: "100%",

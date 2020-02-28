@@ -13,15 +13,13 @@
 
                     <el-submenu index="2">
                         <template slot="title">
-                                <i class="fa fa-map-pin fa-fw" :class="{'menu-active': routeActive('2_')}"></i><span :class="{'menu-active': routeActive('2_')}" class="sidebar-title">Standorte</span>
+                                <i class="fa fa-map-pin fa-fw" :class="{'menu-active': routeActive('2_')}"></i><span :class="{'menu-active': routeActive('2_')}" class="sidebar-title">Standortanalyse</span>
                         </template>
                         <el-menu-item-group>
-                            <el-menu-item index="2_1" :route="{'name':'2_1'}">Umsätze</el-menu-item>
+                            <el-menu-item index="2_1" :route="{'name':'2_1'}">Umsatz</el-menu-item>
                             <el-menu-item index="2_2" :route="{'name':'2_2'}">Unternehmen</el-menu-item>
-                            <el-menu-item index="2_3" :route="{'name':'2_3'}">Beschäftigte Landkreise</el-menu-item>
-                            <el-menu-item index="2_4" :route="{'name':'2_4'}">Beschäftigte Teilmärkte</el-menu-item>
-                            <el-menu-item index="2_5" :route="{'name':'2_5'}">Beschäftigte Analyse</el-menu-item>
-                            <el-menu-item index="2_6" :route="{'name':'2_6'}">Stärken und Schwächen</el-menu-item>
+                            <el-menu-item index="2_3" :route="{'name':'2_3'}">Beschäftigte</el-menu-item>
+                            <el-menu-item index="2_4" :route="{'name':'2_4'}">Städte / Landkreise</el-menu-item>
                         </el-menu-item-group>
                     </el-submenu>
 
@@ -29,7 +27,7 @@
                         <template slot="title"><i class="fa fa-chart-bar fa-fw" :class="{'menu-active': routeActive('3_')}"></i><span
                             :class="{'menu-active': routeActive('3_')}" class="sidebar-title">Zeitreihen</span></template>
                         <el-menu-item-group>
-                            <el-menu-item index="3_1" :route="{'name':'3_1'}">Umsätze</el-menu-item>
+                            <el-menu-item index="3_1" :route="{'name':'3_1'}">Umsatz</el-menu-item>
                             <el-menu-item index="3_2" :route="{'name':'3_2'}">Unternehmen</el-menu-item>
                             <el-menu-item index="3_3" :route="{'name':'3_3'}">Beschäftigte</el-menu-item>
                         </el-menu-item-group>
@@ -39,9 +37,9 @@
                         <template slot="title"><i class="fa fa-fw fa-braille" :class="{'menu-active': routeActive('4_')}"></i><span
                             :class="{'menu-active': routeActive('4_')}" class="sidebar-title">Bundesvergleich</span></template>
                         <el-menu-item-group>
-                            <el-menu-item index="4_1" :route="{'name':'4_1'}">Übersicht</el-menu-item>
-                            <el-menu-item index="4_2" :route="{'name':'4_2'}">Bundesvergleich</el-menu-item>
-                            <el-menu-item index="4_3" :route="{'name':'4_3'}">Detailanalyse</el-menu-item>
+                            <el-menu-item index="4_1" :route="{'name':'4_1'}">Umsatz</el-menu-item>
+                            <el-menu-item index="4_2" :route="{'name':'4_2'}">Unternehmen</el-menu-item>
+                            <el-menu-item index="4_3" :route="{'name':'4_3'}">Beschäftigte</el-menu-item>
                         </el-menu-item-group>
                     </el-submenu>
 
@@ -49,7 +47,7 @@
                         <template slot="title"><i class="fa fa-th-large fa-fw " :class="{'menu-active': routeActive('5_')}"></i><span
                             :class="{'menu-active': routeActive('5_')}" class="sidebar-title">4-Länder Vergleich</span></template>
                         <el-menu-item-group>
-                            <el-menu-item index="5_1" :route="{'name':'5_1'}">Umsätze</el-menu-item>
+                            <el-menu-item index="5_1" :route="{'name':'5_1'}">Umsatz</el-menu-item>
                             <el-menu-item index="5_2" :route="{'name':'5_2'}">Unternehmen</el-menu-item>
                             <el-menu-item index="5_3" :route="{'name':'5_3'}">Beschäftigte</el-menu-item>
                         </el-menu-item-group>
@@ -59,15 +57,13 @@
                         <template slot="title"><i class="fa fa-sort-amount-up fa-fw" :class="{'menu-active': routeActive('6_')}"></i><span
                             :class="{'menu-active': routeActive('6_')}" class="sidebar-title">Index-Analysen</span></template>
                         <el-menu-item-group>
-                            <el-menu-item index="6_1" :route="{'name':'6_1'}">Übersicht</el-menu-item>
-                            <el-menu-item index="6_2" :route="{'name':'6_2'}">Umsatz pro Beschäftigten</el-menu-item>
-                            <el-menu-item index="6_3" :route="{'name':'6_3'}">Umsatz pro Unternehmen</el-menu-item>
-                            <el-menu-item index="6_4" :route="{'name':'6_4'}">Unternehmen pro EW</el-menu-item>
-                            <el-menu-item index="6_5" :route="{'name':'6_5'}">Beschäftigtenanteil</el-menu-item>
+                            <el-menu-item index="6_1" :route="{'name':'6_2'}">Umsatz pro Beschäftigten</el-menu-item>
+                            <el-menu-item index="6_2" :route="{'name':'6_3'}">Umsatz pro Unternehmen</el-menu-item>
+                            <el-menu-item index="6_3" :route="{'name':'6_4'}">Beschäftigte pro Unternehmen</el-menu-item>
                         </el-menu-item-group>
                     </el-submenu>
 
-                    <el-submenu index="special">
+                    <el-submenu index="special" v-if="false">
                         <template slot="title"><i class="fa fa-lightbulb fa-fw " :class="{'menu-active': routeActive('7_')}"></i><span
                             :class="{'menu-active': routeActive('7_')}" class="sidebar-title">Spezial-Analysen</span></template>
                         <el-menu-item-group>

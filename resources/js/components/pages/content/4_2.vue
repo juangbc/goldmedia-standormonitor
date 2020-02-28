@@ -16,8 +16,7 @@
         data() {
             return {
                 loading: true,
-                url: "https://eu-west-1a.online.tableau.com/t/goldmedia/views/" +
-                    "Standortmonitor/4_2Bundesvergleich?:embed=yes&:toolbar=no",
+                url: "https://eu-west-1a.online.tableau.com/t/goldmedia/views/Standortmonitor_15826424386730/4_2Unternehmen?:embed=yes&:toolbar=no",
                 options: {
                     hideTabs: true,
                     width: "100%",

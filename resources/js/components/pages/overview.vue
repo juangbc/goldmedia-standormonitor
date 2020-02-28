@@ -16,14 +16,11 @@
         data() {
             return {
                 loading: true,
-                url: "https://eu-west-1a.online.tableau.com/t/goldmedia/views/" +
-                    "Standortmonitor/1_bersicht?:embed=yes&:toolbar=no",
+                url: "https://eu-west-1a.online.tableau.com/t/goldmedia/views/Standortmonitor_15826424386730/1_1Home?:embed=yes&:toolbar=no",
             options: {
                     hideTabs: true,
                     width: "100%",
                     height: "100%",
-                    'Bundesland': "",
-                    'Teilmärkte' : ""
                 }
             }
         },

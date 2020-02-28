@@ -16,226 +16,11 @@
                                 <div class="clearfix"></div>
                             </div>
                         </div>
-                        <div class="element-flex">
-                            <div class="container-mid">
-                                BETA
-                            </div>
-                        </div>
-                        <div class="element-flex">
-                            <div class="align-right">
-                                <el-button size="mini" v-if="!loginClicked" class="login-button" @click="loginClick">
-                                    Login
-                                </el-button>
-                                <el-button size="mini" v-if="loginClicked" class="login-button" @click="returnLanding">
-                                    Go Back
-                                </el-button>
-                            </div>
-                        </div>
                     </div>
                 </el-col>
             </el-row>
-            <div v-if="!loginClicked" class="header-menu">
-                <el-row class="no-margin-top">
-                    <el-col :span="gridSizeBorder"></el-col>
-                    <el-col :span="gridSize" :xs="24">
-                        <div class="flexbox-nav2 left10">
-                            <div class="nav2-item">
-                                <a href="#methodik">Methodik</a>
-                            </div>
-                            <div class="nav2-item">
-                                <a href="#referenzen">Cases</a>
-                            </div>
-                            <div class="nav2-item">
-                                <a href="#kontakt">Kontakt</a>
-                            </div>
-                        </div>
-                    </el-col>
-                </el-row>
 
-            </div>
-
-
-            <div v-if="!loginClicked">
-                <el-row>
-                    <el-col :span="gridSizeBorder"></el-col>
-                    <el-col :span="gridSize" :xs="24">
-
-                        <el-card class="card">
-                            <div class="gm-blau">
-                                <div class="main-title">
-                                    STANDORTMONITOR
-                                </div>
-                                <div class="subtitle-main">
-                                    MEDIEN- UND KREATIVSTANDORTE IN DEUTSCHLAND.<br>
-                                    LAUFEND AKTUALISIERTE DATEN, FAKTEN, GRAFIKEN INTERAKTIV
-                                </div>
-                            </div>
-                            <div class="align-center">
-                                <img class="top-image" :src="$pngLandingPage"/>
-                            </div>
-                        </el-card>
-
-
-                        <el-card class="card">
-                            <el-col :sm="24" :xs="24" :md="12" :lg="12">
-                                <div class="subtitle">Standortmonitoring <br>als interaktive <br> Datenbank</div>
-                            </el-col>
-                            <el-col :sm="24" :xs="24" :md="12" :lg="12">
-                                <div class="landing-page-textbox">
-              <span>
-              Der Goldmedia Standortmonitor aggregiert erstmals belastbare Zahlen und Fakten für alle Regionen und alle Teilmärkte der
-              gesamten Kreativwirtschaft in Deutschland von der Länderperspektive bis auf die Ebene der Städte und Landkreise.
-
-              Das Kompendium an Daten und Fakten ist als interaktive digitale Datenbank aufbereitet und wird laufend um neue Daten ergänzt. Die gesamtwirtschaftliche
-              Bedeutung der Medien- und Kreativindustrien geht weit über die Kernbranche hinaus und hat Effekte auf vor- und nachgelagerte Märkte.
-              Sie sind Impulsgeber für Innovationen und Wirtschaftswachstum.
-              </span>
-                                </div>
-                            </el-col>
-                        </el-card>
-
-                        <el-card class="card">
-
-                            <div id="referenzen" class="subtitle">Referenzen und Studien</div>
-                            <div class="padding-left-box">
-                                <el-col class="landing-page-column" :span="8">
-                                    <a href="https://www.goldmedia.com/aktuelles/info/article/mehr-beschaeftigte-mehr-umsatz-medienstandort-bayern-attraktiv-fuer-alle-branchen/"
-                                       target="_blank">
-                                        <div class="image">
-                                            <img class="landing-page-image" :src="$pngStandortstudieBayern" alt/>
-                                            <h2 class="image-title"><span>Medienstandort Bayern 2019</span></h2>
-                                        </div>
-                                    </a>
-                                </el-col>
-
-                                <el-col class="landing-page-column" :span="8">
-                                    <a href="https://www.goldmedia.com/produkt/study/produzentenstudie-2018/"
-                                       target="_blank">
-                                        <div class="image">
-                                            <img class="landing-page-image" :src="$pngFilmproduktion" alt/>
-                                            <h2 class="image-title"><span>Produzentenstudie 2018</span></h2>
-                                        </div>
-                                    </a>
-                                </el-col>
-                                <el-col class="landing-page-column" :span="8">
-                                    <a href="https://www.goldmedia.com/aktuelles/info/article/audio-visuelle-medien-in-nordrhein-westfalen-standortstudie-fuer-das-mediennetzwerkesnrw/"
-                                       target="_blank">
-                                        <div class="image">
-                                            <img class="landing-page-image" :src="$pngStandortstudieNRW" alt/>
-                                            <h2 class="image-title"><span>AV-Medienstandort NRW 2019</span></h2>
-                                        </div>
-                                    </a>
-                                </el-col>
-                            </div>
-
-                            <div class="padding-left-box">
-                                <el-col class="landing-page-column" :span="8">
-                                    <a href="https://wila-rundfunk.de/" target="_blank">
-                                        <div class="image">
-                                            <img class="landing-page-image" :src="$pngStandortstudieWila" alt/>
-                                            <h2 class="image-title"><span>Wirtschaftliche</span></h2>
-                                            <h2 class="image-title subtitle-image-title"><span>Lage des Rundfunks</span>
-                                            </h2>
-                                        </div>
-                                    </a>
-                                </el-col>
-                                <el-col class="landing-page-column" :span="8">
-                                    <a href="https://www.bmwi.de/Redaktion/DE/Publikationen/Studien/bedeutung-filmindustrie.pdf?__blob=publicationFile&v=18"
-                                       target="_blank">
-                                        <div class="image">
-                                            <img class="landing-page-image" :src="$pngStandortWirtschaftlicheBedeutungFilm"
-                                                 alt/>
-                                            <h2 class="image-title"><span>Wirtschaftliche Bedeutung</span></h2>
-                                            <h2 class="image-title subtitle-image-title">
-                                                <span>der Filmindustrie in Deutschland</span></h2>
-                                        </div>
-                                    </a>
-                                </el-col>
-                                <el-col class="landing-page-column" :span="8">
-                                    <a href="https://www.goldmedia.com/fileadmin/goldmedia/2015/Studien/2017/Standortstudie_HH/Goldmedia_Standortstudie_FFHSH_2017_dt.pdf"
-                                       target="_blank">
-                                        <div class="image">
-                                            <img class="landing-page-image" :src="$pngStandortstudieBewegtbild" alt/>
-                                            <h2 class="image-title"><span>Standortstudie: Bewegtbildbranche</span></h2>
-                                            <h2 class="image-title subtitle-image-title"><span> in Hamburg und Schleswig-Holstein 2017</span>
-                                            </h2>
-                                        </div>
-                                    </a>
-
-                                </el-col>
-                            </div>
-
-                        </el-card>
-
-                        <el-card class="card">
-                            <el-col :sm="24" :xs="24" :md="12" :lg="12">
-                                <div class="subtitle">Standortmonitoring</div>
-                            </el-col>
-                            <el-col :sm="24" :xs="24" :md="12" :lg="12">
-                                <div class="landing-page-textbox">
-                                    Die Kreativwirtschaft ist ein wichtiger Wirtschaftsfaktor und wertet das Image einer
-                                    Region
-                                    stark auf.
-                                    Bundesländer und Kommunen sind daher bemüht, die eigene Stellung als Medien- und
-                                    Kreativhochburg auszubauen
-                                    und mit Anreizen die Ansiedlung von Medienunternehmen und innovativen Kreativindustrien
-                                    zu
-                                    befördern.
-                                    Daten und Fakten zu Standortfragen sind das Einmaleins für die Entwicklung von Regionen
-                                    und
-                                    Unternehmensentscheidungen.
-                                </div>
-                            </el-col>
-                        </el-card>
-
-                        <el-card class="card">
-                            <el-col :sm="24" :xs="24" :md="12" :lg="12">
-                                <div id="methodik" class="subtitle">Methodik <br> und Inhalte</div>
-                            </el-col>
-                            <el-col :sm="24" :xs="24" :md="12" :lg="12">
-                                <div class="landing-page-textbox">
-                                    Der Goldmedia Standortmonitor basiert auf aktuellen Daten des Statistischen Bundesamts,
-                                    der
-                                    Statistischen
-                                    Landesämter und der Bundesagentur für Arbeit sowie der Künstlersozialkasse und weiterer
-                                    ausgewählter
-                                    Primärstudien. Die Daten werden individuell zusammengestellt und durch Goldmedia
-                                    aggregiert.
-                                    Der Standmonitor
-                                    enthält Zeitreihen-Daten ab 2013 bis zum jeweils aktuellsten verfügbaren Zeitpunkt der
-                                    Daten. Alle Daten werden
-                                    kontinuierlich aktualisiert, so dass alle Informationen stets auf dem neuesten Stand
-                                    sind.
-                                    Der Goldmedia Standmonitor
-                                    wird sukzessive erweitert um Daten aus Goldmedia Primärdatenerhebungen sowie
-                                    Sekundärdatenerhebungen und Daten von Branchenverbänden.
-                                </div>
-                            </el-col>
-                        </el-card>
-
-                        <el-card class="card">
-                            <el-col :sm="24" :xs="24" :md="12" :lg="12">
-                                <div id="kontakt" class="subtitle">Kontaktieren <br>Sie uns!</div>
-                            </el-col>
-                            <el-col :sm="24" :xs="24" :md="12" :lg="12">
-                                <div class="landing-page-textbox">
-                                    Ihre Ansprechpartner sind <a href="mailto:mathias.birkel@goldmedia.de">Mathias
-                                    Birkel</a>
-                                    und
-                                    <a href="mailto:klaus.goldhammer@goldmedia.de">Prof. Dr. Klaus Goldhammer</a>
-                                    oder telefonisch: 030-2462660. Gern präsentieren wir Ihnen die Vorteile und
-                                    Möglichkeiten
-                                    des Standortmonitors.
-                                </div>
-                            </el-col>
-                        </el-card>
-
-                    </el-col>
-                </el-row>
-            </div>
-
-
-            <div v-if="loginClicked" class="login">
+            <div class="login">
                 <div class="login-card">
                     <el-row>
                         <el-col :span="8"></el-col>
@@ -310,7 +95,6 @@
                 }
             }
             return {
-                loginClicked: false,
                 gridSize: 18,
                 gridSizeBorder: 3,
                 userData: {},
@@ -332,12 +116,6 @@
             }
         },
         methods: {
-            loginClick() {
-                this.loginClicked = true;
-            },
-            returnLanding() {
-                this.loginClicked = false;
-            },
             submitForm(formName) {
                 let config = {
                     headers: {
@@ -505,7 +283,7 @@
     }
 
     .main-page {
-        background: url("https://standortmonitor.net/images/landingPageBackgroundImage.png") repeat center center fixed;
+        background: url("https://standortmonitor.net/login/public/images/landingPageBackgroundImage.png") repeat center center fixed;
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;

@@ -403,6 +403,8 @@ a:hover, a:active {
 /* Main
 --------------------------*/
 /* Break-point
+src: url("/fonts/element-icons.woff") format("woff"), url("/fonts/element-icons.ttf") format("truetype");
+src: url("/gm-standortmonitor/public/fonts/element-icons.woff") format("woff"), url("/gm-standortmonitor/public/fonts/element-icons.ttf") format("truetype");
 --------------------------*/
 @font-face {
   font-family: 'element-icons';
