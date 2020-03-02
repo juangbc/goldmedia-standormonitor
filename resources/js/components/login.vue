@@ -283,7 +283,7 @@
     }
 
     .main-page {
-        background: url("https://standortmonitor.net/login/public/images/landingPageBackgroundImage.png") repeat center center fixed;
+        background: url("https://standortmonitor.net/kreativwirtschaft/login/public/images/landingPageBackgroundImage.png") repeat center center fixed;
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;

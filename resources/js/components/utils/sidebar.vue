@@ -57,9 +57,9 @@
                         <template slot="title"><i class="fa fa-sort-amount-up fa-fw" :class="{'menu-active': routeActive('6_')}"></i><span
                             :class="{'menu-active': routeActive('6_')}" class="sidebar-title">Index-Analysen</span></template>
                         <el-menu-item-group>
-                            <el-menu-item index="6_1" :route="{'name':'6_2'}">Umsatz pro Beschäftigten</el-menu-item>
-                            <el-menu-item index="6_2" :route="{'name':'6_3'}">Umsatz pro Unternehmen</el-menu-item>
-                            <el-menu-item index="6_3" :route="{'name':'6_4'}">Beschäftigte pro Unternehmen</el-menu-item>
+                            <el-menu-item index="6_1" :route="{'name':'6_1'}">Umsatz pro Beschäftigten</el-menu-item>
+                            <el-menu-item index="6_2" :route="{'name':'6_2'}">Umsatz pro Unternehmen</el-menu-item>
+                            <el-menu-item index="6_3" :route="{'name':'6_3'}">Beschäftigte pro Unternehmen</el-menu-item>
                         </el-menu-item-group>
                     </el-submenu>
 
